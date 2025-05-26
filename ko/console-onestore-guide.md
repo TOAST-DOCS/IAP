@@ -34,6 +34,6 @@ Apps > 앱 선택 > In-App정보 > 구독상품 > PNS 관리 > 구독 상태 알
 
 - 서버 URL: `https://gw-iap.nhncloudservice.com/markets/ONESTORE/notification/{ONE Store Package Name}/receive`
     - Gamebase 샌드박스를 사용할 경우 서버 URL은 `https://sandbox-gw-iap.nhncloudservice.com/markets/ONESTORE/notification/{ONE Store Package Name}/receive` 입력
-- 구독 상태 알림 전송 정책은 [원스토어 In-App SDK 가이드](https://onestore-dev.gitbook.io/dev/tools/tools/v21/07.-pns-push-notification-service)에서 확인할 수 있습니다.
+- 구독 상태 알림 전송 정책은 [원스토어 In-App SDK 가이드](https://onestore-dev.gitbook.io/dev/tools/tools/v21/pns)에서 확인할 수 있습니다.
    
 > 구독 기능은 원스토어 인앱결제 SDK V21 버전부터 지원합니다. 

@@ -32,5 +32,6 @@ Apps > アプリ選択 > In-App情報 > 購読商品 > PNS管理 > 購読状態�
 
 - サーバーURL: `https://gw-iap.nhncloudservice.com/markets/ONESTORE/notification/{ONE Store Package Name}/receive`
     - Gamebaseサンドボックスを使用する場合、サーバーURLは`https://sandbox-gw-iap.nhncloudservice.com/markets//ONESTORE/notification/{ONE Store Package Name}/receive`入力
+- 購読状態通知送信ポリシーは[ONEstore In-App SDKガイド](https://onestore-dev.gitbook.io/dev/eng/tools/tools/v21/pns)で確認できます。
 
 > 購読機能はONEstoreアプリ内決済SDK V21バージョンからサポートします。
