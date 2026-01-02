@@ -11,7 +11,7 @@
 
 ## 基本情報入力
 
-![NHN Cloud IAPアプリ設定](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_app_01.png)
+![NHN Cloud IAPアプリ設定](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_01.png)
 
 ### 1. Store App ID
 
@@ -34,10 +34,6 @@
 * **YES**に設定すると、送信された決済情報の改ざん有無のみを確認し、Googleの検証を省略します。
 * すべての決済に有効なわけではなく購読や再検証などには適用されません。
 
-### 4. Domain authentication File Names
-
-* 廃止予定の項目なので、空白のままにしておきます。
-
 ## 連動のための2つの認証方式を提供
 
 * Google連携のためにはGoogle Cloud APIを使用する必要があり、Google Cloud APIはGoogleが提供するOAuth2.0認証が必要です。
@@ -57,7 +53,7 @@
 * Google Play ConsoleではGoogle Cloud Consoleで作成したサービスアカウントを追加して使用します。
 * サービスアカウントがアプリにアクセスするためには、適切な権限を付与する必要があります。
 
-![NHN Cloud IAPアプリ設定](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_1.1.png)
+![NHN Cloud IAPアプリ設定](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_02.png)
 
 
 ## Google Cloudプロジェクト設定
@@ -154,7 +150,7 @@ NHN Cloud IAPでGoogle CloudクライアントID認証を使用するために�
 * **Google API Client Secret** : **クライアントセキュリティパスワード**を入力
 * **Refresh Token For Google Oauth** : Google Developsers OAuth Playgroundで受信した**Refresh token**を入力
 
-![NHN Cloud IAPアプリ設定](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_app_03.png)
+![NHN Cloud IAPアプリ設定](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_01.png)
 
 > [注意]<br>
 > 発行されたRefresh tokenは、認証したユーザーアカウントのパスワードを変更するとすぐに失効します。もしアプリが稼働中であれば、障害が発生する可能性があります。
@@ -217,7 +213,7 @@ NHN Cloud IAPでGoogle CloudクライアントID認証を使用するために�
 * **IAP > App**の登録または修正で**サービスアカウント連動情報**項目にダウンロードしたサービスアカウントのキーファイルの内容を入力します。
 * コピーする際は、メモ帳などのテキストエディタを使用して内容全体をコピーしてください。
 
-![Google Cloudサービスアカウント情報の入力](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_app_02.png)
+![Google Cloudサービスアカウント情報の入力](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_03.png)
 
 
 ## リアルタイム購読状態を受信するためのGoogle通知設定

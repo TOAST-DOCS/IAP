@@ -11,7 +11,7 @@
 
 ## 기본 정보 입력
 
-![NHN Cloud IAP 앱 설정](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_app_01.png)
+![NHN Cloud IAP 앱 설정](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_01.png)
 
 ### 1. Store App ID
 
@@ -34,10 +34,6 @@
 * **YES**로 설정 시 전송된 결제 정보의 변조 여부만 확인하고, Google의 검증을 생략합니다.
 * 모든 결제에 유효한 것은 아니며, 구독이나 재검증 등에는 적용되지 않습니다.
 
-### 4. Domain authentication File Names
-
-* 더 이상 사용하지 않는 항목으로 공란으로 둡니다.
-
 ## 연동을 위한 두 가지 인증 방식 제공
 
 * Google 연동을 위해서는 Google Cloud API를 사용해야 하며, Google Cloud API는 Google에서 제공하는 OAuth2.0 인증이 필요합니다. 
@@ -57,7 +53,7 @@
 * Google Play Console에서는 Google Cloud Console에서 생성한 서비스 계정을 추가하여 사용합니다.
 * 서비스 계정이 앱에 접근하기 위해서는 적절한 권한을 부여해야 합니다.
 
-![NHN Cloud IAP 앱 설정](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_1.1.png)
+![NHN Cloud IAP 앱 설정](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_02.png)
 
 
 ## Google Cloud 프로젝트 설정
@@ -154,7 +150,7 @@ NHN Cloud IAP에서 Google Cloud 클라이언트 ID 인증을 사용하기 위�
 * **Google API Client Secret**: **클라이언트 보안 비밀번호**를 입력
 * **Refresh Token For Google Oauth**: Google Developsers OAuth Playground에서 수신한 **Refresh token**을 입력
 
-![NHN Cloud IAP 앱 설정](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_app_03.png)
+![NHN Cloud IAP 앱 설정](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_01.png)
 
 > [주의]<br>
 > 발급 받은 Refresh token은 인증한 사용자 계정의 비밀번호를 변경하면 즉시 만료됩니다. 만약 앱이 운영 중이라면 이는 장애를 초래할 수 있습니다.
@@ -217,8 +213,7 @@ NHN Cloud IAP에서 Google Cloud 클라이언트 ID 인증을 사용하기 위�
 * **IAP > App**의 **추가** 또는 **편집**에서 **서비스 계정 연동 정보** 항목에 다운로드한 서비스 계정의 키 파일 내용을 입력합니다.
 * 복사할 때는 메모장과 같은 텍스트 편집기를 사용해 내용 전체를 복사하십시오.
 
-![Google Cloud 서비스 계정 정보 입력](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_app_02.png)
-
+![Google Cloud 서비스 계정 정보 입력](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_03.png)
 
 ## 실시간 구독 상태 수신을 위한 Google 알림 설정
 Google Play에서 구독 상품을 판매하는 경우 NHN Cloud IAP에서 Google로부터 알림을 받아 구독의 최신 상태를 관리할 수 있습니다. 구독 상품은 갱신 시점에 Google 내에서 자동으로 갱신됩니다. 이와 같은 Google 내에서 발생하는 구독 이벤트를 추적하기 위해 Google Cloud의 **주제(Topic)** 를 사용합니다. 주제에 대한 자세한 내용은 [Android Developers - 주제 만들기](https://developer.android.com/google/play/billing/getting-ready#create-topic)에서 확인할 수 있습니다.

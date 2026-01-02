@@ -11,7 +11,7 @@ We use the Google site below to get the information for the integration.
 
 ## Enter Basic Information
 
-![NHN Cloud IAP App Settings](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_app_01.png)
+![NHN Cloud IAP App Settings](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_01.png)
 
 ### 1. Store App ID
 
@@ -34,10 +34,6 @@ We use the Google site below to get the information for the integration.
 * When set to **YES**, it only checks for tampering with the sent payment information and skips verification by Google.
 * Do not apply to all payments, and subscriptions and revalidations are excluded.
 
-### 4. Domain Authentication File Names
-
-* This field is left blank as it is no longer used.
-
 ## Two Authentication Methods for Integration
 
 * To integrate with Google, you must use the Google Cloud API, which requires OAuth2.0 authorization provided by Google. 
@@ -57,7 +53,7 @@ We use the Google site below to get the information for the integration.
 * Google Play Console adds and uses the service account you created in Google Cloud Console.
 * In order for the service account to access the app, you must grant the appropriate permissions.
 
-![NHN Cloud IAP App Settings](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_1.1.png)
+![NHN Cloud IAP App Settings](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_02.png)
 
 
 ## Set up Google Cloud Project
@@ -154,7 +150,7 @@ To use Google Cloud Client ID authentication in NHN Cloud IAP, you need a Refres
 * **Google API Client Secret**: Enter your **client security password**
 * **Refresh Token For Google Oauth**: Enter the **Refresh token**received from the Google Developers OAuth Playground
 
-![NHN Cloud IAP App Settings](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_app_03.png)
+![NHN Cloud IAP App Settings](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_01.png)
 
 > [Caution]<br>
 > The Refresh token issued will expire immediately if you change the password of the user account you authenticated with. If your app is live, this can cause a failure.
@@ -217,7 +213,7 @@ You can issue service accounts in Google Cloud IAM to allow non-human users to a
 * In **IAP > App** > **Add** or **Modify**, in the **Service account integration information** field, enter the contents of the key file for the downloaded service account.
 * When copying, use a text editor like notepad to copy the entire content.
 
-![Enter Google Cloud services account information](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_google/google_iap_console_app_02.png)
+![Enter Google Cloud services account information](https://static.toastoven.net/prod_iap/console_google/google_iap_console_app_add_03.png)
 
 
 ## Set up Google Notifications to receive real-time subscription status
