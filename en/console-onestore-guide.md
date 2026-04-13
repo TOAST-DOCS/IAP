@@ -33,8 +33,8 @@ Apps > Select App > In-App Information > Subscriptions > PNS Management > Subscr
 
 ![PNS Management](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_onestore/onestore_console_03.png)
 
-- Server URL: `https://gw-iap.nhncloudservice.com/markets/ONESTORE/notification/{ONE Store Package Name}/receive`
-    - If using Gamebase Sandbox, enter `https://sandbox-gw-iap.nhncloudservice.com/markets/ONESTORE/notification/{ONE Store Package Name}/receive` for the server URL
+- Server URL: `https://api-iap.nhncloudservice.com/markets/ONESTORE/notification/{ONE Store Package Name}/receive`
+    - If using Gamebase Sandbox, enter `https://sandbox-api-iap.nhncloudservice.com/markets/ONESTORE/notification/{ONE Store Package Name}/receive` for the server URL
 - The policy for sending subscription status notifications can be found in the [ONE store In-App SDK Guide](https://onestore-dev.gitbook.io/dev/eng/tools/tools/v21/pns).
 
 > The subscription feature is supported starting with version V21 of the ONE Store In-App Payment SDK.
