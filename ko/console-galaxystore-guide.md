@@ -24,5 +24,5 @@ IAP에서 Galaxy Store를 연동하려면 앱 등록 시, PackageName과 IAP Pub
 
 ![[]](https://static.toastoven.net/prod_iap/console_galaxy/galaxy_isn.png)
 
-- ISN url: `https://gw-iap.nhncloudservice.com/markets/GALAXY/notification/{Galaxy Store Package Name}/receive`
-    - Gamebase 샌드박스를 사용하고 있다면 ISN url은 `https://sandbox-gw-iap.nhncloudservice.com/markets/GALAXY/notification/{Galaxy Store Package Name}/receive` 입력
+- ISN url: `https://api-iap.nhncloudservice.com/markets/GALAXY/notification/{Galaxy Store Package Name}/receive`
+    - Gamebase 샌드박스를 사용하고 있다면 ISN url은 `https://sandbox-api-iap.nhncloudservice.com/markets/GALAXY/notification/{Galaxy Store Package Name}/receive` 입력
