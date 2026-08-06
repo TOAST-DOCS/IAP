@@ -1,18 +1,19 @@
+<!-- machine_translated: true -->
+
 <a id="mobile-service-iap-android-sdk-guide"></a>
+
 ## Mobile Service > IAP > Android SDK Guide { #mobile-service-iap-android-sdk-guide }
 
 
 > [Notice]
-> A new IAP SDK that supports subscription has been released as [NHN Cloud SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/).
+> A new IAP SDK that supports subscription has been released as [NHN Cloud SDK](http://docs.toast.com/en/TOAST/ko/toast-sdk/overview/).
 > No new features will be developed for the existing IAP SDK.
 
 
 <a id="development-environment"></a>
-## Development Environment { #development-environment }
 
-* Windows
-* Eclipse in Android Development Tools / Android Studio IDE 1.2
-* Android 5.0.1 (API Level 21)
+## Development Environment { #development-environment }
+* Android Studio IDE 2.3.3 or later
 * Android SDK Version is beyond **2.3.3 (API Level 10)**
 
 The open sources in use are as follows.
@@ -23,13 +24,15 @@ The open sources in use are as follows.
 |gson|https://code.google.com/p/google-gson/|2.2.4|Apache License 2.0|
 
 <a id="using-in-android-studio-gradle"></a>
+
 ## Using in Android Studio & Gradle { #using-in-android-studio-gradle }
 
-IAP’s Android SDK offers development environment for Gradle-based Android Studio IDE. Remote downloading is available from jCenter Maven Repository. Define repository and dependency in build.gradle file of the project as below
-
+`NHN Cloud IAP SDK` offers development environment for Gradle-based Android Studio IDE.
+Remote downloading is available from jCenter Maven Repository.
+Define repository and dependency in build.gradle file of the project as below.
 
 <a id="gradle-repository"></a>
-### Gradle Repository { #gradle-repository }
+### 1. Gradle Repository { #gradle-repository }
 
 ```
 buildscript {
@@ -39,254 +42,290 @@ buildscript {
 }
 ```
 
-```
-dependencies {
-    compile group: 'com.toast.iap', name: 'iap', version: project.TOAST_IAP_SDK_VERSION
-}
-```
+The common permissions used by `NHN Cloud IAP SDK` are as follows.
 
-> [Reference]  
-> Specify SDK version in project.TOAST_IAP_SDK_VERSION. Using Gradle Project beyond version 1.1.0 is recommended.   
+|Permission|Description|
+|---|---|
+|android.permission.INTERNET|Allows the application to open network sockets.|
+|com.android.vending.BILLING|Grants the application in-app purchase permission.|
 
 <br/>
-> [Reference]  
-> Please refer to RELEASE-NOTES.md within package for SDK version history
 
 <a id="adding-dependencies"></a>
-### Adding Dependencies { #adding-dependencies }
-
-<!-- TODO: translate body -->
-
+### 2. Adding Dependencies { #adding-dependencies }
 <a id="adding-dependencies-google-play-store"></a>
 #### Google Play Store
-
-<!-- TODO: translate body -->
-
+```
+dependencies {
+    implementation 'com.toast.iap:iap:1.5.0'
+}
+```
 <a id="adding-dependencies-sdk-v17-api-v5---recommended"></a>
 #### SDK v17 (API v5) - Recommended
+```
+dependencies {
+    implementation 'com.toast.iap:iap-onestore:1.5.0'
+}
+```
+The added permissions are as follows.
 
-<!-- TODO: translate body -->
+|Permission|Description|
+|---|---|
+|android.permission.ACCESS_NETWORK_STATE|Allows the application to access information about networks.|
 
 <a id="adding-dependencies-sdk-v16-api-v4"></a>
 #### SDK v16 (API v4)
+```
+dependencies {
+    implementation 'com.toast.iap:iap-tstore:1.5.0'
+}
+```
 
-<!-- TODO: translate body -->
+<br/>
+
+> [Note]  
+> Release History   
+> Please refer to RELEASE-NOTES.md within package for SDK version history.
 
 <a id="one-store-configuration-information"></a>
+
 ## One Store Configuration Information { #one-store-configuration-information }
 
-<!-- TODO: translate body -->
+Starting Tuesday, June 12, 2018, new apps using the legacy SDK v16 (API v4) or earlier can no longer be registered.
+If you are working on a new app, use SDK v17 (API v5).
+
+* [Notice of end of support for products using In-App SDK versions below v15.xx.xx](https://dev.onestore.co.kr/devpoc/support/news/noticeView.omp?page.no=1&orderValue=&orderType=&noticeId=31245&noticeNo=789&pageFlag=List&searchValue=)
+* [Notice of inability to register new apps using the legacy IAP SDK](https://dev.onestore.co.kr/devpoc/support/news/noticeView.omp?page.no=1&orderValue=&orderType=&noticeId=31224&noticeNo=788&pageFlag=List&searchValue=)
 
 <a id="sdk-v17-api-v5"></a>
-### SDK v17 (API v5) { #sdk-v17-api-v5 }
-
-<!-- TODO: translate body -->
+### 1. SDK v17 (API v5) { #sdk-v17-api-v5 }
 
 <a id="sdk-v17-api-v5-promoting-one-store-update-and-installation"></a>
 #### Promoting One Store Update and Installation
 
-<!-- TODO: translate body -->
+If the SDK error code `INAPP_ONESTORE_NEED_UPDATE(201)` occurs, you can prompt installation by using the following code.
+```java
+Intent intent = new Intent("android.intent.action.VIEW");
+intent.setData(Uri.parse("http://m.onestore.co.kr/mobilepoc/etc/downloadGuide.omp"));
+startActivity(intent);
+```
 
 <a id="sdk-v17-api-v5-requesting-one-store-login"></a>
 #### Requesting One Store Login
 
-<!-- TODO: translate body -->
+The `NHN Cloud IAP SDK` checks the login status internally, so you do not need to handle login separately.
+If the user is not logged in during use, a One Store login popup (Yes/No) will appear.
+If you select `Yes` in the login popup, you will be directed to the One Store login screen. If you select `No`, an `INAPP_ONESTORE_NEED_LOGIN(202)` error is raised.
+
+> [Note]  
+> [Requesting One Store Login](https://dev.onestore.co.kr/devpoc/reference/view/IAP_v17_05_implementation#HC6D0C2A4D1A0C5B4B85CADF8C778C694CCADD558AE30-getLoginIntent2829)
 
 <a id="sdk-v17-api-v5-using-popup-payment-screen"></a>
 #### Using Popup Payment Screen
 
-<!-- TODO: translate body -->
-
-<a id="sdk-v16-api-v4"></a>
-### SDK v16 (API v4) { #sdk-v16-api-v4 }
-
-<!-- TODO: translate body -->
-
-<a id="implementing-sample-application"></a>
-## Implementing Sample Application { #implementing-sample-application }
-
-
-<a id="import-project"></a>
-### Import Project { #import-project }
-
-Import project from Android Studio and add /toast-iap-android-sdk-studio to SDK package.
-
-> [Reference]  
-> Set sdk.dir value in local.properties to Android SDK path set in local. If sample application is built in release build type, enter keystore information for APK signing. Flavor and buildType can be selected from Build Variants menu in Android Studio.
-  
-
-<br/>
-> [Reference]  
-> Workspace Encoding Type   
-> Check if the Workspace File Encoding of the imported project is set in UTF-8. If not, change to UTF-8  
-
-<a id="setting-market-information-to-androidmanifestxml"></a>
-### Setting Market Information to AndroidManifest.xml { #setting-market-information-to-androidmanifestxml }
-
-Set appId / market using information registered to IAP Web Console
-
-> [Reference]  
-> Set appId / Store   
-> Refer to AndroidManifest.xml of each market’s Flavor section of sample application for detailed setting.
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Eclipse IDE section has no ko counterpart; ko covers only Android Studio/Gradle) -->
-<a id="android-reference"></a>
-## Using in Eclipse { #android-reference }
-
-IAP Android SDK is distributed in Android Library Project format.
-
-| Directory Name                                     | Description                     |
-| ----------------------------------------- | ---------------------- |
-| /docs                                     | API reference               |
-| /toast-iap-android-sdk-eclipse/iap        | IAP Android library project |
-| /toast-iap-android-sdk-eclipse/iap-sample | Sample application              |
-
-[Table.1 Android SDK Directory Information]
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Eclipse-specific subsection; no ko counterpart) -->
-<a id="activating-log-information"></a>
-### How To Import { #activating-log-information }
-
-```
-[Eclipse] > [File] > [Import] select.  
-[Android] - [Existing Android Code into Workspace] select.  
-<Import Projects> 창 > [Browse] butoon > [IAP SDK] folder select.  
-Once IAP SDK & sample application project are displayed in Import list, select [Finish] while all projects are selected.
-```
-
-> [Reference]  
-> If error occurs in Project after importing, follow below instructions   
-> \- [project] > [clean] select.    
-> \- [IAP] right click > [Properties] > [Resource] > [Text File Encoding] set to UTF-8.
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Eclipse-specific subsection; no ko counterpart) -->
-<a id="store-market-settings"></a>
-### Add IAP Android SDK { #store-market-settings }
-
-```
-Right Click of [project] > [Properties] > [Android] > [Add] > Add IAP
-```
-
-![[Figure.1 IAP SDK]](http://static.toastoven.net/prod_iap/iap_5.jpg)
-<center>[Figure 1 IAP SDK]</center>
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Android project setup section absent from ko source) -->
-## Setting Android Project
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (AndroidManifest modification subsection absent from ko source) -->
-### AndroidManifest.xml Modification
-
-This is for Google Play development.
-
+If you want to use the popup-style payment screen, add the following settings to `AndroidMenifest.xml`.
 ```xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<!-- google iab permission -->
-<uses-permission android:name="com.android.vending.BILLING" />
-
 <application>
-...
-        <activity android:name="com.nhnent.mobill.api.core.IAPActivity"
-	        android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection"
-	        android:theme="@android:style/Theme.Translucent.NoTitleBar"
-	        android:windowSoftInputMode="adjustResize|stateHidden" />
-        <meta-data android:name="com.toast.iap.config.appId" android:value="1000000" />
-        <meta-data android:name="com.toast.iap.config.market" android:value="GG" />
+    <meta-data 
+        android:name="iap:view_option" 
+        android:value="popup | full" />
 </application>
 ```
 
-Setting information for AndroidManifest.xml is as follows.
+> [Note]  
+> [OneStore - Prerequisites for applying in-app purchase > 7. Android Manifest file settings](https://dev.onestore.co.kr/devpoc/reference/view/IAP_v17_04_preparation#HAndroidManifestD30CC77CC124C815)
 
-| Property Name               | Description                  |
-| --------------------------- | ---------------------------- |
-| android.permission          | Common Android authority for IAP use <br/> * Duplicate permission can be omitted.          |
-| com.android.vending.BILLING | Authority for Google Play. <br/> * Names and/or contents may differ depending on store.     |
-| activity                    | Register activity offered by IAP           |
-| com.toast.iap.config.appId  | App identifier issued by IAP web console          |
-| com.toast.iap.config.market | Store <br/>GG : Google Play <br/> AS : Apple App Store<br/> TS : One Store <br/>TEST : Test |
+<a id="sdk-v16-api-v4"></a>
+### 2. SDK v16 (API v4) { #sdk-v16-api-v4 }
 
-[Table.2 AndroidManifest.xml Information]
+For payment testing, add the following settings to `AndroidMenifest.xml`.
+```
+<application>
+    <meta-data 
+        android:name="iap:plugin_mode" 
+        android:value="development" />
+</application>
+```
 
-> [Reference]  
-> When market information is set in TEST, IAP’s API can be tested easily without entering market sync information.    
-> Please refer to Sample Application for more details.  
+<a id="implementing-sample-application"></a>
 
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (IAP payment flow diagram section absent from ko source; ko api methods appear directly under k18) -->
-## IAP Payment Flow Diagram
+## Implementing Sample Application { #implementing-sample-application }
 
-In-app purchase is proceeded in two stages: payment request and payment consume.  
-If payment consume is complete, issue item in user’s application.
+IAP Android SDK provides sample applications for Google Play Store and One Store.
+You can use the sample applications to easily test the features provided by IAP Android SDK.
 
-> [Reference]  
-> [IAP Payment Flow](/Mobile Service/IAP/en/Overview/#iap)
+> [Note]  
+> Notes before testing  
+> Before testing payments, read the [Console User Guide](/Mobile Service/IAP/en/console-guide/) and complete the console environment setup first.
 
-### Registering User Identifier
+<a id="import-project"></a>
+### 1. Import Project { #import-project }
 
-Register authorized user ID.  
-This is user identifier defined by developer, which qualifies for item issuance.
+Import the `/sample` directory from the distributed SDK package into Android Studio using **Import Project**.
 
-[Request Example]
+<a id="setting-market-information-to-androidmanifestxml"></a>
+### 2. Setting Market Information to AndroidManifest.xml { #setting-market-information-to-androidmanifestxml }
+
+Set the `Store APP ID` registered in the IAP Web Console to match the applicationId of the sample application.
+```
+android {
+    defaultConfig {
+        applicationId "your app id"
+    }
+}
+```
+
+> [Note]  
+> applicationId  
+> This must match the information of the actual store (Google Play Store, One Store).
+
+<a id="android-reference"></a>
+
+## API Reference { #android-reference }
+<a id="activating-log-information"></a>
+### 1. Activating Log Information { #activating-log-information }
+Activates the exposure of log information for debugging.
+
+**[Method]**
+```java
+public void setDebugMode(boolean isDebuggable);
+```
+
+**[Parameter]**
+
+|Type|Name|Description|
+|---|---|---|
+| Boolean | isDebuggable | Whether to expose debugging logs |
+
+**[Example Code]**  
+
+```java
+InAppPurchases.InAppPurchase.setDebugMode(true);
+```
+
+<br/>
+
+<a id="store-market-settings"></a>
+### 2. Store (Market) Settings { #store-market-settings }
+Sets the store (market) to use during SDK initialization.
+
+**[Market ID by Store]**
+
+|MarketId|Store|  
+|---|---|  
+|GG|Google Play Store|  
+|TS|One Store SDK V16 (API V4) - formerly TStore|  
+|ONESTORE|One Store SDK V17 (API V5)|  
+
+**[Method]**
+
+```java
+public boolean registerMarketId(String marketId);
+```
+
+**[Parameter]**
+
+|Type|Name|Description|
+|---|---|---|
+| String | marketId | Market ID |
+
+**[Example Code]**  
+
+When configured in `AndroidMenifest.xml`:
+```xml
+<meta-data 
+    android:name="com.toast.iap.config.market" 
+    android:value="GG" />
+```
+When configured in `Java` code:
+```java
+InAppPurchases.InAppPurchase.registerMarketId(marketId); // marketId : String value
+```
+
+<br/>
+
+<a id="registering-app-id"></a>
+### 3. Registering App ID { #registering-app-id }
+The service ID required to use the IAP Android SDK.
+The App ID can be found in `NHN Cloud Console > Mobile Service > IAP`.
+
+**[Method]**
+
+```java
+public boolean registerAppId(long appId);
+```
+
+**[Parameter]**
+
+|Type|Name|Description|
+|---|---|---|
+| Long | appId | App ID issued from the IAP Service in the NHN Cloud console |
+
+**[Example Code]**  
+
+When configured in `AndroidMenifest.xml`:
+```xml
+<meta-data 
+    android:name="com.toast.iap.config.appId" 
+    android:value="1234567" />
+```
+When configured in `Java` code:
+```java
+InAppPurchases.InAppPurchase.registerAppId(1234567);// appId : long integer
+```
+<br/>
+
+<a id="registering-user-identifier"></a>
+### 4. Registering User Identifier { #registering-user-identifier }
+
+Registers the user ID of an authenticated user.  
+This is the user identifier defined by the developer, and is the target to whom items are granted.
+
+**[Method]**
+
+```java
+public boolean registerUserId(String userId);
+```
+
+**[Parameter]**
+
+|Type|Name|Description|
+|---|---|---|
+| String | userId | User ID identifier |
+
+**[Example Code]**  
 
 ```java
 InAppPurchases.InAppPurchase.registerUserId(userId); // userId : String value
 ```
 
-### Inquiry All Purchasable Items
+<br/>
 
-Inquire All Purchasable Items
+<a id="request-payment"></a>
+### 5. Request Payment { #request-payment }
 
-[Request Example]
+Requests item purchase from the client.
+The response to the payment request is delivered via PurchaseCallback.
+Once payment is successfully completed, send the result to the server to proceed with [9. Payment Consumption](/Mobile%20Service/IAP/en/android-sdk-guide/#9).
 
+> [Note]  
+> In-App Purchase is proceeded in two stages: payment request and payment consumption.  
+> [IAP Payment Flow](/Mobile%20Service/IAP/en/Overview/#iap)  
+
+**[Method]**
 ```java
-InAppPurchases.InAppPurchase.queryItems(activity, new InAppPurchase.ItemListCallback() {
-    @Override
-    public void onCallback(JSONArray result, InAppPurchaseException exception) {
-        if (exception != null) {
-            // An error occurred, we need to handle the error
-            return;
-        }
-        // Success! Include your code to handle the results here
-    }
-});
+public void requestPurchase(Activity activity, long itemId, PurchaseCallback callback);
 ```
 
-[Method]
+**[Parameter]**
 
-|Word|Description|
-| ----- | --- |
-| Syntax | public void queryItems(Activity activity, ItemListCallback callback) |
-| Parameters | activity [in] of current application. |
-| Parameter | callback [in] which returns response of API.|
-| Return Value | void |
+|Type|Name|Description|
+|---|---|---|
+| Activity | activty | Current activity of the application |
+| Long | itemId | Item ID issued from the Web Console |
+| PurchaseCallback | callback | Callback that returns the API request result |
 
-[Response Example]
-```json
-[
-    {
-        "itemSeq" : 1000208,
-        "itemName" : "Test item 01",
-        "marketItemId": "item01",
-        "price": 1000,
-        "currency": "KRW",
-        "localizedPrice":"₩1,000"
-    },
-    {
-        "itemSeq" : 1000209,
-        "itemName" : "Test item 02",
-        "marketItemId": "item02",
-        "price": 7.99,
-        "currency": "USD",
-        "localizedPrice":"$7.99"
-}]
-```
-
-### Request Payment
-
-Request item purchase from client. Response for payment request will be received via PurchaseCallback. Once payment is successfully done, send result to server to consume payment details.
-
-[Request Example]
-
+**[Example Code]**  
 ```java
 InAppPurchases.InAppPurchase.requestPurchase(this, 1000001, new PurchaseCallback() {
 
@@ -301,17 +340,7 @@ InAppPurchases.InAppPurchase.requestPurchase(this, 1000001, new PurchaseCallback
 });
 ```
 
-[Method]
-
-|Word|Description|
-| ----- |  --- |
-| Syntax | public void requestPurchase(Activity activity, long itemId, String currency, float price, PurchaseCallback callback) ||
-| Parameters |  activity [in] of current application. |
-| Parameters | itemId [in] generated in Web Console [Item] |
-| Parameters | callback [in] which returns response of API. |
-| Return Value |  void |
-
-[Response Example]
+**[Response Example]**
 
 ```json
 {
@@ -323,53 +352,26 @@ InAppPurchases.InAppPurchase.requestPurchase(this, 1000001, new PurchaseCallback
 }
 ```
 
-> [Reference]  
-> IAP Android SDK payment confirmation pop-up   
-> There will be no payment confirmation pop-up appearing from toast-iap-android-sdk-1.2.3; it will be directly processed to market purchase.
+<br/>
 
-![[Figure 2 Payment confirmation pop-up supported in old version]](http://static.toastoven.net/prod_iap/iap_40.jpg)
-<center>[Figure 2 Payment confirmation pop-up supported in old version]</center>
+<a id="inquiry-unconsumed-user-payment-history"></a>
+### 6. Inquiry Unconsumed User Payment History { #inquiry-unconsumed-user-payment-history }
 
-### Payment Consume
+Retrieves the unconsumed payment history of a user.
 
-User application server should notify IAP server for payment consume before issuing item. Use Payment Purchase Token to check validity of the payment between user server and IAP server.
-
-> [Reference]  
-> [Server Payment Consume API](/Mobile Service/IAP/en/Server%20Developer%60s%20Guide/#payment-consume-api)  
-
-[HTTP Request Example]
-
-```http
-POST
-https://api-iap.cloud.toast.com/inapp/v3/consume/{paymentSeq}/items/{itemSeq}
-
-RequestBody
-{
- "purchaseToken":string
-}
+**[Method]**
+```java
+public void queryPurchases(Activity activity, PurchaseListCallback callback);
 ```
 
-[Response Example]
+**[Parameter]**
 
-```json
-{
-    "header": {
-        "resultCode": 0,
-        "resultMessage": "request is successful",
-        "isSuccessful": true
-    },
-    "result": {
-        "price":1000.0,
-        "currency":"KRW"
-    }
-}
-```
+|Type|Name|Description|
+|---|---|---|
+| Activity | activty | Current activity of the application |
+| PurchaseCallback | callback | Callback that returns the API request result |
 
-### Inquiry unconsumed user payment history.
-
-Inquire unconsumed user payment history.
-
-[Request Example]
+**[Example Code]**
 
 ```java
 InAppPurchases.InAppPurchase.queryPurchases(this, new PurchaseListCallback() {
@@ -384,16 +386,7 @@ InAppPurchases.InAppPurchase.queryPurchases(this, new PurchaseListCallback() {
 });
 ```
 
-[Method]
-
-|Word|Description|
-|--------|--------|
-| Syntax |public void queryPurchases(Activity activity, PurchaseListCallback callback)|
-| Parameters | activity [in] of current application. |
-| Parameter | callback [in] which returns response of API.|
-| Return Value | void |
-
-[Response Example]
+**[Response Example]**
 
 ```json
 [{
@@ -417,12 +410,82 @@ InAppPurchases.InAppPurchase.queryPurchases(this, new PurchaseListCallback() {
 }]
 ```
 
-### Batch process of unconsumed payment
+<br/>
 
-processes whole of unconsumed(cause of verification failure or network loss) payments. 
+<a id="inquiry-all-purchasable-items"></a>
+### 7. Inquiry All Purchasable Items { #inquiry-all-purchasable-items }
 
+Retrieves all purchasable items.
 
-[Request Example]
+**[Method]**
+```java
+public void queryItems(Activity activity, PurchaseListCallback callback);
+```
+
+**[Parameter]**
+
+|Type|Name|Description|
+|---|---|---|
+| Activity | activty | Current activity of the application |
+| PurchaseCallback | callback | Callback that returns the API request result |
+
+**[Example Code]**
+
+```java
+InAppPurchases.InAppPurchase.queryItems(activity, new InAppPurchase.ItemListCallback() {
+    @Override
+    public void onCallback(JSONArray result, InAppPurchaseException exception) {
+        if (exception != null) {
+            // An error occurred, we need to handle the error
+            return;
+        }
+        // Success! Include your code to handle the results here
+    }
+});
+```
+
+**[Response Example]**
+
+```json
+[
+    {
+        "itemSeq" : 1000208,
+        "itemName" : "Test item 01",
+        "marketItemId": "item01",
+        "price": 1000,
+        "currency": "KRW",
+        "localizedPrice":"₩1,000"
+    },
+    {
+        "itemSeq" : 1000209,
+        "itemName" : "Test item 02",
+        "marketItemId": "item02",
+        "price": 7.99,
+        "currency": "USD",
+        "localizedPrice":"$7.99"
+}]
+```
+
+<br/>
+
+<a id="batch-process-of-unconsumed-payment"></a>
+### 8. Batch Process of Unconsumed Payment { #batch-process-of-unconsumed-payment }
+
+Batch reprocesses unprocessed payments (IAP server verification failures).
+
+**[Method]**
+```java
+public void processesIncompletePurchases(Activity activity, IncompletePurchasesCallback callback);
+```
+
+**[Parameter]**
+
+|Type|Name|Description|
+|---|---|---|
+| Activity | activty | Current activity of the application |
+| IncompletePurchasesCallback | callback | Callback that returns the API request result |
+
+**[Example Code]**
 
 ```java
 InAppPurchases.InAppPurchase.processesIncompletePurchases(activity, new InAppPurchase.IncompletePurchasesCallback() {
@@ -436,17 +499,7 @@ InAppPurchases.InAppPurchase.processesIncompletePurchases(activity, new InAppPur
            // Success! Include your code to handle the results here }
 });
 ```
-
-[Method]
-
-|Word|Description|
-|--------|--------|
-| Syntax |public void processesIncompletePurchases(Activity activity, IncompletePurchasesCallback callback)|
-| Parameters | activity [in] of current application. |
-| Parameter | callback [in] which returns response of API.|
-| Return Value | void |
-
-[Response Example]
+**[Response Example]**
 
 ```json
 {
@@ -481,342 +534,46 @@ InAppPurchases.InAppPurchase.processesIncompletePurchases(activity, new InAppPur
 }
 ```
 
-## Processing Error after Calling API
+<br/>
 
-InAppPurchaseException class delivers error information of API call.
+<a id="payment-consume"></a>
+### 9. Payment Consume { #payment-consume }
+The user application server must notify the IAP server to consume the payment before issuing items.
+Refer to the following for the API for payment consumption.
 
+> [Note]  
+> [Payment Consume API](/Mobile Service/IAP/en/api-guide/#payment-consume-api)
+
+<a id="processing-error-after-calling-api"></a>
+
+## Error Handling { #processing-error-after-calling-api }
+
+<a id="public-class-inapppurchaseexception-extends-exception"></a>
+### 1. InAppPurchaseException { #public-class-inapppurchaseexception-extends-exception }
+Delivers error information for API calls.
+If InAppPurchaseException is not `null`, the situation is treated as a failure.
+
+|Method Name|Return type|Description|
+|---|---|---|
+|getErrorCode|Integer|Returns the error code.|
+|getMessage|String|Returns detailed error information.|
+
+> [Note]  
+> [Error Code Details](/Mobile%20Service/IAP/en/error-code/)
+
+**[Example Code]**  
 ```java
-InAppPurchases.InAppPurchase.queryPurchases(activity, new PurchaseListCallback() {
-
+InAppPurchases.InAppPurchase.queryItems(activity, new InAppPurchase.ItemListCallback() {
     @Override
     public void onCallback(JSONArray result, InAppPurchaseException exception) {
-           if (exception != null) {
-              int errorCode = exception.getErrorCode();
+        if (exception != null) {
+            int errorCode = exception.getErrorCode();
               String errorMessage = exception.getMessage();
               // TODO : do something when error occurs.
               ....
-              return;
-           }
-     }
+            return;
+        }
+        // Success! Include your code to handle the results here
+    }
 });
 ```
-
-* errorCode - error code
-* errorMessage - error detail message
-
-> [Reference]  
-> [Error Code Guide](/Mobile Service/IAP/en/error-code/)    
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Separate Android sample app section absent from ko; ko has a single sample app section (k15) already matched to t5) -->
-## Android Sample Application
-
-Sample application can be imported in Eclipse + ADT development environment.
-
-```
-[Eclipse] > [File] > select [Import]  
-[Android - Existing Android Code into Workspace] select > select [Next]  
-<Import Projects> window > click [Browse] button > select [IAP Android SDK] folder 
-you can see [IAP Android SDK] and sample application project in [Import] list. 
-check projects to be imported  
-check [Copy Project into Workspace]  
-click [Finish] button and Import completed
-```
-
-![[Figure 3 Add sample application]](http://static.toastoven.net/prod_iap/iap_7.jpg)
-<center>[Figure 3 Add sample application]</center>
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Test store subsection absent from ko source) -->
-### Using Test Store
-
-Set market code to TEST to test API provided by IAP Android SDK without actual market sync information.
-
-```xml
-<meta-data android:name="com.toast.iap.config.market" android:value="TEST" />
-```
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Sample code subsection absent from ko source) -->
-### Sample Code
-
-Refer to IAPServiceProvider class of  com.nhnent.iap.sample package.
-
-## Android Reference
-
-# Package: com.toast.android.iap
-
-<a id="registering-app-id"></a>
-### Activating Log Information { #registering-app-id }
-
-<!-- TODO: translate body -->
-
-<a id="registering-user-identifier"></a>
-### Store (Market) Settings { #registering-user-identifier }
-
-<!-- TODO: translate body -->
-
-<a id="request-payment"></a>
-### Registering App ID { #request-payment }
-
-<!-- TODO: translate body -->
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Interface definition subsection absent from ko source; ko reference lists operational methods, not class signatures) -->
-<a id="inquiry-unconsumed-user-payment-history"></a>
-### public interface InAppPurchase { #inquiry-unconsumed-user-payment-history }
-
-Interface for In app purchase payment.
-
-[Method Summary]
-
-| name             | Return Value | Parameter                                                      |
-| -------------- | ------------ | --------------------------------------------------------- |
-| setDebugMode   | void         | boolean isDebuggable                                      |
-| registerUserId | void         | String userId                                             |
-| requestPuchase | void         | Activity activity, long itemId, PurchaseCallback callback |
-| queryPurchases | void         | Activity activity, PurchaseListCallback callback          |
-
-[setDebugMode]
-
-|Word|Description|
-| ----- | -- |
-| Description |  Set IAP SDK log information activation. |
-| Syntax | public void setDebugMode(boolean isDebuggable)  |
-| Parameters |  isDebuggable [in] Expose log information when true.|
-
-[Example Code]
-
-```java
-InAppPurchases.InAppPurchase.setDebugMode(true);
-```
-
-[registerUserId]
-
-|Word|Description|
-| ----- |--|
-| Description | Register user identifier after user verification in application. It is not store account. |
-| Syntax |public void registerUserId(String userId) |
-| Parameters |  userId [in] userId shall be unchanging unique value as user identifier. |
-| Return Value |  void |
-
-[Example Code]
-
-```java
-InAppPurchases.InAppPurchase.registerUserId("guest0001");
-```
-
-[requestPurchase]
-
-|Word|Description|
-| ----- | -- |
-| Description | Request in-app purchase. Response for payment request is delivered via PurchaseCallback interface. Register item information via Web Console. |
-| Syntax | public void requestPurchase(Activity activity, long itemId, PurchaseCallback callback) |
-| Parameters | activity [in] of current application. |
-| Parameters |itemId [in] generated in Web Console |
-| Parameter | callback [in] which returns response of API.|
-| Return Value |  void |
-
-[Response (JSON)]
-
-| Attribute     | Value  | Description                                       |
-| ------------- | ------ | ------------------------------------------------- |
-| paymentSeq    | String | unique payment identifier for completed payment.                                   |
-| itemSeq       | Long   | item identifier                                             |
-| purchaseToken | String | Token information required for requesting payment consume in IAP server from application server.
-| currency      | String | currency                                         |
-| price         | Float  | price                                            |
-
-[Response Example]
-
-```json
-{
-    "paymentSeq": "2014082210002092",
-    "purchaseToken": "5PYSHgisiCU8BditHnDbPhmlS/0DSt4JDs2UMyg1/EY8oC6Q8qkuw5VBo7GNrBYLNUy656GCAh7h9e1BtXeoBA==",
-    "itemSeq": 1000001,
-    "currency": "KRW",
-    "price" : 1000.0
-}
-```
-
-[queryPurchases]
-
-|Word|Description|
-| ----- | ----- |
-| Description |  Inquire unconsumed payment history. |
-| Syntax | public void queryPurchases(Activity activity, PurchaseListCallback callback) |
-| Parameters | activity [in] of current application. |
-| Parameter | callback [in] which returns response of API.|
-| Return Value |  void |
-
-**[Response (JSON)]**
-
-| Attribute     | Value  | Description                      |
-| ------------- | ------ | -------------------------------- |
-| paymentSeq    | String | unique payment identifier for completed payment.                             |
-| purchaseToken | String | Token information required for requesting payment consume in IAP server from application server. |
-| itemSeq       | Long   | item identifier                           |
-| currency      | String | currency                        |
-| price         | Float  | price                           |
-
-[Response Example]
-
-```json
-[{
-    "paymentSeq": "2014082210002092",
-    "purchaseToken": "5PYSHgisiCU8BditHnDbPhmlS/0DSt4JDs2UMyg1/EY8oC6Q8qkuw5VBo7GNrBYLNUy656GCAh7h9e1BtXeoBA==",
-    "itemSeq": 1000208,
-    "currency": "KRW",
-    "price" : 1000.0
-
-}, {
-    "paymentSeq": "2014082210002093",
-    "purchaseToken": "Q+os4dDsYaGiEEqkLeXQfhmlS/0DSt4JDs2UMyg1/EY8oC6Q8qkuw5VBo7GNrBYLNUy656GCAh7h9e1BtXeoBA==",
-    "itemSeq": 1000208,
-    "currency": "KRW",
-    "price" : 1000.0
-
-}, {
-    "paymentSeq": "2014082210002094",
-    "purchaseToken": "GMBcODtMnX306wVlFGIcDRmlS/0DSt4JDs2UMyg1/EY8oC6Q8qkuw5VBo7GNrBYLNUy656GCAh7h9e1BtXeoBA==",
-    "itemSeq": 1000208,
-    "currency": "KRW",
-    "price" : 1000.0
-
-}]
-```
-
-
-[queryItems]
-
-|Word|Description|
-| ----- | ----- |
-| Description |  Inquire all purchasable items. |
-| Syntax | public void queryItems(Activity activity, ItemListCallback callback) |
-| Parameters | activity [in] of current application. |
-| Parameter | callback [in] which returns response of API.|
-| Return Value |  void |
-
-**[Response (JSON)]**
-
-| Attribute     | Value  | Description                      |
-| ------------- | ------ | -------------------------------- |
-| itemSeq       | Long   | item identifier                              |
-| itemName      | String | item name |
-| marketItemId  | String | item ID shown in store console.                          |
-| currency      | String | currency                        |
-| price         | Float  | price                           |
-
-[Response Example]
-
-```json
-[{
-    "itemSeq" : 1000208,
-    "itemName" : "Test item 01",
-    "marketItemId": "item01",
-    "price": 1000,
-    "currency": "KRW"
-}, {
-    "itemSeq" : 1000209,
-    "itemName" : "Test item 02",
-    "marketItemId": "item02",
-    "price": 7.99,
-    "currency": "USD"
-}]
-```
-
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Interface definition subsection absent from ko source) -->
-<a id="inquiry-all-purchasable-items"></a>
-### public interface InAppPurchase.PurchaseCallback { #inquiry-all-purchasable-items }
-
-callback interface for receiving response after payment request
-
-[Method Summary]
-
-| Name         | Return Value | Parameter                                                |
-| ---------- | ------------ | --------------------------------------------------- |
-| onCallback | void         | JSONObject result, InAppPurchaseException exception |
-
-[onCallback]
-
-|Word|Description|
-| ----- | ----- |
-| Description |  Send API request result. |
-| Syntax | public abstract void onCallback(JSONObject result, InAppPurchaseException exception) |
-| Parameters |  result [in]  return result code and message. |
-| Parameters | exception [in] return detail error. if null, request is successful. |
-| Return Value |  void |
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Interface definition subsection absent from ko source) -->
-<a id="batch-process-of-unconsumed-payment"></a>
-### public interface InAppPurchase.PurchaseListCallback { #batch-process-of-unconsumed-payment }
-
-callback interface for receiving response after payment request
-
-[Method Summary]
-
-| Name         | Return Value | Parameter                                                |
-| ---------- | ------------ | -------------------------------------------------- |
-| onCallback | void         | JSONArray result, InAppPurchaseException exception |
-
-[onCallback]
-
-|Word|Description|
-| ----- | ----- |
-| Description |  Send API request result. |
-| Syntax | public abstract void onCallback(JSONArray result, InAppPurchaseException exception) |
-| Parameters |  result [in]  return result code and message. |
-| Parameters | exception [in] return detail error. if null, request is successful. |
-| Return Value |  void |
-
-> [Reference]  
-> 1\. Call unsynchronized API from UI Thread (main Thread)    
-> 2\. When calling unsynchronized API, send response result via parameter Callback interface.
-
-<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Class definition subsection absent from ko source) -->
-<a id="payment-consume"></a>
-### public final class InAppPurchases { #payment-consume }
-
-Entry Point for IAP payment interface
-
-[Field]
-
-| Type                              | Variable       | Description     |
-| --------------------------------- | -------------- | --------------- |
-| public static final InAppPurchase | InAppPurchases | interface for iap payment |
-
-[getSdkVersion]
-
-|Word|Description|
-| ----- | ----- |
-| Description |  returns SDK version.|
-| Syntax | public static String getSdkVersion() |
-| Return Value |  String SDK의 Version |
-
-[getAppId]
-
-|Word|Description|
-| ----- | ----- |
-| Description |  returns App ID. |
-| Syntax | public static long getAppId() |
-| Return Value |  String App ID registered in SDK|
-
-# Package: com.toast.android.iap.exception
-
-<a id="public-class-inapppurchaseexception-extends-exception"></a>
-### public class InAppPurchaseException extends Exception { #public-class-inapppurchaseexception-extends-exception }
-
-Returns error of api request.
-
-[getErrorCode]
-
-|Word|Description|
-| ----- | ----- |
-| Description |  returns error code.|
-| Syntax | public int getErrorCode() |
-| Return Value |  int error code |
-
-[getMessage]
-
-|Word|Description|
-| ----- | ----- |
-| Description |  returns detail error message.|
-| Syntax | public String getMessage() |
-| Return Value |  String detail error message|
