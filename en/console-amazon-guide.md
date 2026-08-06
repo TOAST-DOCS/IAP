@@ -1,6 +1,10 @@
-## Mobile Service > IAP > Amazon Appstore Console Guide
+<!-- pre-align:aligned sig=7c0381063c35 -->
 
-## Amazon Developer Console
+<a id="mobile-service-iap-amazon-appstore-console-guide"></a>
+## Mobile Service > IAP > Amazon Appstore Console Guide { #mobile-service-iap-amazon-appstore-console-guide }
+
+<a id="amazon-developer-console"></a>
+## Amazon Developer Console { #amazon-developer-console }
 
 1. After registering an account in [Amazon Developer Console](https://developer.amazon.com/), create an app in the Amazon Appstore Management menu.
 ![Amazon Developer Console](http://static.toastoven.net/prod_iap/amazon_developer_console_eng.png)
@@ -11,11 +15,13 @@
 4. After creating the app, enter additional information and enter the information provided by the Developer Console in the app settings of the NHN Cloud IAP console.
 5. This guide covers only how to link the app information registered in the Amazon Appstore and the app information of the NHN Cloud IAP. For more detailed steps for Amazon Appstore app registration, refer to the [Amazon documentation](https://developer.amazon.com/apps-and-games/documentation).
 
-## Setting Values ​​Required for Linking
+<a id="setting-values-required-for-linking"></a>
+## Setting Values ​​Required for Linking { #setting-values-required-for-linking }
 
 ![NHN Cloud IAP app settings popup](http://static.toastoven.net/prod_iap/amazon_iap_console_en.png)
 
-### Store App ID
+<a id="store-app-id"></a>
+### Store App ID { #store-app-id }
 
 - Enter the Android package name that you entered as build information for the app that you submitted or plan to submit through the Amazon console.
 - If you have already submitted your app, you can check the information on the Amazon console screen in the following steps.
@@ -24,7 +30,8 @@
 ![APK Files in the Amazon Developer Console](http://static.toastoven.net/prod_iap/amazon_app_store_id_01.png)
 ![APK Files in the Amazon Developer Console](http://static.toastoven.net/prod_iap/amazon_app_store_id_02.png)
 
-### Amazon Shared Key
+<a id="amazon-shared-key"></a>
+### Amazon Shared Key { #amazon-shared-key }
 
 - Go to [Settings -> Identity menu](https://developer.amazon.com/settings/console/sdk/shared-key) in the Amazon Developer Console, and you can check the shared key on the following screen.
 ![Identity screen in Amazon Developer Console](http://static.toastoven.net/prod_iap/amazon_appmenu_3_eng.png)

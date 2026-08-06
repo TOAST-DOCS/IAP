@@ -1,8 +1,12 @@
-## Common > IAP > Overview
+<!-- pre-align:aligned sig=20203a555afa -->
+
+<a id="common-iap-overview"></a>
+## Common > IAP > Overview { #common-iap-overview }
 
 In-App Purchase (이하 IAP) 서비스는 통합 인앱 결제 서비스 입니다.
 
-## 주요 기능
+<a id="main-features"></a>
+## 주요 기능 { #main-features }
 
 IAP는 다음과 같은 기능을 제공합니다.
 
@@ -16,7 +20,8 @@ IAP에서 제공하는 결제 검증 서버를 통해 결제 안정성을 높일
 * 고객 지원을 위한 결제 조회 기능을 제공합니다.  
 웹콘솔에서 결제내역 조회기능을 제공합니다  
 
-## 지원 스토어
+<a id="available-store"></a>
+## 지원 스토어 { #available-store }
 
 IAP 서비스에서는 다음과 같은 스토어의 연동을 지원 합니다.  
 
@@ -28,7 +33,8 @@ IAP 서비스에서는 다음과 같은 스토어의 연동을 지원 합니다.
 | Android | 원스토어(티스토어 + 올레마켓 + U+스토어 + 네이버 앱스토어)<br>[http://dev.onestore.co.kr](http://dev.onestore.co.kr) |
 | iOS | 앱스토어 |
 
-## 서비스 용어
+<a id="terms"></a>
+## 서비스 용어 { #terms }
 
 IAP 서비스에서는 다음 용어를 내부적으로 사용합니다.
 
@@ -43,7 +49,8 @@ IAP 서비스에서는 다음 용어를 내부적으로 사용합니다.
 | 결제소비(Consume) | 사용자에게 아이템을 생성하기 전 결제를 소비하는 것 |
 | Payment Purchase Token | 사용자 애플리케이션 서버가 결제를 소비할 때 사용하는 인증토큰 |
 
-## 서비스 구조
+<a id="service-diagram"></a>
+## 서비스 구조 { #service-diagram }
 
 IAP 서비스는 다음 그림과 같이 IAP SDK, User Application Server, IAP Server, Store 4가지로 구성됩니다.
 
@@ -62,7 +69,8 @@ IAP 서비스는 다음 그림과 같이 IAP SDK, User Application Server, IAP S
 | Store | Google Store, Apple App Store 등의 다양한 스토어입니다. 플랫폼별 스토어는 IAP 서버와 연동되어 있습니다. |
 <center>[표 3 IAP 컴포넌트]</center>
 
-## IAP 결제 흐름도
+<a id="iap-payment-flow"></a>
+## IAP 결제 흐름도 { #iap-payment-flow }
 
 인앱 결제에서는 IAP SDK와 IAP 서버 API를 제공하고 있습니다. 다음 그림은 결제 흐름도 입니다.
 

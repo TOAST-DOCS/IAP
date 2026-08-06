@@ -1,8 +1,12 @@
-## Mobile Service > IAP > ONE Store Console Guide
+<!-- pre-align:aligned sig=42ad6ead3e45 -->
+
+<a id="mobile-service-iap-one-store-console-guide"></a>
+## Mobile Service > IAP > ONE Store Console Guide { #mobile-service-iap-one-store-console-guide }
 
 Create your license key and OAuth credentials in the one-store to register for the IAP app information.
 
-### Create One-Store Key
+<a id="create-one-store-key"></a>
+### Create One-Store Key { #create-one-store-key }
 ```
 Apps > select App> In-App > Managed Product > Managed In-App API
 ```
@@ -22,7 +26,8 @@ Apps > select App> In-App > Managed Product > Managed In-App API
 | **ONE Store License Key**   | **License Key**                     |
 
 
-### リアルタイム購読状態を受信するためのONEstore通知設定
+<a id="set-up-one-store-notifications-for-real-time-subscription-status"></a>
+### リアルタイム購読状態を受信するためのONEstore通知設定 { #set-up-one-store-notifications-for-real-time-subscription-status }
 
 ```
 Apps > アプリ選択 > In-App情報 > 購読商品 > PNS管理 > 購読状態通知

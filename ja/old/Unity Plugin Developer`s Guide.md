@@ -1,6 +1,10 @@
-## Common > IAP > Unity Plugin Developer's Guide
+<!-- pre-align:aligned sig=e40ae1d6c050 -->
 
-### Add In App Purchase SDK
+<a id="common-iap-unity-plugin-developers-guide"></a>
+## Common > IAP > Unity Plugin Developer's Guide { #common-iap-unity-plugin-developers-guide }
+
+<a id="add-in-app-purchase-sdk"></a>
+### Add In App Purchase SDK { #add-in-app-purchase-sdk }
 
 ```
 Unity Editor에서 프로젝트 생성
@@ -24,7 +28,8 @@ Step3 : 모든 Assets을 Import 합니다.
 ![[그림 3 Importing package]](http://static.toastoven.net/prod_iap/iap_13.png)
 <center>[그림 3 Importing package]</center>
 
-### Android 환경 설정 및 빌드
+<a id="android-configuration-and-build"></a>
+### Android 환경 설정 및 빌드 { #android-configuration-and-build }
 
 ```
 1. Unity Editor 의 [File - Build Settings] 선택  
@@ -46,7 +51,8 @@ Step3 : 모든 Assets을 Import 합니다.
 > [참고]  
 > 자세한 Android 빌드 환경설정은 Android 프로젝트 설정을 참조합니다.
 
-### iOS 환경 설정 및 빌드
+<a id="ios-environment-setting-and-build"></a>
+### iOS 환경 설정 및 빌드 { #ios-environment-setting-and-build }
 
 ```
 1. Unity Editor 의 [File] - Build Settings] 선택  
@@ -85,7 +91,8 @@ Step3 : 모든 Assets을 Import 합니다.
 > [참고]  
 > 자세한 iOS 빌드 환경설정은 [iOS Developer's Guide](/Mobile Service/IAP/ja/iOS%20Developer%60s%20Guide/)를 참조
 
-### 유니티 플러그인 초기화
+<a id="unity-plugin-initialization"></a>
+### 유니티 플러그인 초기화 { #unity-plugin-initialization }
 
 IAP 유니티 플러그인을 사용하기 위해서는 아래와 같이 초기화 과정이 필요 합니다.
 
@@ -100,7 +107,8 @@ void Start()
 }
 ```
 
-### 샘플 어플리케이션
+<a id="sample-application"></a>
+### 샘플 어플리케이션 { #sample-application }
 
 Unity Editor에서 아래와 같이 InAppPurchase API를 테스트하기 위한 샘플 Console을 제공합니다.(Sample 폴더 참조)
 Unity Editor에서는 Mock 형태의 API응답이 전달되고, 실제 결제 테스트를 위해서는 Android 디바이스를 통해 빌드 후 테스트 하도록 합니다.  
@@ -114,11 +122,13 @@ Unity Editor에서는 Mock 형태의 API응답이 전달되고, 실제 결제 �
 * Query Item List : 구매가능 상품조회
 * Processes Incomplete Purchases : 미결제건 재처리
 
-## API Reference
+<a id="api-reference"></a>
+## API Reference { #api-reference }
 
 # namespace Toast.IAP
 
-### public class InAppPurchase
+<a id="public-class-inapppurchase"></a>
+### public class InAppPurchase { #public-class-inapppurchase }
 
 인앱 결제를 위한 Method를 제공합니다.
 
@@ -457,7 +467,8 @@ InAppPurchase.AsyncProcessesIncompletePurchases((Result result, object data) => 
 }]
 ```
 
-### public class Result
+<a id="public-class-result"></a>
+### public class Result { #public-class-result }
 
 API의 응답 결과를 나타냅니다.
 
@@ -485,7 +496,8 @@ API의 응답 결과를 나타냅니다.
 | Syntax | public int ResultString; |
 | Return Value |  Int 에러의 상세정보를 반환 |
 
-### public class PluginVersion
+<a id="public-class-pluginversion"></a>
+### public class PluginVersion { #public-class-pluginversion }
 
 플러그인의 Version 정보를 관리합니다.
 

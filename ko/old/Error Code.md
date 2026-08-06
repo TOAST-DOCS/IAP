@@ -1,6 +1,10 @@
-## Common > IAP > Error Code Guide
+<!-- pre-align:aligned sig=cb20a002c4ff -->
 
-## Client API 에러 타입
+<a id="common-iap-error-code-guide"></a>
+## Common > IAP > Error Code Guide { #common-iap-error-code-guide }
+
+<a id="client-api-errors"></a>
+## Client API 에러 타입 { #client-api-errors }
 
 | 에러 코드 | 타입 | 설명 |
 | ---------- | ----- | ----- |
@@ -21,7 +25,8 @@
 | 116 |	 APP_STORE_REMAINS_PAYMENT | 이전의 결제건에 대한 미처리작업 (사용자에게 재구매유도 메시지를 보여줘야 함) |
 | 117 |  IAP_IN_PROGRESS_ERROR | IAP API가 아직 처리 중일 때 새로운 요청이 들어오면 해당 에러가 발생할 수 있으며, 클라이언트는 필요에 따라 무시하거나 재요청할 수 있음 |
 
-## Server API 에러타입
+<a id="server-api-errors"></a>
+## Server API 에러타입 { #server-api-errors }
 
 |에러 코드|	타입|	설명|
 |---|---|---|
@@ -30,7 +35,8 @@
 |2112|	HTTP_REQUEST_METHOD_NOT_SUPPORT|	HTTP Method 오류 – Request 요청시 잘못된 HTTP Method로 요청시|
 |5000|	CONSUME_FAILED|	Consume 실패|
 
-## Web Console 에러타입
+<a id="web-console-errors"></a>
+## Web Console 에러타입 { #web-console-errors }
 
 |에러 코드|	타입|	설명|
 |---|---|---|
@@ -38,7 +44,8 @@
 |5003|	INVALID_AUTHENTICATED|	스토어 인증정보 오류|
 |5013|	MARKET_GOOGLE_INVALID_REQUEST|	Google 연동정보 오류|
 
-## 트러블 슈팅
+<a id="trouble-shooting"></a>
+## 트러블 슈팅 { #trouble-shooting }
 
 |에러 코드|	설명|
 |---|---|

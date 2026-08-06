@@ -1,10 +1,14 @@
-## Mobile Service > IAP > STEAM Console Guide
+<!-- pre-align:aligned sig=9706d0cdded9 -->
+
+<a id="mobile-service-iap-steam-console-guide"></a>
+## Mobile Service > IAP > STEAM Console Guide { #mobile-service-iap-steam-console-guide }
 
 > This document describes how to register and integrate information from apps released with Steamworks with the [NHN Cloud IAP](https://docs.nhncloud.com/ko/Mobile%20Service/IAP/ko/Overview/) console.
 For more information on releasing a Steam app, see the [Steamworks Guide](https://partner.steamgames.com/doc/home).
 
 
-## Enter Basic Information
+<a id="enter-basic-information"></a>
+## Enter Basic Information { #enter-basic-information }
 
 Make sure you enter the following three pieces of information correctly to connect to Steam 
 
@@ -16,7 +20,8 @@ For other topics not covered on this page, see the **Mobile Service > IAP > [Con
 ![NHN Cloud IAP App Settings](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_steam/steam_console_app_01_kor.png)
 
 
-### Steam App ID
+<a id="steam-app-id"></a>
+### Steam App ID { #steam-app-id }
 
 * A unique identifier for your app that you receive after registering your product in Steamworks.
 * Enter the App ID as shown in **Steamworks > App Admin >** (Project Name).
@@ -24,7 +29,8 @@ For other topics not covered on this page, see the **Mobile Service > IAP > [Con
 ![STEAM App ID](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_steam/steam_console_app_02_kor.png)
 
 
-### Steam Web API Key
+<a id="steam-web-api-key"></a>
+### Steam Web API Key { #steam-web-api-key }
 
 * This information is required to access the [ISteamMicroTxn Interface](https://partner.steamgames.com/doc/webapi/ISteamMicroTxn)(Steam Payment API).
 * In **Steamworks > Users & Permissions**, enter the value of your newly created or existing issued key.
@@ -33,7 +39,8 @@ For other topics not covered on this page, see the **Mobile Service > IAP > [Con
 ![STEAM Web API Key](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_iap/console_steam/steam_console_app_03_kor.png)
 
 
-### Steam Default Currency
+<a id="steam-default-currency"></a>
+### Steam Default Currency { #steam-default-currency }
 
 * You can set a default value for the currency code applied to an item's price when a user attempts to make a purchase and enters the Steam Checkout overlay. 
 * If no currency code exists in the item information that matches the currency of the user's Steam Wallet, the price of the item is output in the default currency set in this item. 
@@ -44,7 +51,8 @@ For other topics not covered on this page, see the **Mobile Service > IAP > [Con
 
 
 
-## Set up items for sale
+<a id="set-up-items-for-sale"></a>
+## Set up items for sale { #set-up-items-for-sale }
 
 NHN Cloud IAP supports the [Steam Microtransaction API](https://partner.steamgames.com/doc/features/microtransactions).
 
@@ -52,7 +60,8 @@ NHN Cloud IAP supports the [Steam Microtransaction API](https://partner.steamgam
 
 
 
-### Enter item basic information
+<a id="enter-item-basic-information"></a>
+### Enter item basic information { #enter-item-basic-information }
 
 - **Item name**: Enter a representative name for the item you manage through the IAP console.
 - **Store Item ID**: Enter the item ID that your app manages.
@@ -63,7 +72,8 @@ NHN Cloud IAP supports the [Steam Microtransaction API](https://partner.steamgam
 - **Product Type**: Currently supports only consumable items`(CONSUMABLE`).
 
 
-### Enter country-specific sales item information
+<a id="enter-country-specific-sales-item-information"></a>
+### Enter country-specific sales item information { #enter-country-specific-sales-item-information }
 Make sure when entering and editing the name and price of the item, as this is the information that will actually be charged to the user who attempts to make the purchase.
 
 - **Language code**: Select the language code that corresponds to the item name that will appear in the checkout.

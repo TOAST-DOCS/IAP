@@ -1,8 +1,12 @@
-## Mobile Service > IAP > ONE Store 콘솔 가이드
+<!-- pre-align:aligned sig=42ad6ead3e45 -->
+
+<a id="mobile-service-iap-one-store-console-guide"></a>
+## Mobile Service > IAP > ONE Store 콘솔 가이드 { #mobile-service-iap-one-store-console-guide }
 
 원스토어에서 라이선스 키 및 OAuth 인증 정보를 생성하여 IAP 앱 정보에 등록합니다.
 
-### 원스토어 키 생성
+<a id="create-one-store-key"></a>
+### 원스토어 키 생성 { #create-one-store-key }
 ```
 Apps > 앱 선택 > In-App정보 > 관리상품 > In-App API 관리
 ```
@@ -24,7 +28,8 @@ Apps > 앱 선택 > In-App정보 > 관리상품 > In-App API 관리
 | **ONE Store License Key**   | **License Key**                     |
 
 
-### 실시간 구독 상태 수신을 위한 원스토어 알림 설정
+<a id="set-up-one-store-notifications-for-real-time-subscription-status"></a>
+### 실시간 구독 상태 수신을 위한 원스토어 알림 설정 { #set-up-one-store-notifications-for-real-time-subscription-status }
 
 ```
 Apps > 앱 선택 > In-App정보 > 구독상품 > PNS 관리 > 구독 상태 알림

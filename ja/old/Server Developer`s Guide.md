@@ -1,6 +1,10 @@
-## Common > IAP > Server Developer's Guide
+<!-- pre-align:aligned sig=b412443601e5 -->
 
-## Payment Consume API
+<a id="common-iap-server-developers-guide"></a>
+## Common > IAP > Server Developer's Guide { #common-iap-server-developers-guide }
+
+<a id="payment-consume-api"></a>
+## Payment Consume API { #payment-consume-api }
 
 사용자 애플리케이션 서버는 아이템을 지급하기 전에 IAP 서버에게 결제를 소비 할 것을 알려야 합니다. <br/>결제 1건당 1번만 결제소비 가능하며, 결제의 상태가 정상이 아니면 소비되지 않습니다. <br/>소비 (Consume) 하지 않은 결제내역은 SDK의 미소비 결제 내역조회 API를 통해 조회가능 합니다.
 
@@ -8,7 +12,8 @@
 > 결제 1건당 1번 소비 가능하며, 결제소비 하지 않은 결제는 IAP에서 아이템을 지급하지 않은 것으로 간주합니다.    
 > 클라이언트는 소비 되지 않은 결제건을 일괄 조회할 수 있습니다.
 
-### Request
+<a id="request"></a>
+### Request { #request }
 
 [URL]
 
@@ -47,7 +52,8 @@ RequestBody
 }
 ```
 
-### Response
+<a id="response"></a>
+### Response { #response }
 
 Response body에 JSON형태로 전달
 
@@ -97,11 +103,13 @@ Response body에 JSON형태로 전달
 > 기존의 consume API v2는 호출은 가능하나 더 이상 사용되지 않을 예정입니다.
 
 
-## Payment Consumable API
+<a id="payment-consumable-api"></a>
+## Payment Consumable API { #payment-consumable-api }
 
 결제가 완료되었으나 소비 (consume) 되지 않은 결제내역을 SERVER API로 조회할 수 있습니다. <br/>해당 API로 미소비내역을 조회하여 소비되지 않은 내역들을 소비 (consume) 할 수 있습니다.
 
-### Request
+<a id="payment-consumable-api-request"></a>
+### Request { #payment-consumable-api-request }
 
 [URL]
 
@@ -138,7 +146,8 @@ RequestBody
 }
 ```
 
-### Response
+<a id="payment-consumable-api-response"></a>
+### Response { #payment-consumable-api-response }
 
 Response body에 JSON형태로 전달
 
@@ -201,11 +210,13 @@ Response body에 JSON형태로 전달
 > Error Code 페이지 참조  
 
 
-## Item Search API
+<a id="item-search-api"></a>
+## Item Search API { #item-search-api }
 
 웹콘솔에서 APP ID에 등록된 ITEM을 조회합니다.
 
-### Request
+<a id="item-search-api-request"></a>
+### Request { #item-search-api-request }
 
 [URL]
 
@@ -233,7 +244,8 @@ POST https://api-iap.cloud.toast.com/standard/item/list/{appSeq}
 POST https://api-iap.cloud.toast.com/standard/item/list/1000047
 ```
 
-### Response
+<a id="item-search-api-response"></a>
+### Response { #item-search-api-response }
 
 Response body에 JSON형태로 전달
 

@@ -1,4 +1,7 @@
-## Mobile Service > IAP > Unity SDK Guide
+<!-- pre-align:aligned sig=06c67c6a57a1 -->
+
+<a id="mobile-service-iap-unity-sdk-guide"></a>
+## Mobile Service > IAP > Unity SDK Guide { #mobile-service-iap-unity-sdk-guide }
 
 
 > [Notice]
@@ -7,7 +10,8 @@
 
 
 
-### Add In App Purchase SDK
+<a id="add-in-app-purchase-sdk"></a>
+### Add In App Purchase SDK { #add-in-app-purchase-sdk }
 
 ```
 Create project in Unity Editor
@@ -31,7 +35,8 @@ Step3 : Import all assets
 ![[Figure 3 Importing package]](http://static.toastoven.net/prod_iap/iap_u_01.png)
 <center>[Figure. 3 Importing package]</center>
 
-### Android Configuration and Build
+<a id="android-configuration-and-build"></a>
+### Android Configuration and Build { #android-configuration-and-build }
 
 ```
 1. Select [File - Build Settings] in Unity Editor
@@ -46,7 +51,8 @@ Step3 : Import all assets
 > [Reference]
 > Refer to Android project setting for Android Build Environment Setting.
 
-### iOS Environment Setting and Build
+<a id="ios-environment-setting-and-build"></a>
+### iOS Environment Setting and Build { #ios-environment-setting-and-build }
 
 ```
 1. Select [File] - Build Settings] in Unity Editor
@@ -84,7 +90,8 @@ Implement created Xcode project.
 > [Reference]
 > Refer to iOS SDK Developer’s Guide for more detailed information on iOS build configuration. [iOS Developer's Guide](/Mobile Service/IAP/en/iOS%20Developer%60s%20Guide/)
 
-### Unity Plugin Initialization
+<a id="unity-plugin-initialization"></a>
+### Unity Plugin Initialization { #unity-plugin-initialization }
 
 Follow below initialization instruction to use IAP Unity plugin.
 
@@ -99,7 +106,8 @@ InAppPurchase.Init();
 }
 ```
 
-### Sample Application
+<a id="sample-application"></a>
+### Sample Application { #sample-application }
 
 Unity Editor offers sample console as below for InAppPurchase API test.(Refer to Sample directory)
 In Unity Editor, API response will be delivered in mock format. For actual payment test, complete the build with Android device.
@@ -113,11 +121,13 @@ In Unity Editor, API response will be delivered in mock format. For actual payme
 * Query Item List : Inquiry purchasable items
 * Processes Incomplete Purchases : Processes Incomplete Purchases
 
-## API Reference
+<a id="api-reference"></a>
+## API Reference { #api-reference }
 
 # namespace Toast.IAP
 
-### public class InAppPurchase
+<a id="public-class-inapppurchase"></a>
+### public class InAppPurchase { #public-class-inapppurchase }
 
 Provide method for in-app purchase
 
@@ -462,7 +472,8 @@ PrintLog ("IncompletePurchasesCallback.OnCallback():" + json);
 }]
 ```
 
-### public class InAppPurchase.iOS
+<a id="public-class-inapppurchaseios"></a>
+### public class InAppPurchase.iOS { #public-class-inapppurchaseios }
 
 Provides methods for some iOS specific features.
 
@@ -532,7 +543,8 @@ InAppPurchase.iOS.SetPromotionCallback((result, data) =>
 }
 ```
 
-### public class Result
+<a id="public-class-result"></a>
+### public class Result { #public-class-result }
 
 shows response of API.
 
@@ -560,7 +572,8 @@ shows response of API.
 | Syntax | public int ResultString; |
 | Return Value |  Int detail error message |
 
-### public class PluginVersion
+<a id="public-class-pluginversion"></a>
+### public class PluginVersion { #public-class-pluginversion }
 
 manage version of plugin.
 

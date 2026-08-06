@@ -1,11 +1,16 @@
-## Common > IAP > Store interlocking information
+<!-- pre-align:aligned sig=0aee5980f5ad -->
+
+<a id="common-iap-store-interlocking-information"></a>
+## Common > IAP > Store interlocking information { #common-iap-store-interlocking-information }
 
 You need to enter application key that store issues to IAP web console to implement in-app purchase. 
 Refer to below table for application key value that each store issues. 
 
-## Google Play
+<a id="google-play"></a>
+## Google Play { #google-play }
 
-### Google Play Store
+<a id="google-play-store"></a>
+### Google Play Store { #google-play-store }
 
 | Field | Description                                             |
 | ---------------------------------- | ---------------------------------------------- |
@@ -25,7 +30,8 @@ Refer to below table for application key value that each store issues.
 
 <center>[Table. 2] Field for registering item for synchronizing with Google Play Store</center>
 
-### Check application public key in Google Play developer console
+<a id="check-application-public-key-in-google-play-developer-console"></a>
+### Check application public key in Google Play developer console { #check-application-public-key-in-google-play-developer-console }
 
 ```
 select [Application - Service and API] in Google Play Developer Console
@@ -36,7 +42,8 @@ select [Application - Service and API] in Google Play Developer Console
 > [Reference]  
 > [Android Developers - Management In App Payment](http://developer.android.com/google/play/billing/billing_admin.html)
 
-### Check OAuth Client in Google API developer console
+<a id="check-oauth-client-in-google-api-developer-console"></a>
+### Check OAuth Client in Google API developer console { #check-oauth-client-in-google-api-developer-console }
 
 ```
 Create project in Google API console with the same account as Google Play developer console. 
@@ -113,7 +120,8 @@ Create below information required for OAuth verification in reference to below l
 ![Figure. 4 Creation Refresh Token](http://static.toastoven.net/prod_iap/iap_50.jpg)
 <center>[Figure. 4 Creation Refresh Token]</center>
 
-### AndroidManifest.xml Setting Example
+<a id="androidmanifestxml-setting-example"></a>
+### AndroidManifest.xml Setting Example { #androidmanifestxml-setting-example }
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
@@ -140,7 +148,8 @@ Create below information required for OAuth verification in reference to below l
 * Unity : Refer to  /Plugins/Android/AndroidManifest-iap-template.xml of Unity Plugin
 ```
 
-### Google Play Prerequisites
+<a id="google-play-prerequisites"></a>
+### Google Play Prerequisites { #google-play-prerequisites }
 
 Registering app/ item via web console may not be available if you don’t follow below instructions when setting in Google Play.
 
@@ -181,9 +190,11 @@ Registering app/ item via web console may not be available if you don’t follow
 4. In-app item in ‘Google Play Developer Console’ should match with item in Store Item ID.  
 ```
 
-## One Store Developer Center (ex TStore)
+<a id="one-store-developer-center-ex-tstore"></a>
+## One Store Developer Center (ex TStore) { #one-store-developer-center-ex-tstore }
 
-### Guide for integrated developer center (3 telecoms)
+<a id="guide-for-integrated-developer-center-3-telecoms"></a>
+### Guide for integrated developer center (3 telecoms) { #guide-for-integrated-developer-center-3-telecoms }
 
 T-store developer center is one-store integrated developer center for Olleh store, U+ store and T-store. 
 Synchronizing systems for in-app purchase is the same as before; publishing for all three stores is possible using T-store sync information.
@@ -192,7 +203,8 @@ Synchronizing systems for in-app purchase is the same as before; publishing for 
 > Naver App store will be transferred to One Store from June 01, 2016.
 > [Naver App Store Developer Center](http://cafe.naver.com/naverappdev/10658)
 
-### One Store 
+<a id="one-store"></a>
+### One Store { #one-store }
 
 [Table. 3] App Form for One Store
 
@@ -208,7 +220,8 @@ Synchronizing systems for in-app purchase is the same as before; publishing for 
 | Item Name      | Item Name        |
 | Market Item ID | Product Id registered in One Store|
 
-### Obtaining AID and In-App ID in One Store
+<a id="obtaining-aid-and-in-app-id-in-one-store"></a>
+### Obtaining AID and In-App ID in One Store { #obtaining-aid-and-in-app-id-in-one-store }
 
 ```
 You should check following information in One Store. 
@@ -216,7 +229,8 @@ You should check following information in One Store.
 2) In-App ID : In-App Product Id created in One Store
 ```
 
-### Add One Store library 
+<a id="add-one-store-library"></a>
+### Add One Store library { #add-one-store-library }
 
 In order to download IAP Android SDK and sync with T-store, you first need to add below library to project. 
 Copy files from /libs/tstore folder in downloaded SDK package and paste them to /libs in application project.
@@ -229,7 +243,8 @@ Copy files from /libs/tstore folder in downloaded SDK package and paste them to 
 > Adding Library in Unity Project   
 > Copy files from /libs/tstore folder in downloaded SDK package and paste them to /Plugins/Android/iap/libs  
 
-### AndroidManifest.xml Example
+<a id="androidmanifestxml-example"></a>
+### AndroidManifest.xml Example { #androidmanifestxml-example }
 
 Add AndroidManifest.xml setting information as shown below to sync with One store.
 
@@ -275,9 +290,11 @@ You need to apply the latest in-app SDK in order to register app via One Store d
 > [Reference]  
 > [Naver App Store Transfer](http://cafe.naver.com/naverappdev/10658)
 
-## Apple App Store
+<a id="apple-app-store"></a>
+## Apple App Store { #apple-app-store }
 
-### Apple App Store Form
+<a id="apple-app-store-form"></a>
+### Apple App Store Form { #apple-app-store-form }
 
 | Field         | Description                          |
 | ------------- | --------------------------- |
@@ -289,7 +306,8 @@ You need to apply the latest in-app SDK in order to register app via One Store d
 | Item Name      | item name |
 | Market Item ID | product Id in iTunes Connect  |
 
-### Check Bundle Id and in-app item ID in App Store developer center
+<a id="check-bundle-id-and-in-app-item-id-in-app-store-developer-center"></a>
+### Check Bundle Id and in-app item ID in App Store developer center { #check-bundle-id-and-in-app-item-id-in-app-store-developer-center }
 
 ```
 Check below information in iTunes Connect  

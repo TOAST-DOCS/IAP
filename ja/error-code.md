@@ -1,6 +1,10 @@
-## Mobile Service > IAP > Error Code
+<!-- pre-align:aligned sig=a51506b565e9 -->
 
-## Client API Errors
+<a id="mobile-service-iap-error-codes"></a>
+## Mobile Service > IAP > Error Code { #mobile-service-iap-error-codes }
+
+<a id="client-api-errors"></a>
+## Client API Errors { #client-api-errors }
 
 | Error Code | Type | Description |
 | ---------- | ----- | ----- |
@@ -21,7 +25,8 @@
 | 116 |	 APP_STORE_REMAINS_PAYMENT | clear remained payments (you should show repurchase message to user.) |
 | 117 |  IAP_IN_PROGRESS_ERROR | When an IAP API is still in process, an error may occur when a new request comes in, and the client can ignore or re-request as needed. |
 
-## Server API Errors
+<a id="server-api-errors"></a>
+## Server API Errors { #server-api-errors }
 
 | Error Code | Type | Description |
 |---|---|---|
@@ -31,7 +36,8 @@
 |5000|	CONSUME_FAILED|	Consume fail|
 |5018|	ALREADY_CONSUMED|	already consumed payment|
 
-## Web Console Errors
+<a id="web-console-errors"></a>
+## Web Console Errors { #web-console-errors }
 
 | Error Code | Type | Description |
 |---|---|---|
@@ -39,7 +45,8 @@
 |5003|	INVALID_AUTHENTICATED|	Store authentication error|
 |5013|	MARKET_GOOGLE_INVALID_REQUEST|	Google Registeration error|
 
-## Trouble Shooting
+<a id="troubleshooting"></a>
+## Trouble Shooting { #troubleshooting }
 
 |Error Code|	Description|
 |---|---|

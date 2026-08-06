@@ -1,10 +1,14 @@
-## Mobile Service > IAP > 오류 코드
+<!-- pre-align:aligned sig=a51506b565e9 -->
+
+<a id="mobile-service-iap-error-codes"></a>
+## Mobile Service > IAP > 오류 코드 { #mobile-service-iap-error-codes }
 
 > [공지]<br>
 > 구독 결제를 지원하는 신규 IAP SDK가 [NHN Cloud SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)로 출시됐습니다. <br>
 > 기존 IAP SDK는 신규 기능을 개발하지 않을 예정입니다.
 
-## Client API 에러 타입
+<a id="client-api-errors"></a>
+## Client API 에러 타입 { #client-api-errors }
 
 | 에러 코드 | 타입 | 설명 |
 | ---------- | ----- | ----- |
@@ -29,7 +33,8 @@
 | 201 |  INAPP_ONESTORE_NEED_UPDATE | OneStore 앱 업데이트가 필요한 경우 |
 | 202 |  INAPP_ONESTORE_NEED_LOGIN | OneStore 앱 로그인이 필요한 경우 |
 
-## Server API 에러타입
+<a id="server-api-errors"></a>
+## Server API 에러타입 { #server-api-errors }
 
 |에러 코드|	타입|	설명|
 |---|---|---|
@@ -41,7 +46,8 @@
 
 
 
-## Web Console 에러타입
+<a id="web-console-errors"></a>
+## Web Console 에러타입 { #web-console-errors }
 
 |에러 코드|	타입|	설명|
 |---|---|---|
@@ -49,7 +55,8 @@
 |5003|	INVALID_AUTHENTICATED|	스토어 인증정보 오류|
 |5013|	MARKET_GOOGLE_INVALID_REQUEST|	Google 연동정보 오류|
 
-## 트러블 슈팅
+<a id="troubleshooting"></a>
+## 트러블 슈팅 { #troubleshooting }
 
 |에러 코드|	설명|
 |---|---|

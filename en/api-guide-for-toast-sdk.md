@@ -1,4 +1,7 @@
-## Mobile Service > IAP > Server API Guide
+<!-- pre-align:aligned sig=1b5027353732 -->
+
+<a id="mobile-service-iap-server-api-guide"></a>
+## Mobile Service > IAP > Server API Guide { #mobile-service-iap-server-api-guide }
 
 > [Notice]
 > A new IAP SDK that supports subscription has been released as [NHN Cloud SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/).
@@ -11,7 +14,8 @@ IAP supports server api for in app purchase.<br>
 
 
 
-## Consume API
+<a id="consume-api"></a>
+## Consume API { #consume-api }
 
 User Application Server should notify IAP server to consume payment before issuing item <br/>. Only one consuming is available for each payment, and if the payment is invalid, consuming will not take place. <br/>Unconsumed payment can be inquired with unconsumed payment history inquiry API of the relevant SDK.
 
@@ -19,14 +23,17 @@ User Application Server should notify IAP server to consume payment before issui
 > One consuming is available for each payment, and unconsumed payment will be considered not to have provided an item.    
 > Client may inquire all unconsumed payment.
 
-### Request
+<a id="request"></a>
+### Request { #request }
 
+<a id="request-http-request"></a>
 #### HTTP Request
 
 ```
 POST https://api-iap.cloud.toast.com/v1/service/consume
 ```
 
+<a id="request-http-request-header"></a>
 #### HTTP Request Header
 
 | Key | Value            |
@@ -36,6 +43,7 @@ POST https://api-iap.cloud.toast.com/v1/service/consume
 | X-NHN-TCIAP-AppKey  | appKey |
 
 
+<a id="request-body"></a>
 #### Request Body
 
 | Name         | Data Type    | Description  |
@@ -44,10 +52,12 @@ POST https://api-iap.cloud.toast.com/v1/service/consume
 | accessToken | String | API access token |
 
 
-### Response
+<a id="response"></a>
+### Response { #response }
 
 returns a result in the response body.
 
+<a id="response-success"></a>
 #### Success
 
 ```json
@@ -65,6 +75,7 @@ returns a result in the response body.
 }
 ```
 
+<a id="response-error"></a>
 #### Error
 ```json
 {
@@ -77,6 +88,7 @@ returns a result in the response body.
 ```
 
 
+<a id="response-header"></a>
 #### Header
 
 | Property name | Value   | Description             |
@@ -85,6 +97,7 @@ returns a result in the response body.
 | resultCode |  Integer |  0 or error code |
 | resultMessage |  String |  "SUCCESS" or errer message|
 
+<a id="response-result"></a>
 #### Result
 
 | Property name | Value  | Description       |
@@ -95,7 +108,8 @@ returns a result in the response body.
 
 
 
-### Error Code
+<a id="error-code"></a>
+### Error Code { #error-code }
 
 | Value | Description             |
 | ------------- | ----------------------- |
@@ -105,20 +119,24 @@ returns a result in the response body.
 
 
 
-## Consumable List API
+<a id="consumable-list-api"></a>
+## Consumable List API { #consumable-list-api }
 
 Unconsumed payment history with payment complete status can be inquired with Server API. <br> 
 You can inquire unconsumed items with the API and perform consume process.
 
 
 
-### Request
+<a id="consumable-list-api-request"></a>
+### Request { #consumable-list-api-request }
+<a id="consumable-list-api-request-http-request"></a>
 #### HTTP Request
 
 ```
 POST https://api-iap.cloud.toast.com/v1/service/consumable
 ```
 
+<a id="consumable-list-api-request-http-request-header"></a>
 #### HTTP Request Header
 
 | Key | Value            |
@@ -127,6 +145,7 @@ POST https://api-iap.cloud.toast.com/v1/service/consumable
 | Content-Type  | application/json |
 | X-NHN-TCIAP-AppKey  | appKey |
 
+<a id="consumable-list-api-request-request-body"></a>
 #### Request Body
 
 | Property name | Value  | Description       |
@@ -138,11 +157,13 @@ POST https://api-iap.cloud.toast.com/v1/service/consumable
 
 
 
-### Response
+<a id="consumable-list-api-response"></a>
+### Response { #consumable-list-api-response }
 returns a result in the response body.
 
 
 
+<a id="consumable-list-api-response-success"></a>
 #### Success
 
 ```json
@@ -173,6 +194,7 @@ returns a result in the response body.
 
 ```
 
+<a id="consumable-list-api-response-header"></a>
 #### Header
 
 | Property name | Value   | Description             |
@@ -182,6 +204,7 @@ returns a result in the response body.
 | resultMessage |  String |  "SUCCESS" or errer message|
 
 
+<a id="consumable-list-api-response-result"></a>
 #### Result
 
 | Property name | Value  | Description       |
@@ -194,7 +217,8 @@ returns a result in the response body.
 
 
 
-### Error Code
+<a id="consumable-list-api-error-code"></a>
+### Error Code { #consumable-list-api-error-code }
 
 | Value | Description             |
 | ------------- | ----------------------- |
@@ -203,17 +227,21 @@ returns a result in the response body.
 
 
 
-## ActiveSubscription List API
+<a id="activesubscription-list-api"></a>
+## ActiveSubscription List API { #activesubscription-list-api }
 returns not expired subscription list by app and user.
 
 
-### Request
+<a id="activesubscription-list-api-request"></a>
+### Request { #activesubscription-list-api-request }
+<a id="activesubscription-list-api-request-http-request"></a>
 #### HTTP Request
 
 ```
 POST https://api-iap.cloud.toast.com/v1/service/activeSubscriptionList
 ```
 
+<a id="activesubscription-list-api-request-http-request-header"></a>
 #### HTTP Request Header
 
 | Key | Value            |
@@ -223,6 +251,7 @@ POST https://api-iap.cloud.toast.com/v1/service/activeSubscriptionList
 | X-NHN-TCIAP-AppKey  | appKey |  
 
 
+<a id="activesubscription-list-api-request-request-body"></a>
 #### Request Body
 
 | Property name | Value  | Description       |
@@ -235,11 +264,13 @@ POST https://api-iap.cloud.toast.com/v1/service/activeSubscriptionList
 
 
 
-### Response
+<a id="activesubscription-list-api-response"></a>
+### Response { #activesubscription-list-api-response }
 returns a result in the response body.
 
 
 
+<a id="activesubscription-list-api-response-success"></a>
 #### Success
 
 ```json
@@ -273,6 +304,7 @@ returns a result in the response body.
 
 
 
+<a id="activesubscription-list-api-response-error"></a>
 #### Error
 ```json
 {
@@ -284,6 +316,7 @@ returns a result in the response body.
 }
 ```
 
+<a id="activesubscription-list-api-response-header"></a>
 #### Header
 
 | Property name | Value   | Description             |
@@ -292,6 +325,7 @@ returns a result in the response body.
 | resultCode |  Integer |  0 or error code |
 | resultMessage |  String |  "SUCCESS" or errer message|
 
+<a id="activesubscription-list-api-response-result"></a>
 #### Result
 
 | Property name | Value  | Description       |
@@ -314,7 +348,8 @@ returns a result in the response body.
 
 
 
-### Error Code
+<a id="activesubscription-list-api-error-code"></a>
+### Error Code { #activesubscription-list-api-error-code }
 
 | Value | Description             |
 | ------------- | ----------------------- |

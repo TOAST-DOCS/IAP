@@ -1,6 +1,10 @@
-## Common > IAP > Server Developer's Guide
+<!-- pre-align:aligned sig=b412443601e5 -->
 
-## Payment Consume API
+<a id="common-iap-server-developers-guide"></a>
+## Common > IAP > Server Developer's Guide { #common-iap-server-developers-guide }
+
+<a id="payment-consume-api"></a>
+## Payment Consume API { #payment-consume-api }
 
 User Application Server should notify IAP server to consume payment before issuing item <br/>. Only one consuming is available for each payment, and if the payment is invalid, consuming will not take place. <br/>Unconsumed payment can be inquired with unconsumed payment history inquiry API of the relevant SDK.
 
@@ -8,7 +12,8 @@ User Application Server should notify IAP server to consume payment before issui
 > One consuming is available for each payment, and unconsumed payment will be considered not to have provided an item.    
 > Client may inquire all unconsumed payment.
 
-### Request
+<a id="request"></a>
+### Request { #request }
 
 [URL]
 
@@ -47,7 +52,8 @@ RequestBody
 }
 ```
 
-### Response
+<a id="response"></a>
+### Response { #response }
 
 
 [Example Response]
@@ -96,11 +102,13 @@ RequestBody
 > Even though the existing consume API v2 can be called, it will soon become unavailable. 
 
 
-## Payment Consumable API
+<a id="payment-consumable-api"></a>
+## Payment Consumable API { #payment-consumable-api }
 
 Unconsumed payment history with payment complete status can be inquired with Server API. <br/> You can inquire unconsumed items with the API and perform consume process.
 
-### Request
+<a id="payment-consumable-api-request"></a>
+### Request { #payment-consumable-api-request }
 
 [URL]
 
@@ -137,7 +145,8 @@ RequestBody
 }
 ```
 
-### Response
+<a id="payment-consumable-api-response"></a>
+### Response { #payment-consumable-api-response }
 
 
 [Example Response]
@@ -199,11 +208,13 @@ RequestBody
 > Refer to Error Code page.  
 
 
-## Item Search API
+<a id="item-search-api"></a>
+## Item Search API { #item-search-api }
 
 Inquire items registered to App ID in web console.
 
-### Request
+<a id="item-search-api-request"></a>
+### Request { #item-search-api-request }
 
 [URL]
 
@@ -231,7 +242,8 @@ POST https://api-iap.cloud.toast.com/standard/item/list/{appSeq}
 POST https://api-iap.cloud.toast.com/standard/item/list/1000047
 ```
 
-### Response
+<a id="item-search-api-response"></a>
+### Response { #item-search-api-response }
 
 
 [Example Response]

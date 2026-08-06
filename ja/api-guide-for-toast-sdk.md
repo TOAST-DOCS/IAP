@@ -1,4 +1,7 @@
-## Mobile Service > IAP > Server API ガイド
+<!-- pre-align:aligned sig=1b5027353732 -->
+
+<a id="mobile-service-iap-server-api-guide"></a>
+## Mobile Service > IAP > Server API ガイド { #mobile-service-iap-server-api-guide }
 
 
 > [お知らせ]
@@ -10,7 +13,8 @@
 IAPを連動するときに開発会社のサーバーで使用できるAPIです。<br>
 
 
-## Consume API
+<a id="consume-api"></a>
+## Consume API { #consume-api }
 
 ユーザアプリケーションサーバーは、アイテムを支給する前に、IAP サーバーに決済を消費することをお知らせする必要があります。 <br>
 決済1件当たり1回だけ決済消費が可能で、決済の状態が正常でないと消費されません。 <br>
@@ -19,14 +23,17 @@ IAPを連動するときに開発会社のサーバーで使用できるAPIで�
 
 
 
-### Request
+<a id="request"></a>
+### Request { #request }
 
+<a id="request-http-request"></a>
 #### HTTP Request
 
 ```
 POST https://api-iap.cloud.toast.com/v1/service/consume
 ```
 
+<a id="request-http-request-header"></a>
 #### HTTP Request Header
 
 | Key | Value            |
@@ -36,6 +43,7 @@ POST https://api-iap.cloud.toast.com/v1/service/consume
 | X-NHN-TCIAP-AppKey  | appKey |
 
 
+<a id="request-body"></a>
 #### Request Body
 
 | Property name | Value   | Description             |
@@ -44,10 +52,12 @@ POST https://api-iap.cloud.toast.com/v1/service/consume
 | accessToken | String | API Accessのためのトークン情報 |
 
 
-### Response
+<a id="response"></a>
+### Response { #response }
 
 Response bodyにJSON形に配信
 
+<a id="response-success"></a>
 #### Success
 
 ```json
@@ -65,6 +75,7 @@ Response bodyにJSON形に配信
 }
 ```
 
+<a id="response-error"></a>
 #### Error
 ```json
 {
@@ -77,6 +88,7 @@ Response bodyにJSON形に配信
 ```
 
 
+<a id="response-header"></a>
 #### Header
 
 | Property name | Value   | Description             |
@@ -85,6 +97,7 @@ Response bodyにJSON形に配信
 | resultCode |  Integer |  成功と失敗の詳細コード |
 | resultMessage |  String |  詳細メッセージ |
 
+<a id="response-result"></a>
 #### Result
 
 | Property name | Value  | Description       |
@@ -95,7 +108,8 @@ Response bodyにJSON形に配信
 
 
 
-### Error Code
+<a id="error-code"></a>
+### Error Code { #error-code }
 
 | Value | Description             |
 | ------------- | ----------------------- |
@@ -105,18 +119,22 @@ Response bodyにJSON形に配信
 
 
 
-## Consumable List API
+<a id="consumable-list-api"></a>
+## Consumable List API { #consumable-list-api }
 
 決済が完了しましたが、消費(consume)されていない決済内訳をServer APIで照会することができます。 <br>
 
 
-### Request
+<a id="consumable-list-api-request"></a>
+### Request { #consumable-list-api-request }
+<a id="consumable-list-api-request-http-request"></a>
 #### HTTP Request
 
 ```
 POST https://api-iap.cloud.toast.com/v1/service/consumable
 ```
 
+<a id="consumable-list-api-request-http-request-header"></a>
 #### HTTP Request Header
 
 | Key | Value            |
@@ -125,6 +143,7 @@ POST https://api-iap.cloud.toast.com/v1/service/consumable
 | Content-Type  | application/json |
 | X-NHN-TCIAP-AppKey  | appKey |
 
+<a id="consumable-list-api-request-request-body"></a>
 #### Request Body
 
 | Property name | Value  | Description       |
@@ -136,11 +155,13 @@ POST https://api-iap.cloud.toast.com/v1/service/consumable
 
 
 
-### Response
+<a id="consumable-list-api-response"></a>
+### Response { #consumable-list-api-response }
 Response bodyにJSON形に配信
 
 
 
+<a id="consumable-list-api-response-success"></a>
 #### Success
 
 ```json
@@ -171,6 +192,7 @@ Response bodyにJSON形に配信
 
 ```
 
+<a id="consumable-list-api-response-header"></a>
 #### Header
 
 | Property name | Value   | Description             |
@@ -179,6 +201,7 @@ Response bodyにJSON形に配信
 | resultCode |  Integer |  成功と失敗の詳細コード |
 | resultMessage |  String |  詳細メッセージ |
 
+<a id="consumable-list-api-response-result"></a>
 #### Result
 
 | Property name | Value  | Description       |
@@ -191,7 +214,8 @@ Response bodyにJSON形に配信
 
 
 
-### Error Code
+<a id="consumable-list-api-error-code"></a>
+### Error Code { #consumable-list-api-error-code }
 
 | Value | Description             |
 | ------------- | ----------------------- |
@@ -200,17 +224,21 @@ Response bodyにJSON形に配信
 
 
 
-## ActiveSubscription List API
+<a id="activesubscription-list-api"></a>
+## ActiveSubscription List API { #activesubscription-list-api }
 アプリ別、ユーザ別に満了していない定期購入決済を照会する。
 
 
-### Request
+<a id="activesubscription-list-api-request"></a>
+### Request { #activesubscription-list-api-request }
+<a id="activesubscription-list-api-request-http-request"></a>
 #### HTTP Request
 
 ```
 POST https://api-iap.cloud.toast.com/v1/service/activeSubscriptionList
 ```
 
+<a id="activesubscription-list-api-request-http-request-header"></a>
 #### HTTP Request Header
 
 | Key | Value            |
@@ -220,6 +248,7 @@ POST https://api-iap.cloud.toast.com/v1/service/activeSubscriptionList
 | X-NHN-TCIAP-AppKey  | appKey |  
 
 
+<a id="activesubscription-list-api-request-request-body"></a>
 #### Request Body
 
 | Property name | Value   | Description             |
@@ -231,11 +260,13 @@ POST https://api-iap.cloud.toast.com/v1/service/activeSubscriptionList
 
 
 
-### Response
+<a id="activesubscription-list-api-response"></a>
+### Response { #activesubscription-list-api-response }
 Response bodyにJSON形に配信
 
 
 
+<a id="activesubscription-list-api-response-success"></a>
 #### Success
 
 ```json
@@ -269,6 +300,7 @@ Response bodyにJSON形に配信
 
 
 
+<a id="activesubscription-list-api-response-error"></a>
 #### Error
 ```json
 {
@@ -279,6 +311,7 @@ Response bodyにJSON形に配信
     }
 }
 ```
+<a id="activesubscription-list-api-response-header"></a>
 #### Header
 
 | Property name | Value   | Description             |
@@ -287,6 +320,7 @@ Response bodyにJSON形に配信
 | resultCode |  Integer |  成功と失敗の詳細コード |
 | resultMessage |  String |  詳細メッセージ |
 
+<a id="activesubscription-list-api-response-result"></a>
 #### Result
 
 | Property name | Value  | Description       |
@@ -309,7 +343,8 @@ Response bodyにJSON形に配信
 
 
 
-### Error Code
+<a id="activesubscription-list-api-error-code"></a>
+### Error Code { #activesubscription-list-api-error-code }
 
 | Value | Description             |
 | ------------- | ----------------------- |

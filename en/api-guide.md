@@ -1,11 +1,15 @@
-## Mobile Service > IAP > API Guide
+<!-- pre-align:aligned sig=a257cf7d9a10 -->
+
+<a id="mobile-service-iap-api-guide"></a>
+## Mobile Service > IAP > API Guide { #mobile-service-iap-api-guide }
 
 > [Notice]
 > A new IAP SDK that supports subscription has been released as [NHN Cloud SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/).
 > No new features will be developed for the existing IAP SDK.
 
 
-## Payment Consume API
+<a id="payment-consume-api"></a>
+## Payment Consume API { #payment-consume-api }
 
 User Application Server should notify IAP server to consume payment before issuing item <br/>. Only one consuming is available for each payment, and if the payment is invalid, consuming will not take place. <br/>Unconsumed payment can be inquired with unconsumed payment history inquiry API of the relevant SDK.
 
@@ -13,7 +17,8 @@ User Application Server should notify IAP server to consume payment before issui
 > One consuming is available for each payment, and unconsumed payment will be considered not to have provided an item.    
 > Client may inquire all unconsumed payment.
 
-### Request
+<a id="request"></a>
+### Request { #request }
 
 [URL]
 
@@ -52,7 +57,8 @@ RequestBody
 }
 ```
 
-### Response
+<a id="response"></a>
+### Response { #response }
 
 
 [Example Response]
@@ -101,11 +107,13 @@ RequestBody
 > Even though the existing consume API v2 can be called, it will soon become unavailable. 
 
 
-## Payment Consumable API
+<a id="payment-consumable-api"></a>
+## Payment Consumable API { #payment-consumable-api }
 
 Unconsumed payment history with payment complete status can be inquired with Server API. <br/> You can inquire unconsumed items with the API and perform consume process.
 
-### Request
+<a id="payment-consumable-api-request"></a>
+### Request { #payment-consumable-api-request }
 
 [URL]
 
@@ -142,7 +150,8 @@ RequestBody
 }
 ```
 
-### Response
+<a id="payment-consumable-api-response"></a>
+### Response { #payment-consumable-api-response }
 
 
 [Example Response]
@@ -204,11 +213,13 @@ RequestBody
 > Refer to Error Code page.  
 
 
-## Item Search API
+<a id="item-search-api"></a>
+## Item Search API { #item-search-api }
 
 Inquire items registered to App ID in web console.
 
-### Request
+<a id="item-search-api-request"></a>
+### Request { #item-search-api-request }
 
 [URL]
 
@@ -236,7 +247,8 @@ GET https://api-iap.cloud.toast.com/standard/item/list/{appSeq}
 GET https://api-iap.cloud.toast.com/standard/item/list/1000047
 ```
 
-### Response
+<a id="item-search-api-response"></a>
+### Response { #item-search-api-response }
 
 
 [Example Response]

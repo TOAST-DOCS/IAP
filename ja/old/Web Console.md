@@ -1,8 +1,12 @@
-## Common > IAP > Getting Started
+<!-- pre-align:aligned sig=ecd20741f944 -->
+
+<a id="common-iap-getting-started"></a>
+## Common > IAP > Getting Started { #common-iap-getting-started }
 
 IAP는 Web Console에서 앱과 아이템을 등록한 후 SDK를 사용할 수 있습니다.
 
-## IAP 상품 활성화 및 Appkey 발급
+<a id="activating-iap-item-and-issuing-appkey"></a>
+## IAP 상품 활성화 및 Appkey 발급 { #activating-iap-item-and-issuing-appkey }
 
 ```
 IAP 서비스를 사용하기 위해서는 Web Console (http://console.cloud.toast.com)에서
@@ -19,7 +23,8 @@ IAP 서비스를 사용하기 위해서는 Web Console (http://console.cloud.toa
 ![[그림 2 AppKey 확인]](http://static.toastoven.net/prod_iap/iap_n_31.png)
 <center>[그림 2 AppKey 확인]</center>
 
-## 스토어 등록 – APP ID 획득
+<a id="store-registration"></a>
+## 스토어 등록 – APP ID 획득 { #store-registration }
 
 ```
 1. [App] 탭 선택 > [추가] 버튼 클릭  
@@ -40,7 +45,8 @@ IAP 서비스를 사용하기 위해서는 Web Console (http://console.cloud.toa
 ![[그림 3 스토어 등록]](http://static.toastoven.net/prod_iap/iap_n_32.png)
 <center>[그림 3 스토어 등록]</center>
 
-## 아이템 등록
+<a id="item-registration"></a>
+## 아이템 등록 { #item-registration }
 
 ```
 1. [Item] 탭을 선택합니다.  
@@ -54,7 +60,8 @@ IAP 서비스를 사용하기 위해서는 Web Console (http://console.cloud.toa
 ![[그림 4 아이템 등록]](http://static.toastoven.net/prod_iap/iap_n_33.png)
 <center>[그림 4 아이템 등록]</center>
 
-## 스토어 상품유형
+<a id="store-product-type"></a>
+## 스토어 상품유형 { #store-product-type }
 
 ```
 각 스토어 개발자 센터에서 등록한 InAppProducts의 상품유형([표 1])을 참고하여 아이템을 등록합니다.
@@ -71,7 +78,8 @@ IAP 서비스를 사용하기 위해서는 Web Console (http://console.cloud.toa
 > [주의]  
 > 명시되지 않은 상품유형으로 결제진행 시의 시스템 에러 및 재산상의 피해는 책임지지 않습니다.
 
-## 결제 정보 조회
+<a id="inquiry-payment"></a>
+## 결제 정보 조회 { #inquiry-payment }
 
 ```
 1. [Transaction] 탭을 클릭합니다.  
@@ -98,7 +106,8 @@ IAP 서비스를 사용하기 위해서는 Web Console (http://console.cloud.toa
 >  - Refund : 관리자가 수동으로 마켓에서 환불처리됬음을 업데이트한 경우
 
 
-## 결제 상태 조회
+<a id="change-payment-status"></a>
+## 결제 상태 조회 { #change-payment-status }
 ```
 아래와 같은 상황일 경우 결제상태를 변경할 수 있습니다.
 
@@ -119,7 +128,8 @@ IAP 서비스를 사용하기 위해서는 Web Console (http://console.cloud.toa
 
 
 
-## 결제 통계 조회
+<a id="inquiry-payment-statistics"></a>
+## 결제 통계 조회 { #inquiry-payment-statistics }
 
 ```
 1. [Statistics] 탭을 클릭합니다.  

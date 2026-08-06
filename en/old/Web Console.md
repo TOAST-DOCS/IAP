@@ -1,8 +1,12 @@
-## Common > IAP > Getting Started
+<!-- pre-align:aligned sig=ecd20741f944 -->
+
+<a id="common-iap-getting-started"></a>
+## Common > IAP > Getting Started { #common-iap-getting-started }
 
 To use SDK from IAP, you first need to register app and item at web console. 
 
-## Activating IAP item and issuing Appkey
+<a id="activating-iap-item-and-issuing-appkey"></a>
+## Activating IAP item and issuing Appkey { #activating-iap-item-and-issuing-appkey }
 
 ```
 To use IAP service, select [Common] > [IAP] at web console and click [Use Item] button to activate the service.
@@ -18,7 +22,8 @@ Click 'URL & Appkey' on top as in [Figure 2] to check AppKey or copy the key to 
 ![[Check AppKey]](http://static.toastoven.net/prod_iap/iap_n_31.png)
 <center>[Figure. 2 Check AppKey]</center>
 
-## Store Registration
+<a id="store-registration"></a>
+## Store Registration { #store-registration }
 
 ```
 1. Select [App] Tab and Click [Add]
@@ -39,7 +44,8 @@ Click 'URL & Appkey' on top as in [Figure 2] to check AppKey or copy the key to 
 ![[그림 3 Store Registration]](http://static.toastoven.net/prod_iap/iap_n_32.png)
 <center>[Figure. 3 Store Registration]</center>
 
-## Item Registration
+<a id="item-registration"></a>
+## Item Registration { #item-registration }
 
 ```
 1. Click [Item] Tab.  
@@ -53,7 +59,8 @@ Click 'URL & Appkey' on top as in [Figure 2] to check AppKey or copy the key to 
 ![[그림 4 Item Registration]](http://static.toastoven.net/prod_iap/iap_n_33.png)
 <center>[Figure. 4 Item Registration]</center>
 
-## Store Product Type
+<a id="store-product-type"></a>
+## Store Product Type { #store-product-type }
 
 ```
 Before registering item to IAP service, register item type of InAppProducts registered at Developer Center in reference to [Table 1].
@@ -70,7 +77,8 @@ Before registering item to IAP service, register item type of InAppProducts regi
 > [Warning]  
 > We shall not be liable for any damage or system error caused as a result of proceeding with payment with unspecified item type
 
-## Inquiry payment
+<a id="inquiry-payment"></a>
+## Inquiry payment { #inquiry-payment }
 
 ```
 1. Click [Transaction] Tab.
@@ -97,7 +105,8 @@ Before registering item to IAP service, register item type of InAppProducts regi
 >  - Refund : If the admin manually refunded the payment in store. 
 
 
-## Change Payment Status
+<a id="change-payment-status"></a>
+## Change Payment Status { #change-payment-status }
 ```
 You can change payment status in following conditions, 
 
@@ -119,7 +128,8 @@ Payment which status will be changable shows [Modify] button right side as below
 
 
 
-## Inquiry Payment Statistics
+<a id="inquiry-payment-statistics"></a>
+## Inquiry Payment Statistics { #inquiry-payment-statistics }
 
 ```
 1. Click [Statistics]  

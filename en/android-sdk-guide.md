@@ -1,4 +1,5 @@
-## Mobile Service > IAP > Android SDK Guide
+<a id="mobile-service-iap-android-sdk-guide"></a>
+## Mobile Service > IAP > Android SDK Guide { #mobile-service-iap-android-sdk-guide }
 
 
 > [Notice]
@@ -6,7 +7,8 @@
 > No new features will be developed for the existing IAP SDK.
 
 
-## Development Environment
+<a id="development-environment"></a>
+## Development Environment { #development-environment }
 
 * Windows
 * Eclipse in Android Development Tools / Android Studio IDE 1.2
@@ -20,12 +22,14 @@ The open sources in use are as follows.
 |okhttp|http://square.github.io/okhttp/|1.5.4|Apache License 2.0|
 |gson|https://code.google.com/p/google-gson/|2.2.4|Apache License 2.0|
 
-## Using in Android Studio & Gradle
+<a id="using-in-android-studio-gradle"></a>
+## Using in Android Studio & Gradle { #using-in-android-studio-gradle }
 
 IAP’s Android SDK offers development environment for Gradle-based Android Studio IDE. Remote downloading is available from jCenter Maven Repository. Define repository and dependency in build.gradle file of the project as below
 
 
-### Gradle Repository
+<a id="gradle-repository"></a>
+### Gradle Repository { #gradle-repository }
 
 ```
 buildscript {
@@ -48,10 +52,62 @@ dependencies {
 > [Reference]  
 > Please refer to RELEASE-NOTES.md within package for SDK version history
 
-### Implementing Sample Application
+<a id="adding-dependencies"></a>
+### Adding Dependencies { #adding-dependencies }
+
+<!-- TODO: translate body -->
+
+<a id="adding-dependencies-google-play-store"></a>
+#### Google Play Store
+
+<!-- TODO: translate body -->
+
+<a id="adding-dependencies-sdk-v17-api-v5---recommended"></a>
+#### SDK v17 (API v5) - Recommended
+
+<!-- TODO: translate body -->
+
+<a id="adding-dependencies-sdk-v16-api-v4"></a>
+#### SDK v16 (API v4)
+
+<!-- TODO: translate body -->
+
+<a id="one-store-configuration-information"></a>
+## One Store Configuration Information { #one-store-configuration-information }
+
+<!-- TODO: translate body -->
+
+<a id="sdk-v17-api-v5"></a>
+### SDK v17 (API v5) { #sdk-v17-api-v5 }
+
+<!-- TODO: translate body -->
+
+<a id="sdk-v17-api-v5-promoting-one-store-update-and-installation"></a>
+#### Promoting One Store Update and Installation
+
+<!-- TODO: translate body -->
+
+<a id="sdk-v17-api-v5-requesting-one-store-login"></a>
+#### Requesting One Store Login
+
+<!-- TODO: translate body -->
+
+<a id="sdk-v17-api-v5-using-popup-payment-screen"></a>
+#### Using Popup Payment Screen
+
+<!-- TODO: translate body -->
+
+<a id="sdk-v16-api-v4"></a>
+### SDK v16 (API v4) { #sdk-v16-api-v4 }
+
+<!-- TODO: translate body -->
+
+<a id="implementing-sample-application"></a>
+## Implementing Sample Application { #implementing-sample-application }
 
 
-#### Import Project
+<a id="import-project"></a>
+### Import Project { #import-project }
 
 Import project from Android Studio and add /toast-iap-android-sdk-studio to SDK package.
 
@@ -64,7 +120,8 @@ Import project from Android Studio and add /toast-iap-android-sdk-studio to SDK 
 > Workspace Encoding Type   
 > Check if the Workspace File Encoding of the imported project is set in UTF-8. If not, change to UTF-8  
 
-#### Setting Market Information to AndroidManifest.xml
+<a id="setting-market-information-to-androidmanifestxml"></a>
+### Setting Market Information to AndroidManifest.xml { #setting-market-information-to-androidmanifestxml }
 
 Set appId / market using information registered to IAP Web Console
 
@@ -72,7 +129,9 @@ Set appId / market using information registered to IAP Web Console
 > Set appId / Store   
 > Refer to AndroidManifest.xml of each market’s Flavor section of sample application for detailed setting.
 
-## Using in Eclipse
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Eclipse IDE section has no ko counterpart; ko covers only Android Studio/Gradle) -->
+<a id="android-reference"></a>
+## Using in Eclipse { #android-reference }
 
 IAP Android SDK is distributed in Android Library Project format.
 
@@ -84,7 +143,9 @@ IAP Android SDK is distributed in Android Library Project format.
 
 [Table.1 Android SDK Directory Information]
 
-### How To Import
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Eclipse-specific subsection; no ko counterpart) -->
+<a id="activating-log-information"></a>
+### How To Import { #activating-log-information }
 
 ```
 [Eclipse] > [File] > [Import] select.  
@@ -98,7 +159,9 @@ Once IAP SDK & sample application project are displayed in Import list, select [
 > \- [project] > [clean] select.    
 > \- [IAP] right click > [Properties] > [Resource] > [Text File Encoding] set to UTF-8.
 
-### Add IAP Android SDK 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Eclipse-specific subsection; no ko counterpart) -->
+<a id="store-market-settings"></a>
+### Add IAP Android SDK { #store-market-settings }
 
 ```
 Right Click of [project] > [Properties] > [Android] > [Add] > Add IAP
@@ -107,8 +170,10 @@ Right Click of [project] > [Properties] > [Android] > [Add] > Add IAP
 ![[Figure.1 IAP SDK]](http://static.toastoven.net/prod_iap/iap_5.jpg)
 <center>[Figure 1 IAP SDK]</center>
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Android project setup section absent from ko source) -->
 ## Setting Android Project
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (AndroidManifest modification subsection absent from ko source) -->
 ### AndroidManifest.xml Modification
 
 This is for Google Play development.
@@ -147,6 +212,7 @@ Setting information for AndroidManifest.xml is as follows.
 > When market information is set in TEST, IAP’s API can be tested easily without entering market sync information.    
 > Please refer to Sample Application for more details.  
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (IAP payment flow diagram section absent from ko source; ko api methods appear directly under k18) -->
 ## IAP Payment Flow Diagram
 
 In-app purchase is proceeded in two stages: payment request and payment consume.  
@@ -415,7 +481,7 @@ InAppPurchases.InAppPurchase.processesIncompletePurchases(activity, new InAppPur
 }
 ```
 
-### Processing Error after Calling API
+## Processing Error after Calling API
 
 InAppPurchaseException class delivers error information of API call.
 
@@ -441,6 +507,7 @@ InAppPurchases.InAppPurchase.queryPurchases(activity, new PurchaseListCallback()
 > [Reference]  
 > [Error Code Guide](/Mobile Service/IAP/en/error-code/)    
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Separate Android sample app section absent from ko; ko has a single sample app section (k15) already matched to t5) -->
 ## Android Sample Application
 
 Sample application can be imported in Eclipse + ADT development environment.
@@ -458,6 +525,7 @@ click [Finish] button and Import completed
 ![[Figure 3 Add sample application]](http://static.toastoven.net/prod_iap/iap_7.jpg)
 <center>[Figure 3 Add sample application]</center>
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Test store subsection absent from ko source) -->
 ### Using Test Store
 
 Set market code to TEST to test API provided by IAP Android SDK without actual market sync information.
@@ -466,6 +534,7 @@ Set market code to TEST to test API provided by IAP Android SDK without actual m
 <meta-data android:name="com.toast.iap.config.market" android:value="TEST" />
 ```
 
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Sample code subsection absent from ko source) -->
 ### Sample Code
 
 Refer to IAPServiceProvider class of  com.nhnent.iap.sample package.
@@ -474,7 +543,24 @@ Refer to IAPServiceProvider class of  com.nhnent.iap.sample package.
 
 # Package: com.toast.android.iap
 
-### public interface InAppPurchase
+<a id="registering-app-id"></a>
+### Activating Log Information { #registering-app-id }
+
+<!-- TODO: translate body -->
+
+<a id="registering-user-identifier"></a>
+### Store (Market) Settings { #registering-user-identifier }
+
+<!-- TODO: translate body -->
+
+<a id="request-payment"></a>
+### Registering App ID { #request-payment }
+
+<!-- TODO: translate body -->
+
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Interface definition subsection absent from ko source; ko reference lists operational methods, not class signatures) -->
+<a id="inquiry-unconsumed-user-payment-history"></a>
+### public interface InAppPurchase { #inquiry-unconsumed-user-payment-history }
 
 Interface for In app purchase payment.
 
@@ -636,7 +722,9 @@ InAppPurchases.InAppPurchase.registerUserId("guest0001");
 ```
 
 
-### public interface InAppPurchase.PurchaseCallback
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Interface definition subsection absent from ko source) -->
+<a id="inquiry-all-purchasable-items"></a>
+### public interface InAppPurchase.PurchaseCallback { #inquiry-all-purchasable-items }
 
 callback interface for receiving response after payment request
 
@@ -656,7 +744,9 @@ callback interface for receiving response after payment request
 | Parameters | exception [in] return detail error. if null, request is successful. |
 | Return Value |  void |
 
-### public interface InAppPurchase.PurchaseListCallback
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Interface definition subsection absent from ko source) -->
+<a id="batch-process-of-unconsumed-payment"></a>
+### public interface InAppPurchase.PurchaseListCallback { #batch-process-of-unconsumed-payment }
 
 callback interface for receiving response after payment request
 
@@ -680,7 +770,9 @@ callback interface for receiving response after payment request
 > 1\. Call unsynchronized API from UI Thread (main Thread)    
 > 2\. When calling unsynchronized API, send response result via parameter Callback interface.
 
-### public final class InAppPurchases
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Class definition subsection absent from ko source) -->
+<a id="payment-consume"></a>
+### public final class InAppPurchases { #payment-consume }
 
 Entry Point for IAP payment interface
 
@@ -708,7 +800,8 @@ Entry Point for IAP payment interface
 
 # Package: com.toast.android.iap.exception
 
-### public class InAppPurchaseException extends Exception
+<a id="public-class-inapppurchaseexception-extends-exception"></a>
+### public class InAppPurchaseException extends Exception { #public-class-inapppurchaseexception-extends-exception }
 
 Returns error of api request.
 

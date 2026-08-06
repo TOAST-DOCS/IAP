@@ -1,11 +1,15 @@
-## Mobile Service > IAP > Error Codes
+<!-- pre-align:aligned sig=a51506b565e9 -->
+
+<a id="mobile-service-iap-error-codes"></a>
+## Mobile Service > IAP > Error Codes { #mobile-service-iap-error-codes }
 
 
 > [Notice]
 > A new IAP SDK that supports subscription has been released as [NHN Cloud SDK](http://docs.toast.com/en/TOAST/en/toast-sdk/overview/).
 > No new features will be developed for the existing IAP SDK.
 
-## Client API Errors
+<a id="client-api-errors"></a>
+## Client API Errors { #client-api-errors }
 
 | Error Code | Type | Description |
 | ---------- | ----- | ----- |
@@ -30,7 +34,8 @@
 | 201 |  INAPP_ONESTORE_NEED_UPDATE | OneStore app needs to be updated |
 | 202 |  INAPP_ONESTORE_NEED_LOGIN | OneStore app login required |
 
-## Server API Errors
+<a id="server-api-errors"></a>
+## Server API Errors { #server-api-errors }
 
 |Error Code|	Type|	Description|
 |---|---|---|
@@ -42,7 +47,8 @@
 
 
 
-## Web Console Errors
+<a id="web-console-errors"></a>
+## Web Console Errors { #web-console-errors }
 
 |Error Code|	Type|	Description|
 |---|---|---|
@@ -50,7 +56,8 @@
 |5003|	INVALID_AUTHENTICATED|	Store authentication error|
 |5013|	MARKET_GOOGLE_INVALID_REQUEST|	Google integration information error|
 
-## Troubleshooting
+<a id="troubleshooting"></a>
+## Troubleshooting { #troubleshooting }
 
 |Error Code|	Description|
 |---|---|

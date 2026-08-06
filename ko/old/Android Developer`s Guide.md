@@ -1,6 +1,10 @@
-## Common > IAP > Android Developer's Guide
+<!-- pre-align:aligned sig=f6c0efcb7ffe -->
 
-## 개발환경
+<a id="common-iap-android-developers-guide"></a>
+## Common > IAP > Android Developer's Guide { #common-iap-android-developers-guide }
+
+<a id="development-environment"></a>
+## 개발환경 { #development-environment }
 
 * Windows
 * Eclipse in Android Development Tools / Android Studio IDE 1.2
@@ -14,11 +18,13 @@
 |okhttp|http://square.github.io/okhttp/|1.5.4|Apache License 2.0|
 |gson|https://code.google.com/p/google-gson/|2.2.4|Apache License 2.0|
 
-## Android Studio & Gradle 환경에서 사용하기
+<a id="using-in-android-studio-gradle"></a>
+## Android Studio & Gradle 환경에서 사용하기 { #using-in-android-studio-gradle }
 
 IAP의 Android SDK는 Gradle을 기반으로한 Android Studio IDE에 대한 개발환경을 제공합니다. jCenter Maven Repository 로부터 Remote로 다운로드 받을수 있습니다. 아래의 같이 프로젝트의 build.gradle 파일에 repository와 dependency에 대한 정의를 하시면 됩니다.
 
-### Gradle Repository
+<a id="gradle-repository"></a>
+### Gradle Repository { #gradle-repository }
 
 ```
 buildscript {
@@ -42,10 +48,12 @@ dependencies {
 > Release History   
 > SDK의 Version의 변경이력은 패키지내의 RELEASE-NOTES.md 를 참조해주세요.
 
-### 샘플 애플리케이션 실행하기
+<a id="implementing-sample-application"></a>
+### 샘플 애플리케이션 실행하기 { #implementing-sample-application }
 
 IAP의 Android SDK는 Gradle을 기반으로한 Android Studio IDE에 대한 개발환경을 제공합니다. jCenter Maven Repository 로부터 Remote로 다운로드 받을수 있습니다. 아래의 같이 프로젝트의 build.gradle 파일에 repository와 dependency에 대한 정의를 하시면 됩니다.
 
+<a id="implementing-sample-application-import-project"></a>
 #### Import Project
 
 Android Studio에서 Import Project 하여 SDK 패키지의 /toast-iap-android-sdk-studio 를 추가합니다.
@@ -59,6 +67,7 @@ Android Studio에서 Import Project 하여 SDK 패키지의 /toast-iap-android-s
 > Workspace Encoding Type   
 > Import 한 Project의 Workspace File Encoding이 UTF-8로 되어있는 확인합니다, 아닐경우 UTF-8로 변경합니다.  
 
+<a id="implementing-sample-application-setting-market-information-to-androidmanifestxml"></a>
 #### AndroidManifest.xml 에 스토어 정보 설정
 
 IAP Web Console에 등록한 마켓정보를 통해 appId / Store 을 설정합니다.
@@ -67,7 +76,8 @@ IAP Web Console에 등록한 마켓정보를 통해 appId / Store 을 설정합�
 > appId / Store 설정   
 > 설정방법은 샘플애플리케이션의 각 스토어 Flavor의 AndroidManifest.xml 을 참조하시면 됩니다.
 
-## 이클립스 환경에서 사용하기
+<a id="using-in-eclipse"></a>
+## 이클립스 환경에서 사용하기 { #using-in-eclipse }
 
 IAP Android SDK는 안드로이드 라이브러리 프로젝트 형태로 배포합니다.
 
@@ -79,7 +89,8 @@ IAP Android SDK는 안드로이드 라이브러리 프로젝트 형태로 배포
 
 [표1 Android SDK 디렉토리 정보]
 
-### Import 방법
+<a id="how-to-import"></a>
+### Import 방법 { #how-to-import }
 
 ```
 [Eclipse] > [File] > [Import] 선택  
@@ -93,7 +104,8 @@ IAP SDK와 샘플 애플리케이션의 프로젝트가 Import 목록에 표시�
 > \- [project] > [clean] 선택    
 > \- [IAP] 우클릭 > [Properties] > [Resource] > [Text File Encoding]을 UTF-8로 설정
 
-### IAP Android SDK 추가
+<a id="add-iap-android-sdk"></a>
+### IAP Android SDK 추가 { #add-iap-android-sdk }
 
 ```
 [project] 우클릭 > [Properties] > [Android] > [Add] > IAP 추가
@@ -102,9 +114,11 @@ IAP SDK와 샘플 애플리케이션의 프로젝트가 Import 목록에 표시�
 ![[그림 1 IAP SDK 추가]](http://static.toastoven.net/prod_iap/iap_5.jpg)
 <center>[그림 1 IAP SDK 추가]</center>
 
-## Android 프로젝트 설정
+<a id="setting-android-project"></a>
+## Android 프로젝트 설정 { #setting-android-project }
 
-### AndroidManifest.xml 추가
+<a id="androidmanifestxml-modification"></a>
+### AndroidManifest.xml 추가 { #androidmanifestxml-modification }
 
 Google Play 기준으로 작성한 내용입니다.
 
@@ -143,7 +157,8 @@ AndroidManifest.xml의 설정 정보는 다음과 같습니다.
 > 스토어 정보를 TEST로 설정시 별도의 스토어 연동 정보없이 IAP의 API를 손쉽게 테스트 해볼 수 있습니다.    
 > 자세한 내용은 Sample Application 을 참고 해주세요.  
 
-## IAP 결제 흐름도
+<a id="iap-payment-flow-diagram"></a>
+## IAP 결제 흐름도 { #iap-payment-flow-diagram }
 
 인앱 결제는 결제요청과 결제소비 2단계로 진행됩니다.  
 결제소비까지 완료한 이후에는 사용자의 애플리케이션에서 아이템을 지급하면 됩니다.
@@ -151,7 +166,8 @@ AndroidManifest.xml의 설정 정보는 다음과 같습니다.
 > [참고]  
 > [IAP 결제 흐름도](/Mobile Service/IAP/ko/Overview/#iap)
 
-### 사용자 식별자 등록
+<a id="registering-user-identifier"></a>
+### 사용자 식별자 등록 { #registering-user-identifier }
 
 인증을 완료한 사용자 ID를 등록합니다.  
 개발사에서 정의한 사용자 식별키이며, 아이템이 지급되는 대상입니다.
@@ -162,7 +178,8 @@ AndroidManifest.xml의 설정 정보는 다음과 같습니다.
 InAppPurchases.InAppPurchase.registerUserId(userId); // userId : String value
 ```
 
-### 구매 가능한 아이템 내역 조회
+<a id="inquiry-all-purchasable-items"></a>
+### 구매 가능한 아이템 내역 조회 { #inquiry-all-purchasable-items }
 
 구매 가능한 모든 아이템 내역을 조회합니다.
 
@@ -209,7 +226,8 @@ InAppPurchases.InAppPurchase.queryItems(activity, new InAppPurchase.ItemListCall
 }]
 ```
 
-### 결제 요청
+<a id="request-payment"></a>
+### 결제 요청 { #request-payment }
 
 클라이언트에서 아이템 구매를 요청합니다. 결제 요청에 대한 응답은 PurchaseCallback 을 통해 전달 받게 되고, 결제가 성공적으로 완료되면 결과값을 서버에 전달하여 결제내역을 (Consume) 해야 합니다.
 
@@ -258,7 +276,8 @@ InAppPurchases.InAppPurchase.requestPurchase(this, 1000001, new PurchaseCallback
 ![[그림 2 기존 결제확인창]](http://static.toastoven.net/prod_iap/iap_40.jpg)
 <center>[그림 2 기존 결제확인창]</center>
 
-### 결제 소비
+<a id="payment-consume"></a>
+### 결제 소비 { #payment-consume }
 
 사용자 애플리케이션 서버는 아이템을 지급하기 전 IAP 서버에게 결제를 소비할 것을 알려야 합니다. 이 때 결제 구매 토큰(Payment Purchase Token)을 이용하여 사용자 서버와 IAP서버간의 결제 유효성에 대한 보안을 체크합니다.
 
@@ -293,7 +312,8 @@ RequestBody
 }
 ```
 
-### 미소비 결제내역 조회
+<a id="inquiry-unconsumed-user-payment-history"></a>
+### 미소비 결제내역 조회 { #inquiry-unconsumed-user-payment-history }
 
 유저의 소비(Consume) 되지 않은 결제내역을 조회합니다.
 
@@ -345,7 +365,8 @@ InAppPurchases.InAppPurchase.queryPurchases(this, new PurchaseListCallback() {
 }]
 ```
 
-### 미처리 결제건 일괄 재처리
+<a id="batch-process-of-unconsumed-payment"></a>
+### 미처리 결제건 일괄 재처리 { #batch-process-of-unconsumed-payment }
 
 미처리된 결제건(IAP 서버 검증 실패)들에 대해 일괄로 재처리 작업을 진행합니다.
 
@@ -408,7 +429,8 @@ InAppPurchases.InAppPurchase.processesIncompletePurchases(activity, new InAppPur
 }
 ```
 
-### API 호출 이후 에러 정보에 대한 처리
+<a id="processing-error-after-calling-api"></a>
+### API 호출 이후 에러 정보에 대한 처리 { #processing-error-after-calling-api }
 
 InAppPurchaseException 클래스는 API 호출에 대한 에러 정보를 전달 합니다.
 
@@ -434,7 +456,8 @@ InAppPurchases.InAppPurchase.queryPurchases(activity, new PurchaseListCallback()
 > [참고]  
 > [Error Code Guide](/Mobile Service/IAP/ko/Error%20Code/)    
 
-## Android Sample Application
+<a id="android-sample-application"></a>
+## Android Sample Application { #android-sample-application }
 
 Eclipse + ADT 개발환경에서 샘플 애플리케이션을 다음과 같이 import하여 참고할 수 있습니다.
 
@@ -451,7 +474,8 @@ Import 할 프로젝트 체크
 ![[그림 3 샘플 애플리케이션 추가]](http://static.toastoven.net/prod_iap/iap_7.jpg)
 <center>[그림 3 샘플 애플리케이션 추가]</center>
 
-### 테스트 스토어를 통한 테스트
+<a id="using-test-store"></a>
+### 테스트 스토어를 통한 테스트 { #using-test-store }
 
 IAP Android SDK에서 제공하는 API를 실제 스토어 연동 정보 없이 테스트 하기 위해 스토어 코드를 TEST로 설정합니다.
 
@@ -459,15 +483,18 @@ IAP Android SDK에서 제공하는 API를 실제 스토어 연동 정보 없이 
 <meta-data android:name="com.toast.iap.config.market" android:value="TEST" />
 ```
 
-### 예제 코드
+<a id="sample-code"></a>
+### 예제 코드 { #sample-code }
 
 com.nhnent.iap.sample 패키지의 IAPServiceProvider 클래스 참고.
 
-## Android Reference
+<a id="android-reference"></a>
+## Android Reference { #android-reference }
 
 # Package: com.toast.android.iap
 
-### public interface InAppPurchase
+<a id="public-interface-inapppurchase"></a>
+### public interface InAppPurchase { #public-interface-inapppurchase }
 
 인앱 결제 요청을 위한 interface
 
@@ -629,7 +656,8 @@ InAppPurchases.InAppPurchase.registerUserId("guest0001");
 ```
 
 
-### public interface InAppPurchase.PurchaseCallback
+<a id="public-interface-inapppurchasepurchasecallback"></a>
+### public interface InAppPurchase.PurchaseCallback { #public-interface-inapppurchasepurchasecallback }
 
 인앱 결제 요청 후에 결과를 전달받기 위한 callback interface
 
@@ -649,7 +677,8 @@ InAppPurchases.InAppPurchase.registerUserId("guest0001");
 | Parameters | exception [in] 에러에 대한 정보를 전달한다. null이면 요청 성공 |
 | Return Value |  void |
 
-### public interface InAppPurchase.PurchaseListCallback
+<a id="public-interface-inapppurchasepurchaselistcallback"></a>
+### public interface InAppPurchase.PurchaseListCallback { #public-interface-inapppurchasepurchaselistcallback }
 
 결제 내역 요청 후에 결과를 전달받기 위한 callback interface
 
@@ -673,7 +702,8 @@ InAppPurchases.InAppPurchase.registerUserId("guest0001");
 > 1\. 비동기 API는 UI Thread(메인 Thread) 에서 호출하도록 합니다.    
 > 2\. 비동기 API 호출시에는 응답결과를 파라미터의 콜백 인터페이스를 통해 전달 합니다.
 
-### public final class InAppPurchases
+<a id="public-final-class-inapppurchases"></a>
+### public final class InAppPurchases { #public-final-class-inapppurchases }
 
 인앱 결제를 위한 인터페이스를 제공하는 Entry Point
 
@@ -701,7 +731,8 @@ InAppPurchases.InAppPurchase.registerUserId("guest0001");
 
 # Package: com.toast.android.iap.exception
 
-### public class InAppPurchaseException extends Exception
+<a id="public-class-inapppurchaseexception-extends-exception"></a>
+### public class InAppPurchaseException extends Exception { #public-class-inapppurchaseexception-extends-exception }
 
 API 요청에 대한 에러정보를 전달한다.
 

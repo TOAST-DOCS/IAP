@@ -1,32 +1,39 @@
-## Mobile Service > IAP > コンソール共通使用ガイド
+<!-- pre-align:aligned sig=0b5f52f37dd1 -->
+
+<a id="mobile-service-iap-console-common-guide"></a>
+## Mobile Service > IAP > コンソール共通使用ガイド { #mobile-service-iap-console-common-guide }
 
 ストアでアプリとアイテムを登録した後、IAPコンソールでアプリとアイテムを登録します。
 
 <br>
 
 
-## プロジェクト生成
+<a id="project-creation"></a>
+## プロジェクト生成 { #project-creation }
 ```
 Console (https://console.toast.com) > Click [+ プロジェクト作り]
 ```
 ![[プロジェクト生成]](http://static.toastoven.net/prod_iap/iap-console-new-project.png)
 
 
-## IAP商品の有効化
+<a id="activating-iap"></a>
+## IAP商品の有効化 { #activating-iap }
 ```
 Console (https://console.toast.com)  > [Mobile Service] > Click [IAP]
 ```
 ![[IAP商品の有効化]](http://static.toastoven.net/prod_iap/iap-console-iap-on.png)
 
 
-## AppKey確認
+<a id="check-appkey"></a>
+## AppKey確認 { #check-appkey }
 ```
 "URL & Appkey"をクリックしてAppKeyを確認し、SDKの設定に使用します。
 ```
 ![[AppKey 확인]](http://static.toastoven.net/prod_iap/iap-console-appkey.png)
 
 
-## アプリ登録
+<a id="app-registration"></a>
+## アプリ登録 { #app-registration }
 ストアー別の設定はストアーガイドを参考にしてください。
 ```
 1. [App] Tab Click > [追加]ボタン·クリック
@@ -39,7 +46,8 @@ Console (https://console.toast.com)  > [Mobile Service] > Click [IAP]
 ```
 ![[アプリ登録]](http://static.toastoven.net/prod_iap/iap-console-new-app.png)
 
-## アイテム登録
+<a id="item-registration"></a>
+## アイテム登録 { #item-registration }
 ```
 1. [Item] Tab Click > [追加]ボタン·クリック
 3. [Item 名前] : アイテム名を入力
@@ -51,7 +59,8 @@ Console (https://console.toast.com)  > [Mobile Service] > Click [IAP]
 
 ![[アイテム登録]](http://static.toastoven.net/prod_iap/iap-console-new-item.png)
 
-## ストア商品タイプ
+<a id="product-type"></a>
+## ストア商品タイプ { #product-type }
 ```
 各ストア開発者センターで登録したIn App Productsの商品タイプを参考にアイテムを登録します。
 ```
@@ -71,7 +80,13 @@ Console (https://console.toast.com)  > [Mobile Service] > Click [IAP]
 > [注意]  
 > 正確でない商品タイプで決済を進行した場合のシステムエラーおよび金銭的損失被害は責任を負いません。
 
-## 決済照会
+<a id="consumable-subscription-product-consumableautorenewable"></a>
+### 消費性サブスクリプション商品 (CONSUMABLEAUTORENEWABLE) { #consumable-subscription-product-consumableautorenewable }
+
+<!-- TODO: translate body -->
+
+<a id="inquiry-payment"></a>
+## 決済照会 { #inquiry-payment }
 ```
 1. Click [Transaction] Tab  
 2. [Search Condition] > 必要項目選択
@@ -95,7 +110,8 @@ Console (https://console.toast.com)  > [Mobile Service] > Click [IAP]
 
 
 
-## 決済状態の変更
+<a id="change-payment-status"></a>
+## 決済状態の変更 { #change-payment-status }
 ```
 以下のような状況の場合、決済状態を変更することができます。
 
@@ -111,7 +127,8 @@ Console (https://console.toast.com)  > [Mobile Service] > Click [IAP]
 ![[決済状態追加加入]](http://static.toastoven.net/prod_iap/iap_46.PNG)
 
 
-## 決済統計照会
+<a id="inquiry-payment-statistics"></a>
+## 決済統計照会 { #inquiry-payment-statistics }
 ```
 1. Click [Statistics] Tab  
 2. Click [Currency]  

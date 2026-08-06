@@ -1,4 +1,7 @@
-## Mobile Service > IAP > 콘솔 공통 사용 가이드
+<!-- pre-align:aligned sig=0b5f52f37dd1 -->
+
+<a id="mobile-service-iap-console-common-guide"></a>
+## Mobile Service > IAP > 콘솔 공통 사용 가이드 { #mobile-service-iap-console-common-guide }
 
 스토어에서 앱과 아이템을 등록한 후 IAP Console에서 앱과 아이템을 등록합니다.
 
@@ -8,28 +11,32 @@
 <br>
 
 
-## 프로젝트 생성
+<a id="project-creation"></a>
+## 프로젝트 생성 { #project-creation }
 ```
 Console (https://console.toast.com)에서  [+ 프로젝트 만들기] 를 클릭하여 프로젝트를 생성합니다.
 ```
 ![[프로젝트 생성]](http://static.toastoven.net/prod_iap/iap-console-new-project.png)
 
 
-## IAP 상품 활성화
+<a id="activating-iap"></a>
+## IAP 상품 활성화 { #activating-iap }
 ```
 Console (https://console.toast.com)에서 [Mobile Service] > [IAP] 을  클릭하여 활성화합니다.
 ```
 ![[IAP 상품 활성화]](http://static.toastoven.net/prod_iap/iap-console-iap-on.png)
 
 
-## AppKey 확인
+<a id="check-appkey"></a>
+## AppKey 확인 { #check-appkey }
 ```
 'URL & Appkey'를 클릭하여 AppKey를 확인하여 SDK 설정에 사용합니다.
 ```
 ![[AppKey 확인]](http://static.toastoven.net/prod_iap/iap-console-appkey.png)
 
 
-## 앱 등록
+<a id="app-registration"></a>
+## 앱 등록 { #app-registration }
 스토어별 설정은 스토어 가이드를 참고하세요. 
 ```
 1. [App] 탭 선택 > [추가] 버튼 클릭
@@ -42,7 +49,8 @@ Console (https://console.toast.com)에서 [Mobile Service] > [IAP] 을  클릭�
 ```
 ![[앱 등록]](http://static.toastoven.net/prod_iap/iap-console-new-app.png)
 
-## 아이템 등록
+<a id="item-registration"></a>
+## 아이템 등록 { #item-registration }
 ```
 1. [Item] 탭 선택 > [+ 추가] 버튼을 클릭 
 3. [Item 이름] : 아이템 이름을 입력
@@ -54,7 +62,8 @@ Console (https://console.toast.com)에서 [Mobile Service] > [IAP] 을  클릭�
 
 ![[아이템 등록]](http://static.toastoven.net/prod_iap/iap-console-new-item.png)
 
-## 스토어 상품 유형
+<a id="product-type"></a>
+## 스토어 상품 유형 { #product-type }
 ```
 각 스토어 개발자 센터에서 등록한 In App Products의 상품유형을 참고하여 아이템을 등록합니다.
 ```
@@ -65,7 +74,8 @@ Console (https://console.toast.com)에서 [Mobile Service] > [IAP] 을  클릭�
 | App Store| Consumable, Auto-Renewable | CONSUMABLE, AUTO_RENEWABLE, CONSUMABLE_AUTO_RENEWABLE |
 | ONE Store|	Managed product | CONSUMABLE|
 
-### 소비성 구독상품 (CONSUMABLE_AUTO_RENEWABLE)
+<a id="consumable-subscription-product-consumableautorenewable"></a>
+### 소비성 구독상품 (CONSUMABLE_AUTO_RENEWABLE) { #consumable-subscription-product-consumableautorenewable }
 * 구독 상품 + 소비성 상품이 결합된 유형
 * 기존 구독 기능 포함, 구독결제 갱신마다 상품 지급 가능 ex) 매 달 자동결제 및 게임머니 지급되는 상품
 * 결제 완료 후, [Consumable List api](https://docs.toast.com/ko/Mobile%20Service/IAP/ko/api-guide-for-toast-sdk/#consumable-list-api) 에서 조회 가능 
@@ -77,7 +87,8 @@ Console (https://console.toast.com)에서 [Mobile Service] > [IAP] 을  클릭�
 > 정확하지 않은 상품 유형으로 결제 진행 시의 시스템 에러 및 재산상의 피해는 책임지지 않습니다.
 
 
-## 결제 조회
+<a id="inquiry-payment"></a>
+## 결제 조회 { #inquiry-payment }
 ```
 1. [Transaction] 탭을 클릭합니다.  
 2. [Search Condition] 중, 필요항목 선택
@@ -98,7 +109,8 @@ Console (https://console.toast.com)에서 [Mobile Service] > [IAP] 을  클릭�
 > - UserClose : 유저가 결제 진행중 취소(결제 안됨) 
 
 
-## 결제 상태 변경
+<a id="change-payment-status"></a>
+## 결제 상태 변경 { #change-payment-status }
 ```
 아래와 같은 상황일 경우 결제상태를 변경할 수 있습니다.
 
@@ -115,7 +127,8 @@ Console (https://console.toast.com)에서 [Mobile Service] > [IAP] 을  클릭�
 
 ![[picture 7 Add additional information when changing statu]](http://static.toastoven.net/prod_iap/iap_46.PNG)
 
-## 결제 통계 조회
+<a id="inquiry-payment-statistics"></a>
+## 결제 통계 조회 { #inquiry-payment-statistics }
 ```
 1. [Statistics] 탭을 클릭합니다.  
 2. [통화]를 선택합니다.  

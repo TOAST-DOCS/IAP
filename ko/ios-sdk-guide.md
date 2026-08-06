@@ -1,10 +1,14 @@
-## Mobile Service > IAP > iOS SDK 사용 가이드
+<!-- pre-align:aligned sig=e8dca5bc8151 -->
+
+<a id="mobile-service-iap-ios-sdk-guide"></a>
+## Mobile Service > IAP > iOS SDK 사용 가이드 { #mobile-service-iap-ios-sdk-guide }
 
 > [공지]<br>
 > 구독 결제를 지원하는 신규 IAP SDK가 [TOAST SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)로 출시됐습니다. <br>
 > 기존 IAP SDK는 신규 기능을 개발하지 않을 예정입니다.
 
-## 개발 환경
+<a id="development-environment"></a>
+## 개발 환경 { #development-environment }
 
 * OSX is required
 * Xcode 9.0.0 and higher
@@ -22,9 +26,11 @@ IAP SDK 사용을 위해서는 어플리케이션에 아래의 Framework를 추�
 > In App Purchase 테스트를 하기 위해 iTunes Connect에 어플리케이션 및 상품등록을 완료했다고 가정합니다.    
 > [iTunes Connect](http://itunesconnect.apple.com)
 
-## IAP Console
+<a id="iap-console"></a>
+## IAP Console { #iap-console }
 
-### 1\. 스토어등록 - APP ID 획득
+<a id="1-store-registration---getting-app-id"></a>
+### 1\. 스토어등록 - APP ID 획득 { #1-store-registration---getting-app-id }
 
 ```
 1. [App] 탭 선택 > [추가] 버튼 클릭  
@@ -36,7 +42,8 @@ IAP SDK 사용을 위해서는 어플리케이션에 아래의 Framework를 추�
 ![[그림 1 APP ID 획득]](http://static.toastoven.net/prod_iap/iap_n_32.png)
 <center>[그림 1 APP ID 획득]</center>
 
-### 2\. 아이템 등록
+<a id="2-item-registration"></a>
+### 2\. 아이템 등록 { #2-item-registration }
 
 ```
 1. [Item] 탭 선택 > [추가] 버튼 클릭  
@@ -47,7 +54,8 @@ IAP SDK 사용을 위해서는 어플리케이션에 아래의 Framework를 추�
 4. [ITEM] 확인
 ```
 
-## Xcode 프로젝트 설정하기
+<a id="setting-xcode-project"></a>
+## Xcode 프로젝트 설정하기 { #setting-xcode-project }
 
 
 | 디렉토리명    | 설명                        |
@@ -57,7 +65,8 @@ IAP SDK 사용을 위해서는 어플리케이션에 아래의 Framework를 추�
 | /samples | Sample Application        |
 <center>[표1 iOS SDK 디렉토리 정보]</center>
 
-### 1\. IAP SDK 및 framework 추가
+<a id="1-add-iap-sdk-and-framework"></a>
+### 1\. IAP SDK 및 framework 추가 { #1-add-iap-sdk-and-framework }
 
 ```
 1. [Xcode] > [Project] > [Targets – Build Phases]
@@ -71,7 +80,8 @@ IAP SDK 사용을 위해서는 어플리케이션에 아래의 Framework를 추�
 ![[그림 2 IAP 연동을 위한 라이브러리 추가]](http://static.toastoven.net/prod_iap/iap_51.png)
 <center>[그림 2 IAP 연동을 위한 라이브러리 추가]</center>
 
-### 2\. plist 설정하기
+<a id="2-setting-plist"></a>
+### 2\. plist 설정하기 { #2-setting-plist }
 
 ```
 [plist] 에서 TOAST_IAP_APP_ID 가 KEY인 string value를 생성하고, APP ID를 입력 합니다.  
@@ -105,9 +115,11 @@ IAP SDK 사용을 위해서는 어플리케이션에 아래의 Framework를 추�
     </dict>
 ```
 
-## API Reference
+<a id="api-reference"></a>
+## API Reference { #api-reference }
 
-### 1\. 헤더 파일 추가
+<a id="1-import-header-file"></a>
+### 1\. 헤더 파일 추가 { #1-import-header-file }
 
 어플리케이션에 SDK 사용을 위한 준비가 완료되면, IAP SDK의 Header File을 아래와 같이 추가합니다.
 
@@ -115,7 +127,8 @@ IAP SDK 사용을 위해서는 어플리케이션에 아래의 Framework를 추�
 #import <TIAPurchase/TIAPurchase.h>
 ```
 
-### 2\. 로그정보 활성화
+<a id="2-enable-log"></a>
+### 2\. 로그정보 활성화 { #2-enable-log }
 
 디버그를 위한 로그 정보에 대한 노출을 활성화 합니다.
 
@@ -125,7 +138,8 @@ IAP SDK 사용을 위해서는 어플리케이션에 아래의 Framework를 추�
 [TIAPurchase setDebugMode:YES];
 ```
 
-### 3\. 유저 등록
+<a id="3-register-user"></a>
+### 3\. 유저 등록 { #3-register-user }
 
 애플리케이션에서 사용자에 대한 인증 이후에 사용자 식별이 가능한 값을 등록합니다.
 
@@ -141,7 +155,8 @@ If (!result) {
 // register user id succeccfully.
 ```
 
-### 4\. 결제 요청
+<a id="4-request-payment"></a>
+### 4\. 결제 요청 { #4-request-payment }
 
 인앱 결제 요청을 합니다. 결제가 성공적으로 완료되면 completionHandler 를 통해 결제내역이 전달 됩니다.
 
@@ -178,7 +193,8 @@ server.
 }];
 ```
 
-### 5\. 미소비 결제 내역 조회
+<a id="5-inquiry-unconsumed-payment"></a>
+### 5\. 미소비 결제 내역 조회 { #5-inquiry-unconsumed-payment }
 
 결제 내역을 조회 합니다.
 
@@ -211,7 +227,8 @@ server.
 }];
 ```
 
-### 6\. 구매 가능한 아이템 내역 조회
+<a id="6-inquiry-all-purchasable-items"></a>
+### 6\. 구매 가능한 아이템 내역 조회 { #6-inquiry-all-purchasable-items }
 
 구매 가능한 모든 아이템 내역을 조회합니다.
 
@@ -247,7 +264,8 @@ server.
 }];
 ```
 
-### 7\. 미처리 결제건 일괄 재처리
+<a id="7-batch-process-of-unconsumed-payment"></a>
+### 7\. 미처리 결제건 일괄 재처리 { #7-batch-process-of-unconsumed-payment }
 
 미처리된 결제건(IAP 서버 검증 실패)들에 대해 일괄로 재처리 작업을 진행합니다.
 
@@ -288,7 +306,8 @@ server.
         NSLog(@"processesIncompletePurchasesWithCompletionHandler data:%@", data);
 }];
 ```
-### 8\. 결제 소비
+<a id="8-payment-consume"></a>
+### 8\. 결제 소비 { #8-payment-consume }
 사용자 애플리케이션 서버는 아이템을 지급하기 전 IAP 서버에게 결제를 소비할 것을 알려야 합니다.
 결제 소비를 위한 API는 아래를 참고 해주세요.
 
@@ -296,7 +315,8 @@ server.
 > [Payment Consume API](/Mobile Service/IAP/ko/api-guide/#payment-consume-api)
 
 
-### 9\. AppStore 프로모션 결제
+<a id="9-app-store-promoting-in-app-purchase"></a>
+### 9\. AppStore 프로모션 결제 { #9-app-store-promoting-in-app-purchase }
 AppStore 프로모션 결제를 사용한다면 Delegate 를 등록해 결제 내역을 전달 받으세요.<br>
 `초기화 이전에 Delegate를 등록해야 정상적으로 결제 내역을 전달 받을 수 있습니다.`
 

@@ -1,8 +1,12 @@
-## Mobile Service > IAP > Overview
+<!-- pre-align:aligned sig=f57408f33928 -->
+
+<a id="mobile-service-iap-overview"></a>
+## Mobile Service > IAP > Overview { #mobile-service-iap-overview }
 
 In-App Purchase (IAP) service is an integrated in-app purchase service.
 
-## Features
+<a id="features"></a>
+## Features { #features }
 
 IAP offers the following features.
 
@@ -13,7 +17,8 @@ There is no need to study over detailed payment sync process for each store.
 * Web console provides purchase history inquiry function for customer support.
 
 
-## Available Store
+<a id="available-store"></a>
+## Available Store { #available-store }
 
 | OS Type | Store |
 | --- | --- |
@@ -23,7 +28,13 @@ There is no need to study over detailed payment sync process for each store.
 
 
 
-## Terms
+<a id="supported-product-types"></a>
+## Supported Product Types { #supported-product-types }
+
+<!-- TODO: translate body -->
+
+<a id="terms"></a>
+## Terms { #terms }
 
 | Term | Description |
 | --- | --- |
@@ -34,7 +45,8 @@ There is no need to study over detailed payment sync process for each store.
 | Consume | Consuming purchase before creating item for user. |
 | Payment Purchase Token | Verification token used when user application server consumes purchase. |
 
-## Service Diagram
+<a id="service-diagram"></a>
+## Service Diagram { #service-diagram }
 
 IAP service is comprised of 4 components as in following figure: IAP SDK, User Application Server, IAP Server, and Market.
 
@@ -53,7 +65,8 @@ IAP service is comprised of 4 components as in following figure: IAP SDK, User A
 | Store | It includes various stores such as Google Store and Apple App Store. Store server for each platform is synchronized with IAP server. |
 <center>[Table. 3 IAP Component]</center>
 
-## IAP Payment Flow
+<a id="iap-payment-flow"></a>
+## IAP Payment Flow { #iap-payment-flow }
 
 In-app purchase provides IAP SDK and IAP server API. The following figure is payment flow.
 

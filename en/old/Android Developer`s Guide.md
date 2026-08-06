@@ -1,6 +1,10 @@
-## Common > IAP > Android Developer's Guide
+<!-- pre-align:aligned sig=f6c0efcb7ffe -->
 
-## Development Environment
+<a id="common-iap-android-developers-guide"></a>
+## Common > IAP > Android Developer's Guide { #common-iap-android-developers-guide }
+
+<a id="development-environment"></a>
+## Development Environment { #development-environment }
 
 * Windows
 * Eclipse in Android Development Tools / Android Studio IDE 1.2
@@ -14,12 +18,14 @@ The open sources in use are as follows.
 |okhttp|http://square.github.io/okhttp/|1.5.4|Apache License 2.0|
 |gson|https://code.google.com/p/google-gson/|2.2.4|Apache License 2.0|
 
-## Using in Android Studio & Gradle
+<a id="using-in-android-studio-gradle"></a>
+## Using in Android Studio & Gradle { #using-in-android-studio-gradle }
 
 IAP’s Android SDK offers development environment for Gradle-based Android Studio IDE. Remote downloading is available from jCenter Maven Repository. Define repository and dependency in build.gradle file of the project as below
 
 
-### Gradle Repository
+<a id="gradle-repository"></a>
+### Gradle Repository { #gradle-repository }
 
 ```
 buildscript {
@@ -42,9 +48,11 @@ dependencies {
 > [Reference]  
 > Please refer to RELEASE-NOTES.md within package for SDK version history
 
-### Implementing Sample Application
+<a id="implementing-sample-application"></a>
+### Implementing Sample Application { #implementing-sample-application }
 
 
+<a id="implementing-sample-application-import-project"></a>
 #### Import Project
 
 Import project from Android Studio and add /toast-iap-android-sdk-studio to SDK package.
@@ -58,6 +66,7 @@ Import project from Android Studio and add /toast-iap-android-sdk-studio to SDK 
 > Workspace Encoding Type   
 > Check if the Workspace File Encoding of the imported project is set in UTF-8. If not, change to UTF-8  
 
+<a id="implementing-sample-application-setting-market-information-to-androidmanifestxml"></a>
 #### Setting Market Information to AndroidManifest.xml
 
 Set appId / market using information registered to IAP Web Console
@@ -66,7 +75,8 @@ Set appId / market using information registered to IAP Web Console
 > Set appId / Store   
 > Refer to AndroidManifest.xml of each market’s Flavor section of sample application for detailed setting.
 
-## Using in Eclipse
+<a id="using-in-eclipse"></a>
+## Using in Eclipse { #using-in-eclipse }
 
 IAP Android SDK is distributed in Android Library Project format.
 
@@ -78,7 +88,8 @@ IAP Android SDK is distributed in Android Library Project format.
 
 [Table.1 Android SDK Directory Information]
 
-### How To Import
+<a id="how-to-import"></a>
+### How To Import { #how-to-import }
 
 ```
 [Eclipse] > [File] > [Import] select.  
@@ -92,7 +103,8 @@ Once IAP SDK & sample application project are displayed in Import list, select [
 > \- [project] > [clean] select.    
 > \- [IAP] right click > [Properties] > [Resource] > [Text File Encoding] set to UTF-8.
 
-### Add IAP Android SDK 
+<a id="add-iap-android-sdk"></a>
+### Add IAP Android SDK { #add-iap-android-sdk }
 
 ```
 Right Click of [project] > [Properties] > [Android] > [Add] > Add IAP
@@ -101,9 +113,11 @@ Right Click of [project] > [Properties] > [Android] > [Add] > Add IAP
 ![[Figure.1 IAP SDK]](http://static.toastoven.net/prod_iap/iap_5.jpg)
 <center>[Figure 1 IAP SDK]</center>
 
-## Setting Android Project
+<a id="setting-android-project"></a>
+## Setting Android Project { #setting-android-project }
 
-### AndroidManifest.xml Modification
+<a id="androidmanifestxml-modification"></a>
+### AndroidManifest.xml Modification { #androidmanifestxml-modification }
 
 This is for Google Play development.
 
@@ -142,7 +156,8 @@ Setting information for AndroidManifest.xml is as follows.
 > When market information is set in TEST, IAP’s API can be tested easily without entering market sync information.    
 > Please refer to Sample Application for more details.  
 
-## IAP Payment Flow Diagram
+<a id="iap-payment-flow-diagram"></a>
+## IAP Payment Flow Diagram { #iap-payment-flow-diagram }
 
 In-app purchase is proceeded in two stages: payment request and payment consume.  
 If payment consume is complete, issue item in user’s application.
@@ -150,7 +165,8 @@ If payment consume is complete, issue item in user’s application.
 > [Reference]  
 > [IAP Payment Flow](/Mobile Service/IAP/en/Overview/#iap)
 
-### Registering User Identifier
+<a id="registering-user-identifier"></a>
+### Registering User Identifier { #registering-user-identifier }
 
 Register authorized user ID.  
 This is user identifier defined by developer, which qualifies for item issuance.
@@ -161,7 +177,8 @@ This is user identifier defined by developer, which qualifies for item issuance.
 InAppPurchases.InAppPurchase.registerUserId(userId); // userId : String value
 ```
 
-### Inquiry All Purchasable Items
+<a id="inquiry-all-purchasable-items"></a>
+### Inquiry All Purchasable Items { #inquiry-all-purchasable-items }
 
 Inquire All Purchasable Items
 
@@ -208,7 +225,8 @@ InAppPurchases.InAppPurchase.queryItems(activity, new InAppPurchase.ItemListCall
 }]
 ```
 
-### Request Payment
+<a id="request-payment"></a>
+### Request Payment { #request-payment }
 
 Request item purchase from client. Response for payment request will be received via PurchaseCallback. Once payment is successfully done, send result to server to consume payment details.
 
@@ -257,7 +275,8 @@ InAppPurchases.InAppPurchase.requestPurchase(this, 1000001, new PurchaseCallback
 ![[Figure 2 Payment confirmation pop-up supported in old version]](http://static.toastoven.net/prod_iap/iap_40.jpg)
 <center>[Figure 2 Payment confirmation pop-up supported in old version]</center>
 
-### Payment Consume
+<a id="payment-consume"></a>
+### Payment Consume { #payment-consume }
 
 User application server should notify IAP server for payment consume before issuing item. Use Payment Purchase Token to check validity of the payment between user server and IAP server.
 
@@ -292,7 +311,8 @@ RequestBody
 }
 ```
 
-### Inquiry unconsumed user payment history.
+<a id="inquiry-unconsumed-user-payment-history"></a>
+### Inquiry unconsumed user payment history. { #inquiry-unconsumed-user-payment-history }
 
 Inquire unconsumed user payment history.
 
@@ -344,7 +364,8 @@ InAppPurchases.InAppPurchase.queryPurchases(this, new PurchaseListCallback() {
 }]
 ```
 
-### Batch process of unconsumed payment
+<a id="batch-process-of-unconsumed-payment"></a>
+### Batch process of unconsumed payment { #batch-process-of-unconsumed-payment }
 
 processes whole of unconsumed(cause of verification failure or network loss) payments. 
 
@@ -408,7 +429,8 @@ InAppPurchases.InAppPurchase.processesIncompletePurchases(activity, new InAppPur
 }
 ```
 
-### Processing Error after Calling API
+<a id="processing-error-after-calling-api"></a>
+### Processing Error after Calling API { #processing-error-after-calling-api }
 
 InAppPurchaseException class delivers error information of API call.
 
@@ -434,7 +456,8 @@ InAppPurchases.InAppPurchase.queryPurchases(activity, new PurchaseListCallback()
 > [Reference]  
 > [Error Code Guide](/Mobile Service/IAP/en/Error%20Code/)    
 
-## Android Sample Application
+<a id="android-sample-application"></a>
+## Android Sample Application { #android-sample-application }
 
 Sample application can be imported in Eclipse + ADT development environment.
 
@@ -451,7 +474,8 @@ click [Finish] button and Import completed
 ![[Figure 3 Add sample application]](http://static.toastoven.net/prod_iap/iap_7.jpg)
 <center>[Figure 3 Add sample application]</center>
 
-### Using Test Store
+<a id="using-test-store"></a>
+### Using Test Store { #using-test-store }
 
 Set market code to TEST to test API provided by IAP Android SDK without actual market sync information.
 
@@ -459,15 +483,18 @@ Set market code to TEST to test API provided by IAP Android SDK without actual m
 <meta-data android:name="com.toast.iap.config.market" android:value="TEST" />
 ```
 
-### Sample Code
+<a id="sample-code"></a>
+### Sample Code { #sample-code }
 
 Refer to IAPServiceProvider class of  com.nhnent.iap.sample package.
 
-## Android Reference
+<a id="android-reference"></a>
+## Android Reference { #android-reference }
 
 # Package: com.toast.android.iap
 
-### public interface InAppPurchase
+<a id="public-interface-inapppurchase"></a>
+### public interface InAppPurchase { #public-interface-inapppurchase }
 
 Interface for In app purchase payment.
 
@@ -629,7 +656,8 @@ InAppPurchases.InAppPurchase.registerUserId("guest0001");
 ```
 
 
-### public interface InAppPurchase.PurchaseCallback
+<a id="public-interface-inapppurchasepurchasecallback"></a>
+### public interface InAppPurchase.PurchaseCallback { #public-interface-inapppurchasepurchasecallback }
 
 callback interface for receiving response after payment request
 
@@ -649,7 +677,8 @@ callback interface for receiving response after payment request
 | Parameters | exception [in] return detail error. if null, request is successful. |
 | Return Value |  void |
 
-### public interface InAppPurchase.PurchaseListCallback
+<a id="public-interface-inapppurchasepurchaselistcallback"></a>
+### public interface InAppPurchase.PurchaseListCallback { #public-interface-inapppurchasepurchaselistcallback }
 
 callback interface for receiving response after payment request
 
@@ -673,7 +702,8 @@ callback interface for receiving response after payment request
 > 1\. Call unsynchronized API from UI Thread (main Thread)    
 > 2\. When calling unsynchronized API, send response result via parameter Callback interface.
 
-### public final class InAppPurchases
+<a id="public-final-class-inapppurchases"></a>
+### public final class InAppPurchases { #public-final-class-inapppurchases }
 
 Entry Point for IAP payment interface
 
@@ -701,7 +731,8 @@ Entry Point for IAP payment interface
 
 # Package: com.toast.android.iap.exception
 
-### public class InAppPurchaseException extends Exception
+<a id="public-class-inapppurchaseexception-extends-exception"></a>
+### public class InAppPurchaseException extends Exception { #public-class-inapppurchaseexception-extends-exception }
 
 Returns error of api request.
 

@@ -1,9 +1,13 @@
-## Mobile Service > IAP > Overview
+<!-- pre-align:aligned sig=f57408f33928 -->
+
+<a id="mobile-service-iap-overview"></a>
+## Mobile Service > IAP > Overview { #mobile-service-iap-overview }
 
 In-App Purchase (以下IAP)サービスはアプリ内決済の統合ソリューションです。
 
 
-## 主要機能
+<a id="features"></a>
+## 主要機能 { #features }
 
 NHN Cloud IAPは次のような機能を提供します。
 
@@ -13,7 +17,8 @@ NHN Cloud IAPは次のような機能を提供します。
 * GoogleとAppleの定期購入決済およびプロモーション機能をサポートしています。
 * 顧客サポートのためにウェブコンソールで決済内訳照会機能を提供します。
 
-## サポートするストア
+<a id="available-store"></a>
+## サポートするストア { #available-store }
 
 | プラットフォーム | ストアー |
 | --- | --- |
@@ -21,7 +26,8 @@ NHN Cloud IAPは次のような機能を提供します。
 | Android | ONE Store (Korea only)|
 | iOS | Apple |
 
-## サポートする商品タイプ
+<a id="supported-product-types"></a>
+## サポートする商品タイプ { #supported-product-types }
 
 | ストア | ストア商品タイプ| IAP商品タイプ|    
 |---|---|---|
@@ -29,7 +35,8 @@ NHN Cloud IAPは次のような機能を提供します。
 | App Store| Consumable, Auto-Renewable | CONSUMABLE, AUTO_SUBSCRIPTION |
 | ONE Store|	Managed product | CONSUMABLE|
 
-## サービス用語
+<a id="terms"></a>
+## サービス用語 { #terms }
 
 | 用語 | 説明 |
 | --- | --- |
@@ -40,7 +47,8 @@ NHN Cloud IAPは次のような機能を提供します。
 | 決済消費(Consume) | 使用者にアイテムを生成する前に決済を消費すること。 |
 | Payment Access Token | ユーザーアプリケーションサーバが決済を消費する際に使用する認証トークン |
 
-## サービス構造
+<a id="service-diagram"></a>
+## サービス構造 { #service-diagram }
 
 IAPサービスでは次の図のように、IAP SDK、ユーザーアプリケーションサーバー、 IAPサーバー、プラットフォーム別ストアの4つで構成されます。
 
@@ -59,7 +67,8 @@ IAPサービスでは次の図のように、IAP SDK、ユーザーアプリケ�
 | Store | Google Store、Apple App Storeなどのさまざまなストアです。 プラットフォーム別ストアはIAPサーバーと連動しています。 |
 
 
-## IAP 決済フローチャート
+<a id="iap-payment-flow"></a>
+## IAP 決済フローチャート { #iap-payment-flow }
 
 
 ![[図3 Server To Server Model 決済フローチャート]](http://static.toastoven.net/prod_iap/iap_n_28.png)

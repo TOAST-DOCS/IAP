@@ -1,6 +1,10 @@
-## Mobile Service > IAP > MyCard Guide
+<!-- pre-align:aligned sig=6341d46bce1f -->
 
-## Register MyCard App
+<a id="mobile-service-iap-mycard-guide"></a>
+## Mobile Service > IAP > MyCard Guide { #mobile-service-iap-mycard-guide }
+
+<a id="register-mycard-app"></a>
+## Register MyCard App { #register-mycard-app }
 
 - MyCard does not provide a web console where customers can log in. (As of July 2023)
 - Integration with MyCard is processed according to the information entered in the NHN Cloud IAP console.

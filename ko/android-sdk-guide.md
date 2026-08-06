@@ -1,10 +1,12 @@
-## Mobile Service > IAP > Android SDK 사용 가이드
+<a id="mobile-service-iap-android-sdk-guide"></a>
+## Mobile Service > IAP > Android SDK 사용 가이드 { #mobile-service-iap-android-sdk-guide }
 
 > [공지]<br>
 > 구독 결제를 지원하는 신규 IAP SDK가 [NHN Cloud SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)로 출시됐습니다. <br>
 > 기존 IAP SDK는 신규 기능을 개발하지 않을 예정입니다.
 
-## 개발환경
+<a id="development-environment"></a>
+## 개발환경 { #development-environment }
 * Android Studio IDE 2.3.3 이상
 * Android SDK Version은 **2.3.3 (API Level 10)** 이상
 
@@ -15,13 +17,15 @@
 |okhttp|http://square.github.io/okhttp/|1.5.4|Apache License 2.0|
 |gson|https://code.google.com/p/google-gson/|2.2.4|Apache License 2.0|
 
-## Android Studio & Gradle 환경에서 사용하기
+<a id="using-in-android-studio-gradle"></a>
+## Android Studio & Gradle 환경에서 사용하기 { #using-in-android-studio-gradle }
 
 `NHN Cloud IAP SDK`는 Gradle을 기반으로한 Android Studio IDE에 대한 개발환경을 제공합니다.
 jCenter Maven Repository 로부터 Remote로 다운로드 받을수 있습니다.
 아래의 같이 프로젝트의 build.gradle 파일에 repository와 dependency에 대한 정의를 하시면 됩니다.  
 
-### 1. Gradle Repository
+<a id="gradle-repository"></a>
+### 1. Gradle Repository { #gradle-repository }
 
 ```
 buildscript {
@@ -40,13 +44,16 @@ buildscript {
 
 <br/>
 
-### 2. 의존성 추가하기
+<a id="adding-dependencies"></a>
+### 2. 의존성 추가하기 { #adding-dependencies }
+<a id="adding-dependencies-google-play-store"></a>
 #### Google Play Store 
 ```
 dependencies {
     implementation 'com.toast.iap:iap:1.5.0'
 }
 ```
+<a id="adding-dependencies-sdk-v17-api-v5---recommended"></a>
 #### SDK v17 (API v5) - 권장
 ```
 dependencies {
@@ -59,6 +66,7 @@ dependencies {
 |---|---|
 |android.permission.ACCESS_NETWORK_STATE|응용 프로그램이 네트워크에 대한 정보에 액세스 할 수있게합니다.|
 
+<a id="adding-dependencies-sdk-v16-api-v4"></a>
 #### SDK v16 (API v4) 
 ```
 dependencies {
@@ -72,14 +80,17 @@ dependencies {
 > Release History   
 > SDK의 Version의 변경이력은 패키지내의 RELEASE-NOTES.md 를 참조해주세요.
 
-## One Store 설정 정보 
+<a id="one-store-configuration-information"></a>
+## One Store 설정 정보 { #one-store-configuration-information }
 2018년 6월 12일(화)부터 구버전 SDK v16 (API v4) 이하가 적용된 신규 앱의 등록이 불가능합니다.  
 신규 앱을 작업하실 경우 SDK v17 (API v5)을 사용하시기 바랍니다.  
 
 * [인앱 SDK v15.xx.xx 버전 미만 적용 상품 지원 종료 안내](https://dev.onestore.co.kr/devpoc/support/news/noticeView.omp?page.no=1&orderValue=&orderType=&noticeId=31245&noticeNo=789&pageFlag=List&searchValue=)  
 * [구버전 IAP SDK 적용 신규 앱 등록 불가 안내](https://dev.onestore.co.kr/devpoc/support/news/noticeView.omp?page.no=1&orderValue=&orderType=&noticeId=31224&noticeNo=788&pageFlag=List&searchValue=)  
 
-### 1. SDK v17 (API v5)
+<a id="sdk-v17-api-v5"></a>
+### 1. SDK v17 (API v5) { #sdk-v17-api-v5 }
+<a id="sdk-v17-api-v5-promoting-one-store-update-and-installation"></a>
 #### One Store 업데이트 및 설치 유도하기 
 만약 SDK의 에러코드 `INAPP_ONESTORE_NEED_UPDATE(201)`이 발생한다면 다음의 코드로 설치를 유도할 수 있습니다.
 ```java
@@ -88,6 +99,7 @@ intent.setData(Uri.parse("http://m.onestore.co.kr/mobilepoc/etc/downloadGuide.om
 startActivity(intent);
 ```
 
+<a id="sdk-v17-api-v5-requesting-one-store-login"></a>
 #### One Store 로그인 요청하기
 `NHN Cloud IAP SDK`에서는 내부적으로 로그인 상태를 확인하기 때문에 별도로 로그인 처리를 하실 필요가 없습니다.
 만약 사용중 로그인이 되어 있지 않다면 One Store 로그인 팝업(예/아니요)이 나타납니다.
@@ -96,6 +108,7 @@ startActivity(intent);
 >[참고]  
 >[One Store 로그인 요청하기](https://dev.onestore.co.kr/devpoc/reference/view/IAP_v17_05_implementation#HC6D0C2A4D1A0C5B4B85CADF8C778C694CCADD558AE30-getLoginIntent2829)
 
+<a id="sdk-v17-api-v5-using-popup-payment-screen"></a>
 #### 팝업 결제 화면용 사용
 팝업 형태의 결제화면을 사용하실 경우 `AndroidMenifest.xml`에 아래 설정을 추가해주세요. 
 ```xml
@@ -108,7 +121,8 @@ startActivity(intent);
 > [참고]   
 > [OneStore - 인앱결제 적용을 위한 사전준비 > 7. Android Manifest 파일 설정](https://dev.onestore.co.kr/devpoc/reference/view/IAP_v17_04_preparation#HAndroidManifestD30CC77CC124C815) 
 
-### 2. SDK v16 (API v4)
+<a id="sdk-v16-api-v4"></a>
+### 2. SDK v16 (API v4) { #sdk-v16-api-v4 }
 결제 테스트의 경우 아래의 설정을 `AndroidMenifest.xml`에 추가해주세요.  
 ```
 <application>
@@ -118,7 +132,8 @@ startActivity(intent);
 </application>
 ```
 
-## 샘플 애플리케이션 제공
+<a id="implementing-sample-application"></a>
+## 샘플 애플리케이션 제공 { #implementing-sample-application }
 
 IAP Android SDK에서는 Google Play Store, One Store에 대한 샘플 애플리케이션을 제공합니다.
 샘플 애플리케이션을 사용하여 IAP Android SDK가 제공하는 기능을 간편하게 테스트 할 수 있습니다.
@@ -127,11 +142,13 @@ IAP Android SDK에서는 Google Play Store, One Store에 대한 샘플 애플리
 > 테스트 전 유의 사항   
 > 결제 테스트에 앞서 [콘솔 사용 가이드](/Mobile Service/IAP/ko/console-guide/)를 숙지 하시어 콘솔 환경 구성을 먼저 진행 하시기 바랍니다.
 
-### 1. Import Project
+<a id="import-project"></a>
+### 1. Import Project { #import-project }
 
 배포된 SDK 패키지 내의 `/sample` 디렉토리를 Android Studio에서 `Import Project`를 합니다.
 
-### 2. AndroidManifest.xml 정보 설정
+<a id="setting-market-information-to-androidmanifestxml"></a>
+### 2. AndroidManifest.xml 정보 설정 { #setting-market-information-to-androidmanifestxml }
 
 IAP Web Console에 등록한 `Store APP ID`를 샘플 애플리케이션의 applicationId와 동일하게 설정 합니다.
 ```
@@ -147,8 +164,10 @@ android {
 > 반드시 실제 스토어(Google Play Store, One Store)의 정보와 일치해야 합니다.
 
 
-## API Reference
-### 1. 로그정보 활성화
+<a id="android-reference"></a>
+## API Reference { #android-reference }
+<a id="activating-log-information"></a>
+### 1. 로그정보 활성화 { #activating-log-information }
 디버그를 위한 로그 정보에 대한 노출을 활성화 합니다.
 
 **[Method]**
@@ -170,7 +189,8 @@ InAppPurchases.InAppPurchase.setDebugMode(true);
 
 <br/>
 
-### 2. 스토어(마켓) 설정
+<a id="store-market-settings"></a>
+### 2. 스토어(마켓) 설정 { #store-market-settings }
 SDK에서 초기화 시 사용할 스토어(마켓)를 설정합니다.  
 
 **[스토어 별 마켓 아이디]**
@@ -208,7 +228,8 @@ InAppPurchases.InAppPurchase.registerMarketId(marketId); // marketId : String va
 
 <br/>
 
-### 3. App ID 등록
+<a id="registering-app-id"></a>
+### 3. App ID 등록 { #registering-app-id }
 IAP Android SDK를 사용하기 위한 서비스 ID 입니다.
 App ID는 `NHN Cloud Console > Mobile Service > IAP`에서 확인 가능합니다.
 
@@ -238,7 +259,8 @@ InAppPurchases.InAppPurchase.registerAppId(1234567);// appId : long integer
 ```
 <br/>
 
-### 4. 유저 등록
+<a id="registering-user-identifier"></a>
+### 4. 유저 등록 { #registering-user-identifier }
 
 인증을 완료한 사용자 ID를 등록합니다.  
 개발사에서 정의한 사용자 식별키이며, 아이템이 지급되는 대상입니다.
@@ -263,7 +285,8 @@ InAppPurchases.InAppPurchase.registerUserId(userId); // userId : String value
 
 <br/>
 
-### 5. 결제 요청
+<a id="request-payment"></a>
+### 5. 결제 요청 { #request-payment }
 
 클라이언트에서 아이템 구매를 요청합니다.
 결제 요청에 대한 응답은 PurchaseCallback 을 통해 전달 받게 됩니다.
@@ -315,7 +338,8 @@ InAppPurchases.InAppPurchase.requestPurchase(this, 1000001, new PurchaseCallback
 
 <br/>
 
-### 6. 미소비 결제 내역 조회
+<a id="inquiry-unconsumed-user-payment-history"></a>
+### 6. 미소비 결제 내역 조회 { #inquiry-unconsumed-user-payment-history }
 
 유저의 소비(Consume) 되지 않은 결제내역을 조회합니다.
 
@@ -372,7 +396,8 @@ InAppPurchases.InAppPurchase.queryPurchases(this, new PurchaseListCallback() {
 
 <br/>
 
-### 7. 구매 가능한 아이템 내역 조회
+<a id="inquiry-all-purchasable-items"></a>
+### 7. 구매 가능한 아이템 내역 조회 { #inquiry-all-purchasable-items }
 
 구매 가능한 모든 아이템 내역을 조회합니다.
 
@@ -427,7 +452,8 @@ InAppPurchases.InAppPurchase.queryItems(activity, new InAppPurchase.ItemListCall
 
 <br/>
 
-### 8. 미처리 결제건 일괄 재처리
+<a id="batch-process-of-unconsumed-payment"></a>
+### 8. 미처리 결제건 일괄 재처리 { #batch-process-of-unconsumed-payment }
 
 미처리된 결제건(IAP 서버 검증 실패)들에 대해 일괄로 재처리 작업을 진행합니다.
 
@@ -494,16 +520,19 @@ InAppPurchases.InAppPurchase.processesIncompletePurchases(activity, new InAppPur
 
 <br/>
 
-### 9. 결제 소비
+<a id="payment-consume"></a>
+### 9. 결제 소비 { #payment-consume }
 사용자 애플리케이션 서버는 아이템을 지급하기 전 IAP 서버에게 결제를 소비할 것을 알려야 합니다.
 결제 소비를 위한 API는 아래를 참고 해주세요.
 
 > [참고]  
 > [Payment Consume API](/Mobile Service/IAP/ko/api-guide/#payment-consume-api)
 
-## 에러 처리
+<a id="processing-error-after-calling-api"></a>
+## 에러 처리 { #processing-error-after-calling-api }
 
-### 1. InAppPurchaseException
+<a id="public-class-inapppurchaseexception-extends-exception"></a>
+### 1. InAppPurchaseException { #public-class-inapppurchaseexception-extends-exception }
 API 호출에 대한 에러 정보를 전달 합니다.
 만약 InAppPurchaseException이 `null`이 아니라면 실패 상황으로 처리합니다.
 

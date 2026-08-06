@@ -1,4 +1,7 @@
-## Mobile Service > IAP > Console Common Guide
+<!-- pre-align:aligned sig=0b5f52f37dd1 -->
+
+<a id="mobile-service-iap-console-common-guide"></a>
+## Mobile Service > IAP > Console Common Guide { #mobile-service-iap-console-common-guide }
 
 To use IAP SDK, you first need to register app and item at web console after store registration.
 
@@ -7,28 +10,32 @@ To use IAP SDK, you first need to register app and item at web console after sto
 <br>
 
 
-## Project Creation
+<a id="project-creation"></a>
+## Project Creation { #project-creation }
 ```
 At NHN Cloud Console (https://console.toast.com), click [+ Create New Project]
 ```
 ![[]](http://static.toastoven.net/prod_iap/iap-console-new-project.png)
 
 
-## Activating IAP
+<a id="activating-iap"></a>
+## Activating IAP { #activating-iap }
 ```
 At NHN Cloud Console (https://console.toast.com), click [Mobile Service] > [IAP] 
 ```
 ![[]](http://static.toastoven.net/prod_iap/iap-console-iap-on.png)
 
 
-## Check AppKey
+<a id="check-appkey"></a>
+## Check AppKey { #check-appkey }
 ```
 Click [URL & Appkey] and check AppKey  or copy the key to clipboard.
 ```
 ![[]](http://static.toastoven.net/prod_iap/iap-console-appkey.png)
 
 
-## App Registration
+<a id="app-registration"></a>
+## App Registration { #app-registration }
 See Store console guide if you want store specific setting.
 ```
 1. Select [App] Tab and Click [Add]
@@ -41,7 +48,8 @@ See Store console guide if you want store specific setting.
 ```
 ![[]](http://static.toastoven.net/prod_iap/iap_reg_app_en.png)
 
-## Item Registration
+<a id="item-registration"></a>
+## Item Registration { #item-registration }
 ```
 1. Click [Item] Tab.  
 2. Select [Store ID] and Click [+ Add]   
@@ -54,7 +62,8 @@ See Store console guide if you want store specific setting.
 
 ![[]](http://static.toastoven.net/prod_iap/iap-console-new-item.png)
 
-## Product Type
+<a id="product-type"></a>
+## Product Type { #product-type }
 
 
 | Store | Store Product Type| IAP Supported |    
@@ -73,7 +82,13 @@ See Store console guide if you want store specific setting.
 > We shall not be liable for any damage or system error caused as a result of proceeding with payment with unspecified item type
 
 
-## Inquiry payment
+<a id="consumable-subscription-product-consumableautorenewable"></a>
+### Consumable Subscription Product (CONSUMABLEAUTORENEWABLE) { #consumable-subscription-product-consumableautorenewable }
+
+<!-- TODO: translate body -->
+
+<a id="inquiry-payment"></a>
+## Inquiry payment { #inquiry-payment }
 
 ```
 1. Click [Transaction] Tab.
@@ -97,7 +112,8 @@ See Store console guide if you want store specific setting.
 
 
 
-## Change Payment Status
+<a id="change-payment-status"></a>
+## Change Payment Status { #change-payment-status }
 ```
 You can change payment status in following conditions, 
 
@@ -116,7 +132,8 @@ Payment which status will be changable shows [Modify] button right side as below
 ![[picture 7 Add additional information when changing statu]](http://static.toastoven.net/prod_iap/iap_transaction_update_success_en)
 
 
-## Inquiry Payment Statistics
+<a id="inquiry-payment-statistics"></a>
+## Inquiry Payment Statistics { #inquiry-payment-statistics }
 
 ```
 1. Click [Statistics]  

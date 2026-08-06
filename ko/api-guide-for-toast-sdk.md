@@ -1,4 +1,7 @@
-## Mobile Service > IAP > Server API 가이드
+<!-- pre-align:aligned sig=1b5027353732 -->
+
+<a id="mobile-service-iap-server-api-guide"></a>
+## Mobile Service > IAP > Server API 가이드 { #mobile-service-iap-server-api-guide }
 
 > [공지]
 > 구독 결제를 지원하는 신규 IAP SDK가 [NHN Cloud SDK](http://docs.toast.com/ko/TOAST/ko/toast-sdk/overview/)로 출시됐습니다.
@@ -9,7 +12,8 @@ IAP를 연동할 때 개발사 서버에서 사용할 수 있는 API입니다.<b
 
 
 
-## Consume API
+<a id="consume-api"></a>
+## Consume API { #consume-api }
 
 사용자 애플리케이션 서버는 아이템을 지급하기 전에 IAP 서버에게 결제를 소비 할 것을 알려야 합니다. <br>
 결제 1건당 1번만 결제소비 가능하며, 결제의 상태가 정상이 아니면 소비되지 않습니다. <br>
@@ -20,14 +24,17 @@ IAP를 연동할 때 개발사 서버에서 사용할 수 있는 API입니다.<b
 > 결제 1건당 1번 소비 가능하며, 결제소비 하지 않은 결제는 IAP에서 아이템을 지급하지 않은 것으로 간주합니다.<br>
 > 클라이언트는 소비 되지 않은 결제건을 일괄 조회할 수 있습니다.
 
-### Request
+<a id="request"></a>
+### Request { #request }
 
+<a id="request-http-request"></a>
 #### HTTP Request
 
 ```
 POST https://api-iap.cloud.toast.com/v1/service/consume
 ```
 
+<a id="request-http-request-header"></a>
 #### HTTP Request Header
 
 | Key | Value            |
@@ -37,6 +44,7 @@ POST https://api-iap.cloud.toast.com/v1/service/consume
 | X-NHN-TCIAP-AppKey  | appKey |
 
 
+<a id="request-body"></a>
 #### Request Body
 
 | 이름            | 자료형    | 설명              |
@@ -45,10 +53,12 @@ POST https://api-iap.cloud.toast.com/v1/service/consume
 | accessToken | String | API Access를 위한 토큰 정보 |
 
 
-### Response
+<a id="response"></a>
+### Response { #response }
 
 Response body에 JSON형태로 전달
 
+<a id="response-success"></a>
 #### Success
 
 ```json
@@ -66,6 +76,7 @@ Response body에 JSON형태로 전달
 }
 ```
 
+<a id="response-error"></a>
 #### Error
 ```json
 {
@@ -78,6 +89,7 @@ Response body에 JSON형태로 전달
 ```
 
 
+<a id="response-header"></a>
 #### Header
 
 | Property name | Value   | Description             |
@@ -86,6 +98,7 @@ Response body에 JSON형태로 전달
 | resultCode |  Integer |  성공 및 실패의 상세코드 |
 | resultMessage |  String |  상세 메시지 |
 
+<a id="response-result"></a>
 #### Result
 
 | Property name | Value  | Description       |
@@ -96,7 +109,8 @@ Response body에 JSON형태로 전달
 
 
 
-### Error Code
+<a id="error-code"></a>
+### Error Code { #error-code }
 
 | Value | Description             |
 | ------------- | ----------------------- |
@@ -106,19 +120,23 @@ Response body에 JSON형태로 전달
 
 
 
-## Consumable List API
+<a id="consumable-list-api"></a>
+## Consumable List API { #consumable-list-api }
 
 결제가 완료되었으나 소비(consume) 되지 않은 결제내역을 Server API로 조회할 수 있습니다. <br>
 해당 API로 미소비내역을 조회하여 소비되지 않은 내역들을 소비(consume) 할 수 있습니다.
 
 
-### Request
+<a id="consumable-list-api-request"></a>
+### Request { #consumable-list-api-request }
+<a id="consumable-list-api-request-http-request"></a>
 #### HTTP Request
 
 ```
 POST https://api-iap.cloud.toast.com/v1/service/consumable
 ```
 
+<a id="consumable-list-api-request-http-request-header"></a>
 #### HTTP Request Header
 
 | Key | Value            |
@@ -127,6 +145,7 @@ POST https://api-iap.cloud.toast.com/v1/service/consumable
 | Content-Type  | application/json |
 | X-NHN-TCIAP-AppKey  | appKey |
 
+<a id="consumable-list-api-request-request-body"></a>
 #### Request Body
 
 | 이름            | 자료형    | 설명              |
@@ -138,11 +157,13 @@ POST https://api-iap.cloud.toast.com/v1/service/consumable
 
 
 
-### Response
+<a id="consumable-list-api-response"></a>
+### Response { #consumable-list-api-response }
 Response body에 JSON형태로 전달
 
 
 
+<a id="consumable-list-api-response-success"></a>
 #### Success
 
 ```json
@@ -173,6 +194,7 @@ Response body에 JSON형태로 전달
 
 ```
 
+<a id="consumable-list-api-response-header"></a>
 #### Header
 
 | Property name | Value   | Description             |
@@ -181,6 +203,7 @@ Response body에 JSON형태로 전달
 | resultCode |  Integer |  성공 및 실패의 상세코드 |
 | resultMessage |  String |  상세 메시지 |
 
+<a id="consumable-list-api-response-result"></a>
 #### Result
 
 | Property name | Value  | Description       |
@@ -193,7 +216,8 @@ Response body에 JSON형태로 전달
 
 
 
-### Error Code
+<a id="consumable-list-api-error-code"></a>
+### Error Code { #consumable-list-api-error-code }
 
 | Value | Description             |
 | ------------- | ----------------------- |
@@ -202,17 +226,21 @@ Response body에 JSON형태로 전달
 
 
 
-## ActiveSubscription List API
+<a id="activesubscription-list-api"></a>
+## ActiveSubscription List API { #activesubscription-list-api }
 앱별, 유저별로 만료되지 않은 구독 결제를 조회한다.
 
 
-### Request
+<a id="activesubscription-list-api-request"></a>
+### Request { #activesubscription-list-api-request }
+<a id="activesubscription-list-api-request-http-request"></a>
 #### HTTP Request
 
 ```
 POST https://api-iap.cloud.toast.com/v1/service/activeSubscriptionList
 ```
 
+<a id="activesubscription-list-api-request-http-request-header"></a>
 #### HTTP Request Header
 
 | Key | Value            |
@@ -222,6 +250,7 @@ POST https://api-iap.cloud.toast.com/v1/service/activeSubscriptionList
 | X-NHN-TCIAP-AppKey  | appKey |  
 
 
+<a id="activesubscription-list-api-request-request-body"></a>
 #### Request Body
 
 | 이름            | 자료형    | 설명              |
@@ -234,11 +263,13 @@ POST https://api-iap.cloud.toast.com/v1/service/activeSubscriptionList
 
 
 
-### Response
+<a id="activesubscription-list-api-response"></a>
+### Response { #activesubscription-list-api-response }
 Response body에 JSON형태로 전달
 
 
 
+<a id="activesubscription-list-api-response-success"></a>
 #### Success
 
 ```json
@@ -271,6 +302,7 @@ Response body에 JSON형태로 전달
 ```
 
 
+<a id="activesubscription-list-api-response-error"></a>
 #### Error
 ```json
 {
@@ -281,6 +313,7 @@ Response body에 JSON형태로 전달
     }
 }
 ```
+<a id="activesubscription-list-api-response-header"></a>
 #### Header
 
 | Property name | Value   | Description             |
@@ -289,6 +322,7 @@ Response body에 JSON형태로 전달
 | resultCode |  Integer |  성공 및 실패의 상세코드 |
 | resultMessage |  String |  상세 메시지 |
 
+<a id="activesubscription-list-api-response-result"></a>
 #### Result
 
 | Property name | Value  | Description       |
@@ -310,7 +344,8 @@ Response body에 JSON형태로 전달
 
 
 
-### Error Code
+<a id="activesubscription-list-api-error-code"></a>
+### Error Code { #activesubscription-list-api-error-code }
 
 | Value | Description             |
 | ------------- | ----------------------- |

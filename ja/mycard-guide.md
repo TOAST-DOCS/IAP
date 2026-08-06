@@ -1,6 +1,10 @@
-## Mobile Service > IAP > MyCardガイド
+<!-- pre-align:aligned sig=6341d46bce1f -->
 
-## MyCardアプリ登録
+<a id="mobile-service-iap-mycard-guide"></a>
+## Mobile Service > IAP > MyCardガイド { #mobile-service-iap-mycard-guide }
+
+<a id="register-mycard-app"></a>
+## MyCardアプリ登録 { #register-mycard-app }
 
 - マイカードでは、顧客がログイン可能なウェブコンソールを提供しておりません。 (2023年7月現在)
 - マイカード連動は、NHN Cloud IAPコンソールに入力した情報を基に処理されます。

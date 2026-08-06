@@ -1,11 +1,16 @@
-## Common > IAP > Store interlocking information
+<!-- pre-align:aligned sig=0aee5980f5ad -->
+
+<a id="common-iap-store-interlocking-information"></a>
+## Common > IAP > Store interlocking information { #common-iap-store-interlocking-information }
 
 스토어의 인앱결제를 구현하려면 스토어에서 발급하는 애플리케이션 키를 IAP 웹콘솔에 입력하여야 합니다. 
 마켓별로 발급하는 애플리케이션 키 값은 아래 표를 참고합니다.
 
-## Google Play
+<a id="google-play"></a>
+## Google Play { #google-play }
 
-### Google Play 스토어 연동 정보
+<a id="google-play-store"></a>
+### Google Play 스토어 연동 정보 { #google-play-store }
 
 | 필드 | 설명                                             |
 | ---------------------------------- | ---------------------------------------------- |
@@ -25,7 +30,8 @@
 
 <center>[표 2] Google Play 스토어 연동을 위한 아이템 등록 필드</center>
 
-### Google Play 개발자 콘솔의 애플리케이션 Public Key 확인
+<a id="check-application-public-key-in-google-play-developer-console"></a>
+### Google Play 개발자 콘솔의 애플리케이션 Public Key 확인 { #check-application-public-key-in-google-play-developer-console }
 
 ```
 Google Play 개발자 콘솔 메뉴의 [애플리케이션 - 서비스 및 API] 선택
@@ -36,7 +42,8 @@ Google Play 개발자 콘솔 메뉴의 [애플리케이션 - 서비스 및 API] 
 > [참고]  
 > [Android Developers - 인앱 결제 관리](http://developer.android.com/google/play/billing/billing_admin.html)
 
-### Google API 개발자 콘솔에서 OAuth 클라이언트 정보 확인
+<a id="check-oauth-client-in-google-api-developer-console"></a>
+### Google API 개발자 콘솔에서 OAuth 클라이언트 정보 확인 { #check-oauth-client-in-google-api-developer-console }
 
 ```
 Google Play 개발자 콘솔과 동일한 계정으로 Google API 콘솔에 프로젝트를 생성합니다. 아래의 링크를 참조하여 OAuth 인증에 필요한 아래의 정보를 생성합니다.  
@@ -100,7 +107,8 @@ Google Play 개발자 콘솔과 동일한 계정으로 Google API 콘솔에 프�
 ![[그림 4] Refresh Token 생성 2](http://static.toastoven.net/prod_iap/iap_50.jpg)
 <center>[그림 4] Refresh Token 생성 2</center>
 
-### AndroidManifest.xml 설정 예시
+<a id="androidmanifestxml-setting-example"></a>
+### AndroidManifest.xml 설정 예시 { #androidmanifestxml-setting-example }
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
@@ -127,7 +135,8 @@ Google Play 개발자 콘솔과 동일한 계정으로 Google API 콘솔에 프�
 * Unity : 유니티 플러그인의 /Plugins/Android/AndroidManifest-iap-template.xml 참조
 ```
 
-### Google Play 연동 주의사항
+<a id="google-play-prerequisites"></a>
+### Google Play 연동 주의사항 { #google-play-prerequisites }
 
 구글연동을 위해 주의해야 할 사항이 있습니다.    
 아래와 같은 상황이 아닌 경우 웹콘솔을 통해 정상적인 앱, 아이템 등록이 불가할 수 있습니다.
@@ -173,9 +182,11 @@ Google Play 개발자 콘솔과 동일한 계정으로 Google API 콘솔에 프�
   - 인앱 상품의 ID 확인
 ```
 
-## 원스토어 통합개발자센터(구 T스토어)
+<a id="one-store-developer-center-ex-tstore"></a>
+## 원스토어 통합개발자센터(구 T스토어) { #one-store-developer-center-ex-tstore }
 
-### 통신3사 통합개발자센터에 대한 안내
+<a id="guide-for-integrated-developer-center-3-telecoms"></a>
+### 통신3사 통합개발자센터에 대한 안내 { #guide-for-integrated-developer-center-3-telecoms }
 
 원스토어 통합개발자 센터는 올레마켓 / U+스토어 / T스토어 / 네이버 앱스토어 통합 센터입니다. 
 인앱결제를 위한 연동방법은 기존과 동일하게 제공되기 때문에 원스토어 연동 정보를 통해 퍼블리싱이 가능합니다.
@@ -184,7 +195,8 @@ Google Play 개발자 콘솔과 동일한 계정으로 Google API 콘솔에 프�
 > 2016년 6월 1일 이후로는 네이버 앱스토어는 원스토어로 양도 되었습니다.
 > [네이버앱스토어 개발자센터 공식카페](http://cafe.naver.com/naverappdev/10658)
 
-### 원스토어 연동 정보
+<a id="one-store"></a>
+### 원스토어 연동 정보 { #one-store }
 
 [표 3] 원스토어 연동을 위한 앱 등록 필드
 
@@ -200,7 +212,8 @@ Google Play 개발자 콘솔과 동일한 계정으로 Google API 콘솔에 프�
 | Item Name      | 아이템에 대한 제목 또는 설명        |
 | Market Item ID | 원스토어에 등록한 In-App 상품의 ID |
 
-### 원스토어 개발자 센터에서 AID와 In-App ID 발급
+<a id="obtaining-aid-and-in-app-id-in-one-store"></a>
+### 원스토어 개발자 센터에서 AID와 In-App ID 발급 { #obtaining-aid-and-in-app-id-in-one-store }
 
 ```
 원스토어 개발자 센터에서 아래의 정보를 확인 합니다.  
@@ -208,7 +221,8 @@ Google Play 개발자 콘솔과 동일한 계정으로 Google API 콘솔에 프�
 2) In-App ID : 생성한 애플리케이션에 등록한 In-App 상품의 ID
 ```
 
-### Android 원스토어 라이브러리 추가
+<a id="add-one-store-library"></a>
+### Android 원스토어 라이브러리 추가 { #add-one-store-library }
 
 IAP Android SDK의 다운로드 받고 원스토어 연동을 위해서는 추가적으로 아래와 같이 프로젝트에 라이브러리를 추가해야합니다.
 
@@ -221,7 +235,8 @@ IAP Android SDK의 다운로드 받고 원스토어 연동을 위해서는 추�
 > Unity 프로젝트에서 Library 추가   
 > Download 한 SDK패키지에서 /libs/tstore 폴더의 파일을 /Plugins/Android/iap/libs 에 복사합니다.  
 
-### AndroidManifest.xml 설정 예시
+<a id="androidmanifestxml-example"></a>
+### AndroidManifest.xml 설정 예시 { #androidmanifestxml-example }
 
 원스토어 연동을 위해서는 아래와 같이 AndroidManifest.xml 설정 정보를 추가 합니다.
 
@@ -267,9 +282,11 @@ IAP Android SDK의 다운로드 받고 원스토어 연동을 위해서는 추�
 > [참고]  
 > [네이버 앱스토어 영업 양수도 관련 서비스 주요 변경사항](http://cafe.naver.com/naverappdev/10658)
 
-## 애플 앱스토어
+<a id="apple-app-store"></a>
+## 애플 앱스토어 { #apple-app-store }
 
-### 앱스토어 연동 정보
+<a id="apple-app-store-form"></a>
+### 앱스토어 연동 정보 { #apple-app-store-form }
 
 | 필드         | 설명                          |
 | ------------- | --------------------------- |
@@ -281,7 +298,8 @@ IAP Android SDK의 다운로드 받고 원스토어 연동을 위해서는 추�
 | Item Name      | 아이템에 대한 제목 또는 설명 |
 | Market Item ID | 앱스토어 등록한 제품 ID   |
 
-### 앱스토어 개발자 센터에서 Bundle Id 및 In-App 제품ID 확인
+<a id="check-bundle-id-and-in-app-item-id-in-app-store-developer-center"></a>
+### 앱스토어 개발자 센터에서 Bundle Id 및 In-App 제품ID 확인 { #check-bundle-id-and-in-app-item-id-in-app-store-developer-center }
 
 ```
 iTunes Connect 를 통해 아래의 정보를 확인 합니다.  

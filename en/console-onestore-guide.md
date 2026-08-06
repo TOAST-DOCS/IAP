@@ -1,8 +1,12 @@
-## Mobile Service > IAP > ONE Store Console Guide
+<!-- pre-align:aligned sig=42ad6ead3e45 -->
+
+<a id="mobile-service-iap-one-store-console-guide"></a>
+## Mobile Service > IAP > ONE Store Console Guide { #mobile-service-iap-one-store-console-guide }
 
 Create your license key and OAuth credentials in the one-store to register for the IAP app information.
 
-### Create One-Store Key
+<a id="create-one-store-key"></a>
+### Create One-Store Key { #create-one-store-key }
 ```
 Apps > select App> In-App > Managed Product > Managed In-App API
 ```
@@ -25,7 +29,8 @@ Apps > select App> In-App > Managed Product > Managed In-App API
 
 
 
-### Set up ONE store Notifications for Real-Time Subscription Status
+<a id="set-up-one-store-notifications-for-real-time-subscription-status"></a>
+### Set up ONE store Notifications for Real-Time Subscription Status { #set-up-one-store-notifications-for-real-time-subscription-status }
 
 ```
 Apps > Select App > In-App Information > Subscriptions > PNS Management > Subscription Status Notifications
