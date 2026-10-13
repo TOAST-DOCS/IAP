@@ -10,13 +10,13 @@ NHN Cloud IAP SDK를 적용하면 모바일 애플리케이션에서 쉽고 강�
 ## 개발 가이드
 
 #### iOS
-* [NHN Cloud IAP iOS 가이드](https://docs.toast.com/ko/TOAST/ko/toast-sdk/iap-ios/)를 참고하십시오.
+* [NHN Cloud IAP iOS 가이드](https://docs.nhncloud.com/ko/TOAST/ko/toast-sdk/iap-ios/)를 참고하십시오.
 
 #### Android
-* [NHN Cloud IAP Android 가이드](https://docs.toast.com/ko/TOAST/ko/toast-sdk/iap-android/)를 참고하십시오.
+* [NHN Cloud IAP Android 가이드](https://docs.nhncloud.com/ko/TOAST/ko/toast-sdk/iap-android/)를 참고하십시오.
 
 #### Unity
-* [NHN Cloud IAP Unity 가이드](https://docs.toast.com/ko/TOAST/ko/toast-sdk/iap-unity/)를 참고하십시오.
+* [NHN Cloud IAP Unity 가이드](https://docs.nhncloud.com/ko/TOAST/ko/toast-sdk/iap-unity/)를 참고하십시오.
 
 #### 기타
 * 기타 플랫폼에 대한 문의는 [NHN Cloud 고객 센터](https://toast.com/support/inquiry?alias=tab3_06)로 해 주시기 바랍니다.

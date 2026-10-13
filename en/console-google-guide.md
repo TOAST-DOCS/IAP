@@ -1,6 +1,6 @@
 ## Mobile Service > IAP > Google Console Guide
 
-> This document describes how to register and link information from an app released on Google Play to [NHN Cloud IAP](http://docs.toast.com/ko/Mobile%20Service/IAP/ko/Overview/) Console.
+> This document describes how to register and link information from an app released on Google Play to [NHN Cloud IAP](https://docs.nhncloud.com/ko/Mobile%20Service/IAP/ko/Overview/) Console.
 > For more details on releasing apps with Google Play, please refer to the Google Play Console guide provided by Google.
 
 ## Google site

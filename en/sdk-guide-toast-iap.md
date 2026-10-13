@@ -10,13 +10,13 @@ With NHN Cloud IAP SDK, easy and strong in-app purchase becomes available on mob
 ## Developer's Guide
 
 #### iOS
-* See [Guide for NHN Cloud IAP iOS](https://docs.toast.com/ko/TOAST/ko/toast-sdk/iap-ios/).
+* See [Guide for NHN Cloud IAP iOS](https://docs.nhncloud.com/ko/TOAST/ko/toast-sdk/iap-ios/).
 
 #### Android
-* See [Guide for NHN Cloud IAP Android](https://docs.toast.com/ko/TOAST/ko/toast-sdk/iap-android/).
+* See [Guide for NHN Cloud IAP Android](https://docs.nhncloud.com/ko/TOAST/ko/toast-sdk/iap-android/).
 
 #### Unity
-* See [Guide for NHN Cloud IAP Unity](https://docs.toast.com/ko/TOAST/ko/toast-sdk/iap-unity/).
+* See [Guide for NHN Cloud IAP Unity](https://docs.nhncloud.com/ko/TOAST/ko/toast-sdk/iap-unity/).
 
 #### Others
 * For inquiries on other platforms, contact [NHN Cloud Customer Center](https://toast.com/support/inquiry?alias=tab3_06).

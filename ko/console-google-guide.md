@@ -1,6 +1,6 @@
 ## Mobile Service > IAP > Google 콘솔 가이드
 
-> 본 문서는 Google Play로 출시된 앱의 정보를 [NHN Cloud IAP](http://docs.toast.com/ko/Mobile%20Service/IAP/ko/Overview/) 콘솔에 등록 및 연동시키는 방법을 다룹니다.
+> 본 문서는 Google Play로 출시된 앱의 정보를 [NHN Cloud IAP](https://docs.nhncloud.com/ko/Mobile%20Service/IAP/ko/Overview/) 콘솔에 등록 및 연동시키는 방법을 다룹니다.
 > Google Play로 앱을 출시하기 위한 보다 자세한 사항들은 Google이 제공하는 Google Play Console 가이드를 참조하십시오.
 
 ## Google 사이트

@@ -1,6 +1,6 @@
 ## Mobile Service > IAP > Googleコンソールガイド
 
-> 本文書は、Google Playでリリースしたアプリの情報を[NHN Cloud IAP](http://docs.toast.com/ko/Mobile%20Service/IAP/ko/Overview/)コンソールに登録及び連動させる方法を説明します。
+> 本文書は、Google Playでリリースしたアプリの情報を[NHN Cloud IAP](https://docs.nhncloud.com/ko/Mobile%20Service/IAP/ko/Overview/)コンソールに登録及び連動させる方法を説明します。
 > Google Playでアプリをリリースするためのより詳しい内容は、Googleが提供するGoogle Play Consoleガイドを参照してください。
 
 ## Googleサイト
